@@ -47,7 +47,7 @@ const Index = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-background grid-bg relative">
+    <div className="min-h-screen bg-background relative">
       {/* Animated light rays */}
       <div className="light-rays" />
       <div className="speed-lines">
