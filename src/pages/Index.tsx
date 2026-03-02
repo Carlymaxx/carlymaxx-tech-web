@@ -1,7 +1,9 @@
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
+const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
+const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 
 const services = [
   {
