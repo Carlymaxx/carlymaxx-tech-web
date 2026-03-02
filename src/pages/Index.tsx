@@ -37,8 +37,34 @@ const services = [
 ];
 
 const Index = () => {
+  const speedLines = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    top: `${Math.random() * 100}%`,
+    width: `${100 + Math.random() * 300}px`,
+    duration: `${1.5 + Math.random() * 3}s`,
+    delay: `${Math.random() * 5}s`,
+    opacity: 0.2 + Math.random() * 0.5,
+  }));
+
   return (
-    <div className="min-h-screen bg-background grid-bg">
+    <div className="min-h-screen bg-background grid-bg relative">
+      {/* Animated light rays */}
+      <div className="light-rays" />
+      <div className="speed-lines">
+        {speedLines.map((line) => (
+          <div
+            key={line.id}
+            className="speed-line"
+            style={{
+              top: line.top,
+              width: line.width,
+              animationDuration: line.duration,
+              animationDelay: line.delay,
+              opacity: line.opacity,
+            }}
+          />
+        ))}
+      </div>
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
