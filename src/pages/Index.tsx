@@ -1,4 +1,4 @@
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -157,6 +157,23 @@ const Index = () => {
           <p className="mb-8 max-w-md text-muted-foreground">
             Join the WhatsApp channel for the latest tech updates, tools, and exclusive content.
           </p>
+
+          {/* Contact Info */}
+          <div className="mb-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
+            <a href="mailto:maxxtechxmd@gmail.com" className="flex items-center gap-2 text-sm text-secondary-foreground transition-colors hover:text-primary">
+              <Mail className="h-4 w-4 text-primary" />
+              maxxtechxmd@gmail.com
+            </a>
+            <a href="tel:+254725979273" className="flex items-center gap-2 text-sm text-secondary-foreground transition-colors hover:text-primary">
+              <Phone className="h-4 w-4 text-primary" />
+              +254 725 979 273
+            </a>
+            <a href="tel:+245100638635" className="flex items-center gap-2 text-sm text-secondary-foreground transition-colors hover:text-primary">
+              <Phone className="h-4 w-4 text-primary" />
+              +245 100 638 635
+            </a>
+          </div>
+
           <a
             href={WHATSAPP_CHANNEL}
             target="_blank"
