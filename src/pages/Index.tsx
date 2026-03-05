@@ -322,7 +322,7 @@ const Index = () => {
         <div className="container mx-auto flex flex-col items-center gap-2 px-6 text-center">
           <span className="font-display text-sm tracking-wider gradient-text">MAXX TECH</span>
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Carly Maxx. All rights reserved.
+            © {new Date().getFullYear()} Maxx Tech. All rights reserved.
           </p>
         </div>
       </footer>
