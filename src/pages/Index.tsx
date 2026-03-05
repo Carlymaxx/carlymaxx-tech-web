@@ -216,10 +216,6 @@ const Index = () => {
               <Phone className="h-4 w-4 text-primary" />
               +254 725 979 273
             </a>
-            <a href="tel:+245100638635" className="flex items-center gap-2 text-sm text-secondary-foreground transition-colors hover:text-primary">
-              <Phone className="h-4 w-4 text-primary" />
-              +245 100 638 635
-            </a>
           </div>
 
           <a
