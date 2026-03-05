@@ -172,6 +172,7 @@ const Index = () => {
         </div>
       </nav>
 
+      <FadeSection>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
         {/* Glow orbs */}
@@ -211,7 +212,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* Services */}
       <section className="py-24">
         <div className="container mx-auto px-6">
@@ -239,7 +242,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* Premium Services / Pricing */}
       <section className="border-t border-border py-24">
         <div className="container mx-auto px-6">
@@ -284,7 +289,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* About */}
       <section className="border-t border-border py-24">
         <div className="container mx-auto flex flex-col items-center gap-10 px-6 md:flex-row md:gap-16">
@@ -306,7 +313,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* CTA */}
       <section className="border-t border-border py-20">
         <div className="container mx-auto flex flex-col items-center px-6 text-center">
@@ -341,6 +350,7 @@ const Index = () => {
           </a>
         </div>
       </section>
+      </FadeSection>
 
       {/* Footer */}
       <footer className="border-t border-border py-8">
