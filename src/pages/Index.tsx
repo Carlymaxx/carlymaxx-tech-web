@@ -81,6 +81,19 @@ const services = [
 ];
 
 const Index = () => {
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setShowNav(currentY < lastScrollY || currentY < 50);
+      setLastScrollY(currentY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const speedLines = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     top: `${Math.random() * 100}%`,
@@ -110,7 +123,7 @@ const Index = () => {
         ))}
       </div>
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+      <nav className={`fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
