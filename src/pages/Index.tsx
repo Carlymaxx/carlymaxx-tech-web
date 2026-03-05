@@ -1,9 +1,50 @@
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
+const ORDER_WA = "https://wa.me/254725979273?text=Hey%20Maxx%20I%20need%20your%20help%20here";
+
+const premiumServices = [
+  {
+    icon: Bot,
+    title: "Bot Deployment",
+    description: "Get a fully functional WhatsApp bot deployed for your group or business. Automate tasks, manage members, and more.",
+    price: "50 KES",
+    hot: true,
+  },
+  {
+    icon: Youtube,
+    title: "YouTube Boosting",
+    description: "Boost your YouTube channel with subscribers, views, and engagement to grow your audience fast.",
+    price: "From 100 KES",
+  },
+  {
+    icon: Instagram,
+    title: "Instagram Growth",
+    description: "Get real followers, likes, and engagement on your Instagram profile. Build your brand presence.",
+    price: "From 100 KES",
+  },
+  {
+    icon: Globe,
+    title: "TikTok Boosting",
+    description: "Go viral on TikTok with boosted views, followers, and likes. Reach millions of users worldwide.",
+    price: "From 100 KES",
+  },
+  {
+    icon: Users,
+    title: "Group Management",
+    description: "Professional WhatsApp group management with bots, moderation tools, and engagement features.",
+    price: "Custom",
+  },
+  {
+    icon: Shield,
+    title: "Account Security",
+    description: "Protect your social media accounts with advanced security setups and recovery assistance.",
+    price: "From 200 KES",
+  },
+];
 
 const services = [
   {
@@ -168,6 +209,51 @@ const Index = () => {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Services / Pricing */}
+      <section className="border-t border-border py-24">
+        <div className="container mx-auto px-6">
+          <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">
+            OUR SERVICES
+          </h2>
+          <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">
+            Premium digital services at unbeatable prices. Fast delivery, real results.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {premiumServices.map((service) => (
+              <div
+                key={service.title}
+                className="group relative rounded-xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:box-glow"
+              >
+                {service.hot && (
+                  <span className="absolute -top-3 right-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
+                    <Flame className="h-3 w-3" /> HOT DEAL
+                  </span>
+                )}
+                <service.icon className="mb-5 h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+                <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">
+                  {service.title}
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-lg font-bold text-primary">{service.price}</span>
+                  <a
+                    href={ORDER_WA}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn flex items-center gap-1 rounded-lg bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-all hover:box-glow-hover"
+                  >
+                    Order Now
+                    <ArrowRight className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
