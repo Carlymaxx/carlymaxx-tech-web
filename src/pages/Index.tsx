@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
