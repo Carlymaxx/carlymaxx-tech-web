@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
@@ -80,20 +80,31 @@ const services = [
   },
 ];
 
-const Index = () => {
-  const [showNav, setShowNav] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+const FadeSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      setShowNav(currentY < lastScrollY || currentY < 50);
-      setLastScrollY(currentY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        el.style.opacity = entry.isIntersecting ? "1" : "0";
+        el.style.transform = entry.isIntersecting ? "translateY(0)" : "translateY(30px)";
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
+  return (
+    <div ref={ref} className={`transition-all duration-700 ease-out opacity-0 translate-y-[30px] ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+const Index = () => {
   const speedLines = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     top: `${Math.random() * 100}%`,
@@ -123,7 +134,7 @@ const Index = () => {
         ))}
       </div>
       {/* Nav */}
-      <nav className={`fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
+      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
