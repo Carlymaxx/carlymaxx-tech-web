@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
@@ -80,20 +80,31 @@ const services = [
   },
 ];
 
-const Index = () => {
-  const [showNav, setShowNav] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+const FadeSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      setShowNav(currentY < lastScrollY || currentY < 50);
-      setLastScrollY(currentY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        el.style.opacity = entry.isIntersecting ? "1" : "0";
+        el.style.transform = entry.isIntersecting ? "translateY(0)" : "translateY(30px)";
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
+  return (
+    <div ref={ref} className={`transition-all duration-700 ease-out opacity-0 translate-y-[30px] ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+const Index = () => {
   const speedLines = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     top: `${Math.random() * 100}%`,
@@ -123,7 +134,7 @@ const Index = () => {
         ))}
       </div>
       {/* Nav */}
-      <nav className={`fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
+      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
@@ -161,6 +172,7 @@ const Index = () => {
         </div>
       </nav>
 
+      <FadeSection>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
         {/* Glow orbs */}
@@ -200,7 +212,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* Services */}
       <section className="py-24">
         <div className="container mx-auto px-6">
@@ -228,7 +242,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* Premium Services / Pricing */}
       <section className="border-t border-border py-24">
         <div className="container mx-auto px-6">
@@ -273,7 +289,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* About */}
       <section className="border-t border-border py-24">
         <div className="container mx-auto flex flex-col items-center gap-10 px-6 md:flex-row md:gap-16">
@@ -295,7 +313,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </FadeSection>
 
+      <FadeSection>
       {/* CTA */}
       <section className="border-t border-border py-20">
         <div className="container mx-auto flex flex-col items-center px-6 text-center">
@@ -330,6 +350,7 @@ const Index = () => {
           </a>
         </div>
       </section>
+      </FadeSection>
 
       {/* Footer */}
       <footer className="border-t border-border py-8">
