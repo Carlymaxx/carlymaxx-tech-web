@@ -353,6 +353,22 @@ const Index = () => {
             </a>
           </div>
 
+          {/* Social Links Grid */}
+          <div className="mb-10 flex flex-wrap justify-center gap-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary hover:box-glow"
+              >
+                <link.icon className="h-4 w-4 text-primary" />
+                {link.label}
+              </a>
+            ))}
+          </div>
+
           <a
             href={WHATSAPP_CHANNEL}
             target="_blank"
