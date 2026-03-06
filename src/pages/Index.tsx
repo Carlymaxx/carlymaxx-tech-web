@@ -243,7 +243,7 @@ const Index = () => {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group rounded-xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:box-glow"
+                className="group neon-border-card rounded-xl bg-card p-8 transition-all duration-300"
               >
                 <service.icon className="mb-5 h-8 w-8 text-primary transition-transform group-hover:scale-110" />
                 <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">
@@ -273,7 +273,7 @@ const Index = () => {
             {premiumServices.map((service) => (
               <div
                 key={service.title}
-                className="group relative rounded-xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:box-glow"
+                className="group relative neon-border-card rounded-xl bg-card p-8 transition-all duration-300"
               >
                 {service.hot && (
                   <span className="absolute -top-3 right-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
