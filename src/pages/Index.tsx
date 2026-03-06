@@ -1,11 +1,26 @@
 import { useEffect, useRef } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame, Send, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const ORDER_WA = "https://wa.me/254725979273?text=Hey%20Maxx%20I%20need%20your%20help%20here";
+const INSTAGRAM = "https://www.instagram.com/carlymaxx?igsh=MTNqc2k5cGs2YWprbQ==";
+const TELEGRAM = "https://t.me/maxxtechgram";
+const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
+const X_TWITTER = "https://x.com/maxx1470";
+const YOUTUBE = "https://www.youtube.com/@MaxxTechxmd";
+
+const socialLinks = [
+  { icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_CHANNEL },
+  { icon: Youtube, label: "YouTube", href: YOUTUBE },
+  { icon: Instagram, label: "Instagram", href: INSTAGRAM },
+  { icon: Globe, label: "TikTok", href: TIKTOK },
+  { icon: Send, label: "Telegram", href: TELEGRAM },
+  { icon: Twitter, label: "X Twitter", href: X_TWITTER },
+  { icon: Github, label: "GitHub", href: GITHUB_REPO },
+];
 
 const premiumServices = [
   {
@@ -338,6 +353,22 @@ const Index = () => {
             </a>
           </div>
 
+          {/* Social Links Grid */}
+          <div className="mb-10 flex flex-wrap justify-center gap-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary hover:box-glow"
+              >
+                <link.icon className="h-4 w-4 text-primary" />
+                {link.label}
+              </a>
+            ))}
+          </div>
+
           <a
             href={WHATSAPP_CHANNEL}
             target="_blank"
@@ -354,8 +385,22 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-8">
-        <div className="container mx-auto flex flex-col items-center gap-2 px-6 text-center">
+        <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center">
           <span className="font-display text-sm tracking-wider gradient-text">MAXX TECH</span>
+          <div className="flex flex-wrap justify-center gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-primary"
+                title={link.label}
+              >
+                <link.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Maxx Tech. All rights reserved.
           </p>
