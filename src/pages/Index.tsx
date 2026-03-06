@@ -385,8 +385,22 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-8">
-        <div className="container mx-auto flex flex-col items-center gap-2 px-6 text-center">
+        <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center">
           <span className="font-display text-sm tracking-wider gradient-text">MAXX TECH</span>
+          <div className="flex flex-wrap justify-center gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-primary"
+                title={link.label}
+              >
+                <link.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Maxx Tech. All rights reserved.
           </p>
