@@ -1,11 +1,26 @@
 import { useEffect, useRef } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Instagram, Shield, Users, Flame, Send, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const ORDER_WA = "https://wa.me/254725979273?text=Hey%20Maxx%20I%20need%20your%20help%20here";
+const INSTAGRAM = "https://www.instagram.com/carlymaxx?igsh=MTNqc2k5cGs2YWprbQ==";
+const TELEGRAM = "https://t.me/maxxtechgram";
+const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
+const X_TWITTER = "https://x.com/maxx1470";
+const YOUTUBE = "https://www.youtube.com/@MaxxTechxmd";
+
+const socialLinks = [
+  { icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_CHANNEL },
+  { icon: Youtube, label: "YouTube", href: YOUTUBE },
+  { icon: Instagram, label: "Instagram", href: INSTAGRAM },
+  { icon: Globe, label: "TikTok", href: TIKTOK },
+  { icon: Send, label: "Telegram", href: TELEGRAM },
+  { icon: Twitter, label: "X Twitter", href: X_TWITTER },
+  { icon: Github, label: "GitHub", href: GITHUB_REPO },
+];
 
 const premiumServices = [
   {
