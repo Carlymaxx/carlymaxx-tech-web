@@ -377,6 +377,42 @@ const Index = () => {
       </section>
       </FadeSection>
 
+      <FadeSection>
+      {/* FAQ */}
+      <section className="border-t border-border py-24">
+        <div className="container mx-auto px-6">
+          <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">
+            FAQ
+          </h2>
+          <p className="mx-auto mb-12 max-w-xl text-center text-muted-foreground">
+            Frequently asked questions about our services
+          </p>
+          <div className="mx-auto max-w-2xl space-y-4">
+            {[
+              { q: "How do I order a service?", a: "Simply click the 'Order Now' button on any service card and you'll be connected to us on WhatsApp to discuss your needs." },
+              { q: "How long does bot deployment take?", a: "Most bots are deployed within 1-2 hours after payment confirmation. Complex setups may take up to 24 hours." },
+              { q: "What payment methods do you accept?", a: "We accept M-Pesa, PayPal, and cryptocurrency. Contact us for other payment options." },
+              { q: "Do you offer refunds?", a: "Yes, we offer a full refund if we're unable to deliver the service as promised. Partial refunds apply for partially completed work." },
+              { q: "Can I get a custom package?", a: "Absolutely! Reach out via WhatsApp and we'll create a tailored package that fits your exact needs and budget." },
+            ].map((faq, i) => (
+              <details
+                key={i}
+                className="group neon-border-card rounded-xl bg-card overflow-hidden"
+              >
+                <summary className="cursor-pointer list-none flex items-center justify-between p-6 font-display text-sm font-semibold tracking-wide text-card-foreground">
+                  {faq.q}
+                  <ArrowRight className="h-4 w-4 text-primary transition-transform group-open:rotate-90" />
+                </summary>
+                <div className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      </FadeSection>
+
       {/* Footer */}
       <footer className="border-t border-border py-8">
         <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center">
