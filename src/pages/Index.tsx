@@ -125,7 +125,7 @@ const NavBar = () => {
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded-lg border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          className="border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -255,10 +255,10 @@ const Index = () => {
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <div
-                key={service.title}
-                className="group neon-border-card rounded-xl bg-card p-8 transition-all duration-300"
-              >
+               <div
+                 key={service.title}
+                 className="group neon-border-card bg-card p-8 transition-all duration-300"
+               >
                 <service.icon className="mb-5 h-8 w-8 text-primary transition-transform group-hover:scale-110" />
                 <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">
                   {service.title}
@@ -285,10 +285,10 @@ const Index = () => {
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {premiumServices.map((service) => (
-              <div
-                key={service.title}
-                className="group relative neon-border-card rounded-xl bg-card p-8 transition-all duration-300"
-              >
+               <div
+                 key={service.title}
+                 className="group relative neon-border-card bg-card p-8 transition-all duration-300"
+               >
                 {service.hot && (
                   <span className="absolute -top-3 right-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                     <Flame className="h-3 w-3" /> HOT DEAL
@@ -307,7 +307,7 @@ const Index = () => {
                     href={ORDER_WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn flex items-center gap-1 rounded-lg bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-all hover:box-glow-hover"
+                    className="group/btn flex items-center gap-1 bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-all hover:box-glow-hover"
                   >
                     Order Now
                     <ArrowRight className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
@@ -375,7 +375,7 @@ const Index = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary hover:box-glow"
+                className="group flex items-center gap-2 border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary hover:box-glow"
               >
                 <link.icon className="h-4 w-4 text-primary" />
                 {link.label}
@@ -387,7 +387,7 @@ const Index = () => {
             href={WHATSAPP_CHANNEL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 rounded-xl bg-primary px-10 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
+            className="group flex items-center gap-3 bg-primary px-10 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
           >
             <MessageCircle className="h-5 w-5" />
             Join WhatsApp Channel
@@ -417,7 +417,7 @@ const Index = () => {
             ].map((faq, i) => (
               <details
                 key={i}
-                className="group neon-border-card rounded-xl bg-card overflow-hidden"
+                className="group neon-border-card bg-card overflow-hidden"
               >
                 <summary className="cursor-pointer list-none flex items-center justify-between p-6 font-display text-sm font-semibold tracking-wide text-card-foreground">
                   {faq.q}
