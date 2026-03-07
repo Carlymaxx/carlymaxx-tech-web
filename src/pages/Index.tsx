@@ -138,7 +138,7 @@ const NavBar = () => {
             <a
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+              className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
               Owner
             </a>
@@ -147,7 +147,7 @@ const NavBar = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+              className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
               <Music className="h-4 w-4" />
               Music Hub
@@ -157,7 +157,7 @@ const NavBar = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+              className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
               <Github className="h-4 w-4" />
               Repo
