@@ -132,34 +132,37 @@ const NavBar = () => {
         </button>
       </div>
       {menuOpen && (
-        <div className="container mx-auto flex flex-col gap-2 px-6 pb-4 animate-in slide-in-from-top-2 duration-200">
-          <a
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-          >
-            Owner
-          </a>
-          <a
-            href={MUSIC_HUB}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-          >
-            <Music className="h-4 w-4" />
-            Music Hub
-          </a>
-          <a
-            href={GITHUB_REPO}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-          >
-            <Github className="h-4 w-4" />
-            Repo
-          </a>
+        <div className="container mx-auto flex gap-4 px-6 pb-4 animate-in slide-in-from-top-2 duration-200">
+          <div className="ml-4 w-0.5 bg-primary/40 rounded-full" />
+          <div className="flex flex-col gap-2 flex-1">
+            <a
+              href="/"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+            >
+              Owner
+            </a>
+            <a
+              href={MUSIC_HUB}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+            >
+              <Music className="h-4 w-4" />
+              Music Hub
+            </a>
+            <a
+              href={GITHUB_REPO}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+            >
+              <Github className="h-4 w-4" />
+              Repo
+            </a>
+          </div>
         </div>
       )}
     </nav>
