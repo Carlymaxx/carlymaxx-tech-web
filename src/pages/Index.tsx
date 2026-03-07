@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -113,6 +113,59 @@ const FadeSection = ({ children, className = "" }: { children: React.ReactNode; 
   );
 };
 
+const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
+          <span className="font-display text-lg font-bold tracking-wider gradient-text">MAXX TECH</span>
+        </div>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="rounded-lg border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+      {menuOpen && (
+        <div className="container mx-auto flex flex-col gap-2 px-6 pb-4 animate-in slide-in-from-top-2 duration-200">
+          <a
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          >
+            Owner
+          </a>
+          <a
+            href={MUSIC_HUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          >
+            <Music className="h-4 w-4" />
+            Music Hub
+          </a>
+          <a
+            href={GITHUB_REPO}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          >
+            <Github className="h-4 w-4" />
+            Repo
+          </a>
+        </div>
+      )}
+    </nav>
+  );
+};
+
 const Index = () => {
   const speedLines = Array.from({ length: 20 }, (_, i) => ({
     id: i,
@@ -143,40 +196,7 @@ const Index = () => {
         ))}
       </div>
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
-            <span className="font-display text-lg font-bold tracking-wider gradient-text">MAXX TECH</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="/"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              Owner
-            </a>
-            <a
-              href={MUSIC_HUB}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              <Music className="h-4 w-4" />
-              Music Hub
-            </a>
-            <a
-              href={GITHUB_REPO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              <Github className="h-4 w-4" />
-              Repo
-            </a>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       <FadeSection>
       {/* Hero */}
