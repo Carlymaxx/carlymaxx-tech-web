@@ -143,40 +143,7 @@ const Index = () => {
         ))}
       </div>
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
-            <span className="font-display text-lg font-bold tracking-wider gradient-text">MAXX TECH</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="/"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              Owner
-            </a>
-            <a
-              href={MUSIC_HUB}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              <Music className="h-4 w-4" />
-              Music Hub
-            </a>
-            <a
-              href={GITHUB_REPO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              <Github className="h-4 w-4" />
-              Repo
-            </a>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       <FadeSection>
       {/* Hero */}
