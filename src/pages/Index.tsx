@@ -125,7 +125,7 @@ const NavBar = () => {
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded-lg border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          className="border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
