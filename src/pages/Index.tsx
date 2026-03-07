@@ -151,13 +151,10 @@ const Index = () => {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href={GITHUB_REPO}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/"
               className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
-              <Github className="h-4 w-4" />
-              GitHub
+              Owner
             </a>
             <a
               href={MUSIC_HUB}
@@ -166,16 +163,16 @@ const Index = () => {
               className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
               <Music className="h-4 w-4" />
-              Music & Movies
+              Music Hub
             </a>
             <a
-              href={WHATSAPP_CHANNEL}
+              href={GITHUB_REPO}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-body text-sm font-semibold text-primary-foreground transition-all hover:box-glow-hover"
+              className="flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
-              <MessageCircle className="h-4 w-4" />
-              Join Channel
+              <Github className="h-4 w-4" />
+              Repo
             </a>
           </div>
         </div>
