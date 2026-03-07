@@ -410,9 +410,9 @@ const Index = () => {
           <div className="mx-auto max-w-2xl space-y-4">
             {[
               { q: "How do I order a service?", a: "Simply click the 'Order Now' button on any service card and you'll be connected to us on WhatsApp to discuss your needs." },
-              { q: "How long does bot deployment take?", a: "Most bots are deployed within 1-2 hours after payment confirmation. Complex setups may take up to 24 hours." },
-              { q: "What payment methods do you accept?", a: "We accept M-Pesa, PayPal, and cryptocurrency. Contact us for other payment options." },
-              { q: "Do you offer refunds?", a: "Yes, we offer a full refund if we're unable to deliver the service as promised. Partial refunds apply for partially completed work." },
+               { q: "How long does bot deployment take?", a: "Bots are deployed within 2-6 minutes after payment confirmation." },
+               { q: "What payment methods do you accept?", a: "We accept M-Pesa, PayPal, and cryptocurrency. Contact us for other payment options." },
+               { q: "Do you offer refunds?", a: "No refund acceptable." },
               { q: "Can I get a custom package?", a: "Absolutely! Reach out via WhatsApp and we'll create a tailored package that fits your exact needs and budget." },
             ].map((faq, i) => (
               <details
