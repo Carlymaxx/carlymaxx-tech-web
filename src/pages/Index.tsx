@@ -471,6 +471,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* WhatsApp Floating Widget */}
+      <WhatsAppWidget />
     </div>
   );
 };
