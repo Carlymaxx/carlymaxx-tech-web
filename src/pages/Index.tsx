@@ -327,7 +327,7 @@ const Index = () => {
           <img
             src={logo}
             alt="Carly Maxx"
-            className="h-48 w-48 rounded-2xl object-cover ring-2 ring-primary/30 box-glow"
+            className="h-48 w-48 object-cover ring-2 ring-primary/30 box-glow"
           />
           <div className="max-w-lg">
             <h2 className="mb-4 font-display text-3xl font-bold tracking-wider gradient-text">
