@@ -290,7 +290,7 @@ const Index = () => {
                  className="group relative neon-border-card bg-card p-8 transition-all duration-300"
                >
                 {service.hot && (
-                  <span className="absolute -top-3 right-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
+                  <span className="absolute -top-3 right-4 flex items-center gap-1 bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                     <Flame className="h-3 w-3" /> HOT DEAL
                   </span>
                 )}
