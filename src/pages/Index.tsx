@@ -232,7 +232,7 @@ const Index = () => {
               href={WHATSAPP_CHANNEL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
+              className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
             >
               <MessageCircle className="h-5 w-5" />
               WhatsApp Channel
