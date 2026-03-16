@@ -232,7 +232,7 @@ const Index = () => {
               href={WHATSAPP_CHANNEL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
+              className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover"
             >
               <MessageCircle className="h-5 w-5" />
               WhatsApp Channel
@@ -290,7 +290,7 @@ const Index = () => {
                  className="group relative neon-border-card bg-card p-8 transition-all duration-300"
                >
                 {service.hot && (
-                  <span className="absolute -top-3 right-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
+                  <span className="absolute -top-3 right-4 flex items-center gap-1 bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                     <Flame className="h-3 w-3" /> HOT DEAL
                   </span>
                 )}
@@ -327,7 +327,7 @@ const Index = () => {
           <img
             src={logo}
             alt="Carly Maxx"
-            className="h-48 w-48 rounded-2xl object-cover ring-2 ring-primary/30 box-glow"
+            className="h-48 w-48 object-cover ring-2 ring-primary/30 box-glow"
           />
           <div className="max-w-lg">
             <h2 className="mb-4 font-display text-3xl font-bold tracking-wider gradient-text">
