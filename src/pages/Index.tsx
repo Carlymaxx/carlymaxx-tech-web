@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import Testimonials from "@/components/Testimonials";
+import Portfolio from "@/components/Portfolio";
+import Blog from "@/components/Blog";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
@@ -321,7 +325,18 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-      {/* About */}
+        <Testimonials />
+      </FadeSection>
+
+      <FadeSection>
+        <Portfolio />
+      </FadeSection>
+
+      <FadeSection>
+        <Blog />
+      </FadeSection>
+
+      <FadeSection>
       <section className="border-t border-border py-24">
         <div className="container mx-auto flex flex-col items-center gap-10 px-6 md:flex-row md:gap-16">
           <img
@@ -456,6 +471,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* WhatsApp Floating Widget */}
+      <WhatsAppWidget />
     </div>
   );
 };
