@@ -325,7 +325,18 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-      {/* About */}
+        <Testimonials />
+      </FadeSection>
+
+      <FadeSection>
+        <Portfolio />
+      </FadeSection>
+
+      <FadeSection>
+        <Blog />
+      </FadeSection>
+
+      <FadeSection>
       <section className="border-t border-border py-24">
         <div className="container mx-auto flex flex-col items-center gap-10 px-6 md:flex-row md:gap-16">
           <img
