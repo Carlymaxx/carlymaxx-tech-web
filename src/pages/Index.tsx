@@ -39,11 +39,10 @@ const services = [
 ];
 
 const premiumServices = [
-  { icon: Bot, title: "Bot Deployment", description: "Get a fully functional WhatsApp bot deployed for your group or business.", price: "$1", hot: true },
-  { icon: Youtube, title: "YouTube Boosting", description: "Boost your YouTube channel with subscribers, views, and engagement.", price: "$1" },
-  { icon: Globe, title: "TikTok Boosting", description: "Go viral on TikTok with boosted views, followers, and likes.", price: "$1" },
-  { icon: Users, title: "Group Management", description: "Professional WhatsApp group management with bots and moderation tools.", price: "$2" },
-  { icon: Shield, title: "Account Security", description: "Protect your social media accounts with advanced security setups.", price: "$2" },
+  { icon: Bot, title: "Bot Deployment", description: "Get a fully functional WhatsApp bot deployed for your group or business.", price: "50 KES", hot: true },
+  { icon: Youtube, title: "YouTube Boosting", description: "Boost your YouTube channel with subscribers, views, and engagement.", price: "260 KES" },
+  { icon: Globe, title: "TikTok Boosting", description: "Go viral on TikTok with boosted views, followers, and likes.", price: "120 KES" },
+  { icon: Shield, title: "Account Security", description: "Protect your social media accounts with advanced security setups.", price: "440 KES" },
 ];
 
 const FadeSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
