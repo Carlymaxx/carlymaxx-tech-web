@@ -62,6 +62,13 @@ const FadeSection = ({ children, className = "" }: { children: React.ReactNode; 
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navLinks = [
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#pricing", label: "Pricing" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#contact", label: "Contact" },
+  ];
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -69,17 +76,24 @@ const NavBar = () => {
           <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
           <span className="font-display text-lg font-bold tracking-wider gradient-text">MAXX TECH</span>
         </div>
-        <button onClick={() => setMenuOpen(!menuOpen)} className="border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary" aria-label="Toggle menu">
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{link.label}</a>
+          ))}
+          <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">WhatsApp</a>
+        </div>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary md:hidden" aria-label="Toggle menu">
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {menuOpen && (
-        <div className="container mx-auto flex gap-4 px-6 pb-4 animate-in slide-in-from-top-2 duration-200">
-          <div className="ml-4 w-0.5 bg-primary/40 rounded-full" />
-          <div className="flex flex-col gap-2 flex-1">
-            <a href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary">Owner</a>
-            <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"><Music className="h-4 w-4" />Music Hub</a>
-            <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"><Github className="h-4 w-4" />Repo</a>
+        <div className="container mx-auto px-6 pb-4 md:hidden animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary">{link.label}</a>
+            ))}
+            <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="bg-primary text-primary-foreground px-4 py-2.5 rounded-lg text-sm font-medium text-center">WhatsApp</a>
+            <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"><Music className="h-4 w-4" />Music Hub</a>
           </div>
         </div>
       )}
@@ -119,7 +133,39 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section className="py-24">
+        <section id="about" className="py-24 border-t border-border">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                  <img src="https://files.catbox.moe/3716xg.jpg" alt="Carly Maxx" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center gap-4">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center"><span className="text-2xl">🚀</span></div>
+                    <div><div className="font-bold text-lg">Fast Delivery</div><div className="text-muted-foreground text-sm">On-time, every time</div></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet <span className="text-primary">Carly Maxx</span></h2>
+                <p className="text-muted-foreground mb-4 text-lg">I'm a passionate software developer, web designer, and IT specialist dedicated to building intelligent digital solutions.</p>
+                <p className="text-muted-foreground mb-6 text-lg">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">500+</div><div className="text-sm text-muted-foreground">Projects Done</div></div>
+                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">5+</div><div className="text-sm text-muted-foreground">Years Experience</div></div>
+                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">24/7</div><div className="text-sm text-muted-foreground">Support</div></div>
+                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">98%</div><div className="text-sm text-muted-foreground">Satisfaction</div></div>
+                </div>
+                <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">Get In Touch <ArrowRight className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeSection>
+
+      <FadeSection>
+        <section id="services" className="py-24">
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Services</h2>
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Software, Web Design, Information Technology & Market Solutions</p>
