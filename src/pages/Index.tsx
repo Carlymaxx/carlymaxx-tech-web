@@ -216,13 +216,70 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <footer className="border-t border-border py-8">
-          <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center">
-            <span className="font-display text-sm tracking-wider gradient-text">MAXX TECH</span>
-            <div className="flex flex-wrap justify-center gap-4">
-              {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary" title={link.label}><link.icon className="h-5 w-5" /></a>)}
+        <Newsletter />
+      </FadeSection>
+
+      <FadeSection>
+        <footer className="border-t border-border bg-muted/30 py-12">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+              {/* Product */}
+              <div>
+                <h3 className="font-bold mb-4">Product</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href="#services" className="hover:text-primary transition-colors">Home</a></li>
+                  <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
+                  <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
+                  <li><a href="#gallery" className="hover:text-primary transition-colors">Gallery</a></li>
+                  <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+                </ul>
+              </div>
+              {/* Tools */}
+              <div>
+                <h3 className="font-bold mb-4">Tools</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Maxx Hub</a></li>
+                  <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">Bot Builder</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">Web Tools</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">API Access</a></li>
+                </ul>
+              </div>
+              {/* Company */}
+              <div>
+                <h3 className="font-bold mb-4">Company</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">Contact Us</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">Careers</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Press</a></li>
+                </ul>
+              </div>
+              {/* Legal */}
+              <div>
+                <h3 className="font-bold mb-4">Legal</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Cookies</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Security</a></li>
+                  <li><a href="#" className="hover:text-primary transition-colors">Refund Policy</a></li>
+                </ul>
+              </div>
             </div>
-            <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Maxx Tech. All rights reserved.</p>
+            
+            {/* Bottom Footer */}
+            <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <img src="https://files.catbox.moe/oepq4e.jpg" alt="Maxx Tech" className="w-8 h-8 rounded-full" />
+                <span className="font-bold gradient-text">MAXX TECH</span>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4">
+                {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title={link.label}><link.icon className="h-5 w-5" /></a>)}
+              </div>
+              <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Maxx Tech. All rights reserved.</p>
+            </div>
           </div>
         </footer>
       </FadeSection>
