@@ -133,38 +133,6 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section id="about" className="py-24 border-t border-border">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                  <img src="https://files.catbox.moe/3716xg.jpg" alt="Carly Maxx" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-6 shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center"><span className="text-2xl">🚀</span></div>
-                    <div><div className="font-bold text-lg">Fast Delivery</div><div className="text-muted-foreground text-sm">On-time, every time</div></div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet <span className="text-primary">Carly Maxx</span></h2>
-                <p className="text-muted-foreground mb-4 text-lg">I'm a passionate software developer, web designer, and IT specialist dedicated to building intelligent digital solutions.</p>
-                <p className="text-muted-foreground mb-6 text-lg">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">500+</div><div className="text-sm text-muted-foreground">Projects Done</div></div>
-                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">5+</div><div className="text-sm text-muted-foreground">Years Experience</div></div>
-                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">24/7</div><div className="text-sm text-muted-foreground">Support</div></div>
-                  <div className="bg-card p-4 rounded-xl neon-border-card"><div className="text-3xl font-bold text-primary">98%</div><div className="text-sm text-muted-foreground">Satisfaction</div></div>
-                </div>
-                <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">Get In Touch <ArrowRight className="h-4 w-4" /></a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </FadeSection>
-
-      <FadeSection>
         <section id="services" className="py-24">
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Services</h2>
@@ -219,6 +187,25 @@ const Index = () => {
             <h2 className="mb-8 font-display text-2xl font-bold tracking-wider gradient-text">What Our Clients Say</h2>
           </div>
           <Testimonials />
+        </section>
+      </FadeSection>
+
+      <FadeSection>
+        <section id="about" className="py-20 border-t border-border">
+          <div className="container mx-auto px-6">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet <span className="text-primary">Carly Maxx</span></h2>
+              <div className="mb-6">
+                <img src="https://files.catbox.moe/3716xg.jpg" alt="Carly Maxx" className="w-40 h-40 rounded-full mx-auto object-cover ring-4 ring-primary/50 shadow-lg" />
+              </div>
+              <p className="text-muted-foreground mb-4 text-lg">I'm a passionate software developer, web designer, and IT specialist from <span className="font-bold text-primary">Ruiru, Kenya</span>.</p>
+              <p className="text-muted-foreground mb-6 text-lg">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
+                <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">🎵 Maxx Hub</a>
+                <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">Get In Touch <ArrowRight className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </div>
         </section>
       </FadeSection>
 
