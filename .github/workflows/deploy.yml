@@ -1,9 +1,12 @@
-name: Deploy to Cloudflare Pages
+name: Deploy Lovable Site
 
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -20,8 +23,7 @@ jobs:
 
       - run: npm run build
 
-      - uses: cloudflare/wrangler-action@v3
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=carlymaxx-tech-web --branch=main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
