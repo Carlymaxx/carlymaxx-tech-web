@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Instagram, Facebook, Youtube, Twitter, Send, MessageCircle, Zap } from "lucide-react";
+import { X, ArrowLeft, MessageCircle, Zap } from "lucide-react";
 
 const CheapGains = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ const CheapGains = () => {
       {/* Button to open */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-24 right-0 z-40 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-l-lg shadow-lg hover:scale-105 transition-transform writing-vertical"
+        className="fixed top-24 right-0 z-40 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-l-lg shadow-lg hover:scale-105 transition-transform"
         style={{ writingMode: "vertical-rl" }}
       >
         <Zap className="h-5 w-5 inline mr-2" />
@@ -20,11 +20,21 @@ const CheapGains = () => {
       {isOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
+            {/* Close button top right */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white"
+              className="absolute top-4 right-4 text-white/70 hover:text-white bg-white/10 rounded-full p-2"
             >
               <X className="h-6 w-6" />
+            </button>
+
+            {/* Back button top left */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 left-4 text-white/70 hover:text-white bg-white/10 rounded-full p-2 flex items-center gap-2 pr-3"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="text-sm">Back</span>
             </button>
 
             <div className="text-center mb-6">
