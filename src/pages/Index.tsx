@@ -4,7 +4,7 @@ import logo from "@/assets/logo.jpg";
 import Testimonials from "@/components/Testimonials";
 import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
+
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
@@ -472,8 +472,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* WhatsApp Floating Widget */}
-      <WhatsAppWidget />
+
     </div>
   );
 };
