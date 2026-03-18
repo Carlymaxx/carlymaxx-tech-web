@@ -1,43 +1,54 @@
 import { useState } from "react";
-import { X, ExternalLink } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ExternalLink } from "lucide-react";
 
 const galleryItems = [
   {
     title: "WhatsApp Bot Dashboard",
     category: "Bot Development",
     description: "Custom admin dashboard for managing WhatsApp bot operations",
-    color: "from-green-500 to-emerald-700",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
   {
     title: "E-commerce Platform",
     category: "Web Development",
     description: "Modern e-commerce website with payment integration",
-    color: "from-blue-500 to-indigo-700",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
   },
   {
     title: "AI Chat Interface",
     category: "AI Solutions",
     description: "Intelligent chatbot with natural language processing",
-    color: "from-purple-500 to-pink-700",
+    image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80",
   },
   {
     title: "Mobile App UI",
     category: "UI/UX Design",
     description: "Sleek mobile application interface design",
-    color: "from-orange-500 to-red-700",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
   },
   {
     title: "Analytics Dashboard",
     category: "Data Visualization",
     description: "Real-time analytics and reporting system",
-    color: "from-cyan-500 to-blue-700",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
   {
     title: "API Gateway",
     category: "Backend",
     description: "Secure and scalable API infrastructure",
-    color: "from-gray-500 to-slate-700",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+  },
+  {
+    title: "Cloud Infrastructure",
+    category: "DevOps",
+    description: "Modern cloud architecture and deployment",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+  },
+  {
+    title: "Cybersecurity",
+    category: "Security",
+    description: "Enterprise-grade security solutions",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
   },
 ];
 
@@ -54,15 +65,17 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {galleryItems.map((item, index) => (
             <div
               key={index}
               onClick={() => setSelectedItem(item)}
               className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${item.color} transition-transform group-hover:scale-110`}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <div className="text-center p-4">
@@ -80,20 +93,29 @@ const Gallery = () => {
           ))}
         </div>
 
-        <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
-          <DialogContent className="max-w-2xl">
-            {selectedItem && (
-              <div>
-                <div
-                  className={`h-48 rounded-lg bg-gradient-to-br ${selectedItem.color} mb-4`}
-                />
+        {/* Simple Modal */}
+        {selectedItem && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            onClick={() => setSelectedItem(null)}
+          >
+            <div 
+              className="bg-background rounded-2xl max-w-2xl w-full overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">{selectedItem.title}</h3>
                 <p className="text-muted-foreground mb-4">{selectedItem.description}</p>
                 <span className="text-sm font-medium text-primary">{selectedItem.category}</span>
               </div>
-            )}
-          </DialogContent>
-        </Dialog>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

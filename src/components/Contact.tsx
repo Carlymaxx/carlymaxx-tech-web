@@ -50,18 +50,44 @@ const Contact = () => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     
-    // Simulate form submission - in production, integrate with form service
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Send to Formspree
+    try {
+      const response = await fetch('https://formspree.io/f/xpwzgvjq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+        }),
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          form.reset();
+        }, 3000);
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      // Fallback: open email client
+      const subject = encodeURIComponent(`New Inquiry: ${data.service}`);
+      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nService: ${data.service}\n\nMessage:\n${data.message}`);
+      window.location.href = `mailto:maxxtechxmd@gmail.com?subject=${subject}&body=${body}`;
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        form.reset();
+      }, 3000);
+    }
     
-    console.log("Form submitted:", data);
     setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      form.reset();
-    }, 3000);
   };
 
   return (

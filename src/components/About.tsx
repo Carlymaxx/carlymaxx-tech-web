@@ -1,5 +1,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
+const ABOUT_IMAGE = "https://files.catbox.moe/3716xg.jpg";
+
 const About = () => {
   return (
     <section id="about" className="py-20">
@@ -36,11 +38,12 @@ const About = () => {
             </a>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-6xl font-bold text-primary mb-2">5+</div>
-                <div className="text-xl text-muted-foreground">Years of Experience</div>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={ABOUT_IMAGE} 
+                alt="Carly Maxx - Founder" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-6 shadow-lg">
               <div className="flex items-center gap-4">

@@ -5,7 +5,7 @@ const plans = [
   {
     name: "Starter",
     description: "Perfect for individuals and small projects",
-    price: "KES 5,000",
+    price: "$1",
     period: "/project",
     features: [
       "WhatsApp Bot Setup (Basic)",
@@ -21,7 +21,7 @@ const plans = [
   {
     name: "Professional",
     description: "Best for growing businesses",
-    price: "KES 15,000",
+    price: "$4",
     period: "/project",
     features: [
       "WhatsApp Bot (Advanced)",
@@ -39,7 +39,7 @@ const plans = [
   {
     name: "Enterprise",
     description: "For large organizations",
-    price: "KES 50,000+",
+    price: "$10",
     period: "/project",
     features: [
       "Custom Bot Development",
