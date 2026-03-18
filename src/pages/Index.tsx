@@ -9,6 +9,8 @@ import Pricing from "@/components/Pricing";
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
 import Gallery from "@/components/Gallery";
+import Newsletter from "@/components/Newsletter";
+import LiveChat from "@/components/LiveChat";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
@@ -210,6 +212,10 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
+        <Newsletter />
+      </FadeSection>
+
+      <FadeSection>
         <footer className="border-t border-border py-8">
           <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center">
             <span className="font-display text-sm tracking-wider gradient-text">MAXX TECH</span>
@@ -220,6 +226,7 @@ const Index = () => {
           </div>
         </footer>
       </FadeSection>
+      <LiveChat />
     </div>
   );
 };
