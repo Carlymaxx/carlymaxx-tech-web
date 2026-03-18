@@ -11,6 +11,7 @@ import Clients from "@/components/Clients";
 import Gallery from "@/components/Gallery";
 import Newsletter from "@/components/Newsletter";
 import LiveChat from "@/components/LiveChat";
+import CheapGains from "@/components/CheapGains";
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
@@ -284,6 +285,7 @@ const Index = () => {
         </footer>
       </FadeSection>
       <LiveChat />
+      <CheapGains />
     </div>
   );
 };
