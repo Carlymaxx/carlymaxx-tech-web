@@ -12,6 +12,7 @@ import Gallery from "@/components/Gallery";
 import Newsletter from "@/components/Newsletter";
 import LiveChat from "@/components/LiveChat";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Partners from "@/components/Partners";
 import TrustBadges from "@/components/TrustBadges";
 import CountdownTimer from "@/components/CountdownTimer";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -430,6 +431,7 @@ const Index = () => {
       </FadeSection>
 
       <LocationMap />
+      <Partners />
 
       <FadeSection>
         <footer className="bg-footer-gradient py-16 text-white">
@@ -495,7 +497,6 @@ const Index = () => {
           </div>
         </footer>
       </FadeSection>
-      <WhatsAppButton />
       <SocialProof />
       <LiveChat />
     </div>
