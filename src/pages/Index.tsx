@@ -28,6 +28,10 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Blog from "@/components/Blog";
 import ReferralPopup from "@/components/ReferralPopup";
 import TypingText from "@/components/TypingText";
+import ScrollProgress from "@/components/ScrollProgress";
+import GoogleReviews from "@/components/GoogleReviews";
+import Sitemap from "@/components/Sitemap";
+import CookieBanner from "@/components/CookieBanner";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -134,6 +138,7 @@ const Index = () => {
         {speedLines.map((line) => <div key={line.id} className="speed-line" style={{ top: line.top, width: line.width, animationDuration: line.duration, animationDelay: line.delay, opacity: line.opacity * 0.3 }} />)}
       </div>
       <AnnouncementBar />
+      <ScrollProgress />
       <NavBar />
 
       <FadeSection>
@@ -431,6 +436,8 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      <GoogleReviews />
+
       {/* === MEET CARLY === */}
       <FadeSection>
         <section className="py-20 bg-about-gradient section-glow-purple">
@@ -461,6 +468,7 @@ const Index = () => {
       </FadeSection>
       <Partners />
       <SocialMediaSection />
+      <Sitemap />
 
       <FadeSection>
         <footer className="bg-footer-gradient py-16 text-white">
@@ -530,6 +538,7 @@ const Index = () => {
       <SocialProof />
       <LiveChat />
       <ReferralPopup />
+      <CookieBanner />
     </div>
   );
 };
