@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones, Sparkles, Key } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -140,6 +140,77 @@ const Index = () => {
               <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 border border-secondary px-8 py-4 font-display text-sm font-bold tracking-wider text-secondary-foreground transition-all hover:bg-secondary hover:text-white">
                 AI Assistant<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
+            </div>
+          </div>
+        </section>
+      </FadeSection>
+
+      <FadeSection>
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Our Products</h2>
+            <p className="mx-auto mb-16 max-w-xl text-center text-gray-600">Powerful tools built by Maxx Tech for your digital needs</p>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* MAXXTECH AI Card */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-indigo-600 via-violet-500 to-purple-700"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="relative p-8 md:p-10 text-white">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Sparkles className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold tracking-wider">MAXXTECH AI</h3>
+                      <p className="text-sm text-white/70">Powered by Maxx Tech</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 leading-relaxed mb-6">Advanced AI assistant for smart conversations, coding help, content creation, and automation. Available 24/7 with lightning-fast responses.</p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {["AI Chat", "Code Help", "Content Writer", "24/7"].map((tag) => (
+                      <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
+                    Try MAXXTECH AI <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              {/* MAXX-XMD Card */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-green-600 via-emerald-500 to-teal-700"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="relative p-8 md:p-10 text-white">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Bot className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold tracking-wider">MAXX-XMD</h3>
+                      <p className="text-sm text-white/70">WhatsApp Bot</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 leading-relaxed mb-6">Powerful WhatsApp bot with group management, auto-replies, media downloads, stickers, and 100+ commands. Deploy in minutes!</p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {["WhatsApp", "Group Mgmt", "Auto-Reply", "50+ Commands"].map((tag) => (
+                      <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-emerald-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
+                      <Key className="h-4 w-4" /> Get Session ID
+                    </a>
+                    <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-white/40 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/10 transition-all">
+                      <Github className="h-4 w-4" /> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
