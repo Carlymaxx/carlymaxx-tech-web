@@ -5,7 +5,6 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Pricing from "@/components/Pricing";
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
 import Gallery from "@/components/Gallery";
@@ -414,7 +413,6 @@ const Index = () => {
       <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
 
       {/* === PRICING === */}
-      <FadeSection bgClassName="bg-section-teal"><Pricing /></FadeSection>
       <PricingCalculator />
 
       {/* === FAQ === */}
