@@ -48,7 +48,7 @@ const premiumServices = [
   { icon: Shield, title: "Account Security", description: "Protect your social media accounts with advanced security setups.", price: "440 KES" },
 ];
 
-const FadeSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+const FadeSection = ({ children, className = "", bgClassName = "" }: { children: React.ReactNode; className?: string; bgClassName?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -60,7 +60,7 @@ const FadeSection = ({ children, className = "" }: { children: React.ReactNode; 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  return <div ref={ref} className={`transition-all duration-700 ease-out opacity-0 translate-y-[30px] ${className}`}>{children}</div>;
+  return <div ref={ref} className={`transition-all duration-700 ease-out opacity-0 translate-y-[30px] ${bgClassName} ${className}`}>{children}</div>;
 };
 
 const NavBar = () => {
@@ -116,7 +116,7 @@ const Index = () => {
       <NavBar />
 
       <FadeSection>
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 bg-hero-gradient">
           <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-[120px] animate-pulse-glow" />
           <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
           <div className="container mx-auto flex flex-col items-center px-6 text-center">
@@ -136,7 +136,7 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section id="services" className="py-24">
+        <section id="services" className="py-24 bg-services-gradient section-glow-green">
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Services</h2>
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Software, Web Design, Information Technology & Market Solutions</p>
@@ -154,7 +154,7 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section className="border-t border-border py-24">
+        <section className="py-24 bg-premium-gradient section-glow-purple">
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">OUR SERVICES</h2>
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Premium digital services at unbeatable prices. Fast delivery, real results.</p>
@@ -176,16 +176,16 @@ const Index = () => {
         </section>
       </FadeSection>
 
-      <FadeSection><About /></FadeSection>
-      <FadeSection><Clients /></FadeSection>
-      <FadeSection><Pricing /></FadeSection>
-      <FadeSection><Team /></FadeSection>
-      <FadeSection><Gallery /></FadeSection>
-      <FadeSection><FAQ /></FadeSection>
-      <FadeSection><Contact /></FadeSection>
+      <FadeSection bgClassName="bg-section-dark"><About /></FadeSection>
+      <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
+      <FadeSection bgClassName="bg-section-teal"><Pricing /></FadeSection>
+      <FadeSection bgClassName="bg-section-slate"><Team /></FadeSection>
+      <FadeSection bgClassName="bg-section-dark"><Gallery /></FadeSection>
+      <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
+      <FadeSection bgClassName="bg-section-indigo"><Contact /></FadeSection>
 
-      <FadeSection>
-        <section className="border-t border-border py-16">
+      <FadeSection bgClassName="bg-testimonials-gradient">
+        <section className="py-16">
           <div className="container mx-auto px-6 text-center">
             <h2 className="mb-8 font-display text-2xl font-bold tracking-wider gradient-text">What Our Clients Say</h2>
           </div>
@@ -194,7 +194,7 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section id="about" className="py-20 border-t border-border">
+        <section id="about" className="py-20 bg-about-gradient section-glow-purple">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet <span className="text-primary">Carly Maxx</span></h2>
@@ -221,7 +221,7 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <footer className="border-t border-border bg-muted/30 py-12">
+        <footer className="bg-footer-gradient py-12">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
               {/* Product */}

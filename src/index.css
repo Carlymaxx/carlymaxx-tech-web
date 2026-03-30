@@ -142,6 +142,88 @@
     background-clip: text;
   }
 
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 30%, #1b2838 60%, #0a1628 100%);
+  }
+
+  .bg-services-gradient {
+    background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 50%, #1a1040 100%);
+  }
+
+  .bg-premium-gradient {
+    background: linear-gradient(180deg, #1a1040 0%, #0c1220 30%, #042f2e 70%, #0a1628 100%);
+  }
+
+  .bg-about-gradient {
+    background: linear-gradient(180deg, #0a1628 0%, #1a0a2e 50%, #2d1045 100%);
+  }
+
+  .bg-testimonials-gradient {
+    background: linear-gradient(180deg, #2d1045 0%, #1a0a2e 50%, #0f172a 100%);
+  }
+
+  .bg-footer-gradient {
+    background: linear-gradient(180deg, #0f172a 0%, #0a0a1a 100%);
+  }
+
+  .bg-newsletter-gradient {
+    background: linear-gradient(135deg, #064e3b 0%, #0f172a 50%, #1e1b4b 100%);
+  }
+
+  .bg-section-dark {
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+  }
+
+  .bg-section-indigo {
+    background: linear-gradient(180deg, #1a1040 0%, #1e1b4b 50%, #0f172a 100%);
+  }
+
+  .bg-section-teal {
+    background: linear-gradient(180deg, #0a1628 0%, #042f2e 50%, #0d1117 100%);
+  }
+
+  .bg-section-slate {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+
+  .bg-section-emerald {
+    background: linear-gradient(180deg, #0d1117 0%, #064e3b 30%, #0f172a 100%);
+  }
+
+  .section-glow-green {
+    position: relative;
+  }
+
+  .section-glow-green::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, hsl(var(--primary) / 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .section-glow-purple {
+    position: relative;
+  }
+
+  .section-glow-purple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, hsl(var(--glow-secondary) / 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .grid-bg {
     background-image: 
       linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),

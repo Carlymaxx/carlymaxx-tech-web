@@ -23,7 +23,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-primary/5 border-t border-border">
+    <section className="py-16 bg-newsletter-gradient">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">Subscribe to Our Newsletter</h2>
