@@ -120,7 +120,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium">Email</div>
-                    <div className="text-muted-foreground">hello@maxxtech.co.ke</div>
+                    <div className="text-muted-foreground">maxxtechxmd@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

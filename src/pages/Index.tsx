@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Flame, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -112,10 +112,9 @@ const Index = () => {
   const speedLines = Array.from({ length: 20 }, (_, i) => ({ id: i, top: `${Math.random() * 100}%`, width: `${100 + Math.random() * 300}px`, duration: `${1.5 + Math.random() * 3}s`, delay: `${Math.random() * 5}s`, opacity: 0.2 + Math.random() * 0.5 }));
 
   return (
-    <div className="min-h-screen bg-background relative">
-      <div className="light-rays" />
+    <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="speed-lines">
-        {speedLines.map((line) => <div key={line.id} className="speed-line" style={{ top: line.top, width: line.width, animationDuration: line.duration, animationDelay: line.delay, opacity: line.opacity }} />)}
+        {speedLines.map((line) => <div key={line.id} className="speed-line" style={{ top: line.top, width: line.width, animationDuration: line.duration, animationDelay: line.delay, opacity: line.opacity * 0.3 }} />)}
       </div>
       <NavBar />
 
@@ -179,6 +178,51 @@ const Index = () => {
                     <span className="font-display text-lg font-bold text-primary">{service.price}</span>
                     <a href={ORDER_WA} target="_blank" rel="noopener noreferrer" className="group/btn flex items-center gap-1 bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-all hover:box-glow-hover">Order Now<ArrowRight className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" /></a>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeSection>
+
+      <FadeSection>
+        <section className="py-16 bg-primary">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {[
+                { value: "500+", label: "Projects Delivered" },
+                { value: "200+", label: "Happy Clients" },
+                { value: "5+", label: "Years Experience" },
+                { value: "24/7", label: "Support Available" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-primary-foreground">
+                  <div className="font-display text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>
+                  <div className="text-sm opacity-80">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeSection>
+
+      <FadeSection>
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Why Choose Us</h2>
+            <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">What makes Maxx Tech the best choice for your digital needs</p>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: Zap, title: "Fast Delivery", description: "Most projects delivered within 24-48 hours. No long waits." },
+                { icon: Clock, title: "24/7 Availability", description: "Round-the-clock support and services whenever you need us." },
+                { icon: Award, title: "Quality Guaranteed", description: "Premium quality work with satisfaction guarantee on all services." },
+                { icon: Headphones, title: "Dedicated Support", description: "Personal support team to help you every step of the way." },
+              ].map((item) => (
+                <div key={item.title} className="text-center p-6 rounded-2xl border border-border bg-card hover:border-primary/40 transition-all hover:shadow-lg">
+                  <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
               ))}
             </div>
