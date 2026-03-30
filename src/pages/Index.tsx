@@ -14,9 +14,12 @@ import LiveChat from "@/components/LiveChat";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
+const WHATSAPP_GROUP = "https://chat.whatsapp.com/BWZOtIlbZoJ9Xt8lgxxbqQ?mode=gi_t";
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const ORDER_WA = "https://wa.me/254725979273?text=Hey%20Maxx%20I%20need%20your%20help%20here";
+const PAIR_SITE = "https://pair.maxxtech.co.ke";
+const AI_SITE = "https://ai.maxxtech.co.ke";
 
 const TELEGRAM = "https://t.me/maxxtechgram";
 const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
@@ -25,6 +28,7 @@ const YOUTUBE = "https://www.youtube.com/@MaxxTechxmd";
 
 const socialLinks = [
   { icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_CHANNEL },
+  { icon: MessageCircle, label: "WhatsApp Group", href: WHATSAPP_GROUP },
   { icon: Youtube, label: "YouTube", href: YOUTUBE },
   { icon: Globe, label: "TikTok", href: TIKTOK },
   { icon: Send, label: "Telegram", href: TELEGRAM },
@@ -130,6 +134,12 @@ const Index = () => {
               <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover">
                 <MessageCircle className="h-5 w-5" />WhatsApp Channel<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
+              <a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 border border-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground">
+                Pair Session<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 border border-secondary px-8 py-4 font-display text-sm font-bold tracking-wider text-secondary-foreground transition-all hover:bg-secondary hover:text-white">
+                AI Assistant<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </section>
@@ -217,10 +227,6 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <Newsletter />
-      </FadeSection>
-
-      <FadeSection>
         <footer className="bg-footer-gradient py-12">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -239,11 +245,11 @@ const Index = () => {
               <div>
                 <h3 className="font-bold mb-4">Tools</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Pair Session</a></li>
+                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">AI Assistant</a></li>
                   <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Maxx Hub</a></li>
                   <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">Bot Builder</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">Web Tools</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">API Access</a></li>
+                  <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp Group</a></li>
                 </ul>
               </div>
               {/* Company */}
