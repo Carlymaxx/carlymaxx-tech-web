@@ -7,7 +7,7 @@ const AffiliateSystem = () => {
   const stats = [
     { icon: Users, label: "Total Referrals", value: "24", color: "text-emerald-600" },
     { icon: TrendingUp, label: "Conversion Rate", value: "68%", color: "text-violet-600" },
-    { icon: DollarSign, label: "Earnings", value: "2,400 KES", color: "text-amber-600" },
+    { icon: DollarSign, label: "Earnings", value: "230 KES", color: "text-amber-600" },
   ];
 
   const copy = () => {

@@ -340,7 +340,7 @@ const Index = () => {
               {[
                 { value: "500+", label: "Projects Delivered" },
                 { value: "200+", label: "Happy Clients" },
-                { value: "5+", label: "Years Experience" },
+                { value: "1", label: "Years Experience" },
                 { value: "24/7", label: "Support Available" },
               ].map((stat) => (
                 <div key={stat.label} className="text-primary-foreground">

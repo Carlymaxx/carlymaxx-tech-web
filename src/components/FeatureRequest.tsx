@@ -9,8 +9,9 @@ const FeatureRequest = () => {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!idea.trim()) return;
-    const msg = `Feature Request:%0A%0A${encodeURIComponent(idea)}%0A%0AFrom: ${encodeURIComponent(email || 'Anonymous')}`;
-    window.open(`https://wa.me/254725979273?text=${msg}`, '_blank');
+    const subject = encodeURIComponent("New Feature Request - Maxx Tech");
+    const body = encodeURIComponent(`Feature Request:\n\n${idea}\n\nFrom: ${email || 'Anonymous'}`);
+    window.location.href = `mailto:maxxtechxmd@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
     setTimeout(() => { setSent(false); setIdea(""); setEmail(""); }, 3000);
   };
@@ -30,7 +31,7 @@ const FeatureRequest = () => {
             <textarea value={idea} onChange={(e) => setIdea(e.target.value)} placeholder="Describe your idea... e.g. 'I need a bot that sends daily weather updates'" rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 mb-4 resize-none" />
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email (optional, for updates)" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 mb-4" />
             <button type="submit" className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${sent ? 'bg-green-500 text-white' : 'bg-sky-600 text-white hover:bg-sky-700'}`}>
-              {sent ? <><CheckCircle className="h-4 w-4" /> Sent via WhatsApp!</> : <><Send className="h-4 w-4" /> Submit Idea</>}
+              {sent ? <><CheckCircle className="h-4 w-4" /> Sent to Email!</> : <><Send className="h-4 w-4" /> Submit Idea</>}
             </button>
           </form>
         </div>
