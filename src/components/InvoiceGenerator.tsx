@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FileText, Download, Plus, Trash2, Check } from "lucide-react";
+import { jsPDF } from "jspdf";
 
 interface Item { desc: string; qty: number; price: number; }
 
@@ -20,77 +21,94 @@ const InvoiceGenerator = () => {
   const invNum = `INV-${Date.now().toString().slice(-6)}`;
 
   const download = () => {
-    const rows = items.map(item => `
-      <tr>
-        <td style="padding:12px;border-bottom:1px solid #e5e7eb">${item.desc || 'Service'}</td>
-        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:center">${item.qty}</td>
-        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:right">${item.price.toLocaleString()} KES</td>
-        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:right;font-weight:bold">${(item.qty * item.price).toLocaleString()} KES</td>
-      </tr>`).join('');
+    const doc = new jsPDF();
+    const green: [number, number, number] = [16, 185, 129];
+    const dark: [number, number, number] = [31, 41, 55];
+    const gray: [number, number, number] = [107, 114, 128];
 
-    const html = `<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Invoice ${invNum} - Maxx Tech</title>
-<style>
-  body{font-family:Arial,Helvetica,sans-serif;padding:40px;max-width:750px;margin:auto;color:#1f2937}
-  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;padding-bottom:20px;border-bottom:3px solid #059669}
-  .logo h1{color:#059669;font-size:28px;margin:0}
-  .logo p{color:#6b7280;margin:4px 0 0;font-size:13px}
-  .inv-info{text-align:right}
-  .inv-info h2{color:#059669;font-size:22px;margin:0}
-  .inv-info p{color:#6b7280;margin:4px 0;font-size:13px}
-  .bill-to{margin-bottom:30px}
-  .bill-to strong{color:#059669}
-  table{width:100%;border-collapse:collapse;margin:20px 0}
-  th{background:#f0fdf4;padding:12px;text-align:left;font-size:13px;color:#059669;border-bottom:2px solid #059669}
-  .total-row{display:flex;justify-content:flex-end;margin-top:20px}
-  .total-box{background:#f0fdf4;padding:15px 25px;border-radius:8px;text-align:right}
-  .total-box .label{font-size:13px;color:#6b7280}
-  .total-box .amount{font-size:24px;font-weight:bold;color:#059669}
-  .footer{margin-top:50px;padding-top:20px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af}
-</style></head>
-<body>
-  <div class="header">
-    <div class="logo">
-      <h1>MAXX TECH</h1>
-      <p>Smart Tech Solutions by Carly Maxx</p>
-      <p>Ruiru, Kenya | maxxtech.co.ke</p>
-    </div>
-    <div class="inv-info">
-      <h2>INVOICE</h2>
-      <p><strong>${invNum}</strong></p>
-      <p>Date: ${new Date().toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-    </div>
-  </div>
-  <div class="bill-to">
-    <strong>Bill To:</strong><br>
-    ${client || 'Client Name'}<br>
-    ${email || 'client@example.com'}
-  </div>
-  <table>
-    <thead><tr><th>Description</th><th style="text-align:center">Qty</th><th style="text-align:right">Price</th><th style="text-align:right">Total</th></tr></thead>
-    <tbody>${rows}</tbody>
-  </table>
-  <div class="total-row">
-    <div class="total-box">
-      <div class="label">Total Amount</div>
-      <div class="amount">${total.toLocaleString()} KES</div>
-    </div>
-  </div>
-  <div class="footer">
-    <p>Thank you for your business!</p>
-    <p>Maxx Tech — WhatsApp: +254 725 979 273 | maxxtechxmd@gmail.com</p>
-  </div>
-</body></html>`;
+    // Header bar
+    doc.setFillColor(...green);
+    doc.rect(0, 0, 210, 45, 'F');
 
-    const blob = new Blob([html], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `MaxxTech_Invoice_${invNum}.html`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    // Company name
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(24);
+    doc.setFont("helvetica", "bold");
+    doc.text("MAXX TECH", 20, 22);
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.text("Smart Tech Solutions by Carly Maxx", 20, 30);
+    doc.text("Ruiru, Kenya | maxxtech.co.ke", 20, 36);
+
+    // Invoice info
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.text("INVOICE", 190, 18, { align: "right" });
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    doc.text(invNum, 190, 25, { align: "right" });
+    doc.text(new Date().toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' }), 190, 31, { align: "right" });
+
+    // Bill To
+    doc.setTextColor(...dark);
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "bold");
+    doc.text("Bill To:", 20, 60);
+    doc.setFont("helvetica", "normal");
+    doc.text(client || "Client Name", 20, 68);
+    doc.setTextColor(...gray);
+    doc.text(email || "client@example.com", 20, 75);
+
+    // Table header
+    const tableTop = 90;
+    doc.setFillColor(240, 253, 244);
+    doc.rect(15, tableTop, 180, 10, 'F');
+    doc.setTextColor(...green);
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "bold");
+    doc.text("Description", 20, tableTop + 7);
+    doc.text("Qty", 120, tableTop + 7, { align: "center" });
+    doc.text("Price (KES)", 155, tableTop + 7, { align: "right" });
+    doc.text("Total (KES)", 190, tableTop + 7, { align: "right" });
+
+    // Table rows
+    doc.setTextColor(...dark);
+    doc.setFont("helvetica", "normal");
+    let yPos = tableTop + 18;
+    items.forEach((item) => {
+      doc.setFontSize(9);
+      doc.text(item.desc || "Service", 20, yPos);
+      doc.text(String(item.qty), 120, yPos, { align: "center" });
+      doc.text(item.price.toLocaleString(), 155, yPos, { align: "right" });
+      doc.text((item.qty * item.price).toLocaleString(), 190, yPos, { align: "right" });
+
+      // Row separator
+      doc.setDrawColor(229, 231, 235);
+      doc.line(15, yPos + 4, 195, yPos + 4);
+      yPos += 12;
+    });
+
+    // Total
+    yPos += 5;
+    doc.setFillColor(240, 253, 244);
+    doc.roundedRect(120, yPos, 75, 20, 3, 3, 'F');
+    doc.setTextColor(...gray);
+    doc.setFontSize(9);
+    doc.text("Total Amount", 157, yPos + 7, { align: "center" });
+    doc.setTextColor(...green);
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.text(`${total.toLocaleString()} KES`, 157, yPos + 16, { align: "center" });
+
+    // Footer
+    doc.setTextColor(...gray);
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "normal");
+    doc.text("Thank you for your business!", 105, 270, { align: "center" });
+    doc.text("Maxx Tech — WhatsApp: +254 725 979 273 | maxxtechxmd@gmail.com", 105, 277, { align: "center" });
+
+    // Download PDF
+    doc.save(`MaxxTech_Invoice_${invNum}.pdf`);
 
     setDownloaded(true);
     setTimeout(() => setDownloaded(false), 3000);
@@ -107,7 +125,7 @@ const InvoiceGenerator = () => {
               </div>
             </div>
             <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-3">Invoice Generator</h2>
-            <p className="text-gray-500">Create professional invoices in seconds</p>
+            <p className="text-gray-500">Create professional PDF invoices in seconds</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
@@ -140,7 +158,7 @@ const InvoiceGenerator = () => {
             <div className="border-t border-gray-100 pt-4 flex items-center justify-between">
               <span className="font-bold text-lg">Total: <span className="text-emerald-600">{total.toLocaleString()} KES</span></span>
               <button onClick={download} className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all ${downloaded ? 'bg-green-500 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}`}>
-                {downloaded ? <><Check className="h-4 w-4" /> Downloaded!</> : <><Download className="h-4 w-4" /> Download Invoice</>}
+                {downloaded ? <><Check className="h-4 w-4" /> Downloaded!</> : <><Download className="h-4 w-4" /> Download PDF</>}
               </button>
             </div>
           </div>
