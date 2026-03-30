@@ -13,6 +13,7 @@ import Newsletter from "@/components/Newsletter";
 import LiveChat from "@/components/LiveChat";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Partners from "@/components/Partners";
+import SocialMediaSection, { socials } from "@/components/SocialMediaSection";
 import TrustBadges from "@/components/TrustBadges";
 import CountdownTimer from "@/components/CountdownTimer";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -432,6 +433,7 @@ const Index = () => {
 
       <LocationMap />
       <Partners />
+      <SocialMediaSection />
 
       <FadeSection>
         <footer className="bg-footer-gradient py-16 text-white">
@@ -489,8 +491,8 @@ const Index = () => {
                 <img src="https://files.catbox.moe/oepq4e.jpg" alt="Maxx Tech" className="w-8 h-8 rounded-full" />
                 <span className="font-bold text-white">MAXX TECH</span>
               </div>
-              <div className="flex flex-wrap justify-center gap-4">
-                {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" title={link.label}><link.icon className="h-5 w-5" /></a>)}
+              <div className="flex flex-wrap justify-center gap-3">
+                {socials.map((s) => <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white flex items-center justify-center transition-all" title={s.name}><span className="[&>svg]:h-4 [&>svg]:w-4">{s.svg}</span></a>)}
               </div>
               <p className="text-xs text-white/50">© {new Date().getFullYear()} Maxx Tech. All rights reserved.</p>
             </div>
