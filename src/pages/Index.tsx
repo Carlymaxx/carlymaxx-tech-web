@@ -30,7 +30,6 @@ import ReferralPopup from "@/components/ReferralPopup";
 import TypingText from "@/components/TypingText";
 import ScrollProgress from "@/components/ScrollProgress";
 import GoogleReviews from "@/components/GoogleReviews";
-import Sitemap from "@/components/Sitemap";
 import CookieBanner from "@/components/CookieBanner";
 import URLShortener from "@/components/URLShortener";
 import InvoiceGenerator from "@/components/InvoiceGenerator";
@@ -474,21 +473,40 @@ const Index = () => {
       </FadeSection>
       <Partners />
       <SocialMediaSection />
-      <Sitemap />
 
       <FadeSection>
         <footer className="bg-footer-gradient py-16 text-white">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-10">
               {/* Product */}
               <div>
                 <h3 className="font-bold mb-4 text-white/90">Product</h3>
                 <ul className="space-y-2 text-sm text-white/60">
-                  <li><a href="#services" className="hover:text-white transition-colors">Home</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
                   <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                  <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                   <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
                   <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+              </div>
+              {/* Products */}
+              <div>
+                <h3 className="font-bold mb-4 text-white/90">Products</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXXTECH AI</a></li>
+                  <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXX-XMD Bot</a></li>
+                  <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Media Hub</a></li>
+                </ul>
+              </div>
+              {/* Services */}
+              <div>
+                <h3 className="font-bold mb-4 text-white/90">Services</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href="#services" className="hover:text-white transition-colors">Web Design</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">Bot Deployment</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">YouTube Boosting</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">TikTok Boosting</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">Account Security</a></li>
                 </ul>
               </div>
               {/* Tools */}
@@ -497,7 +515,6 @@ const Index = () => {
                 <ul className="space-y-2 text-sm text-white/60">
                   <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pair Session</a></li>
                   <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Assistant</a></li>
-                  <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Media Hub</a></li>
                   <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
                   <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Group</a></li>
                 </ul>
@@ -508,8 +525,8 @@ const Index = () => {
                 <ul className="space-y-2 text-sm text-white/60">
                   <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
                   <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
-                  <li><a href="#contact" className="hover:text-white transition-colors">Careers</a></li>
                   <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Careers</a></li>
                   <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
                 </ul>
               </div>
