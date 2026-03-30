@@ -34,6 +34,12 @@ import CookieBanner from "@/components/CookieBanner";
 import URLShortener from "@/components/URLShortener";
 import InvoiceGenerator from "@/components/InvoiceGenerator";
 import AffiliateSystem from "@/components/AffiliateSystem";
+import GitHubRepos from "@/components/GitHubRepos";
+import LiveStatus from "@/components/LiveStatus";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import FeatureRequest from "@/components/FeatureRequest";
+import LiveVisitors from "@/components/LiveVisitors";
+import ServiceComparison from "@/components/ServiceComparison";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -174,6 +180,7 @@ const Index = () => {
 
       <ClientLogos />
       <TrustBadges />
+      <LiveStatus />
 
       <FadeSection>
         <section className="py-20">
@@ -409,6 +416,7 @@ const Index = () => {
 
       {/* === CREDIBILITY === */}
       <SkillsSection />
+      <GitHubRepos />
       <FadeSection bgClassName="bg-section-dark"><About /></FadeSection>
 
       {/* === PORTFOLIO === */}
@@ -421,6 +429,7 @@ const Index = () => {
 
       {/* === PRICING === */}
       <PricingCalculator />
+      <ServiceComparison />
 
       {/* === FAQ === */}
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
@@ -465,6 +474,7 @@ const Index = () => {
 
       {/* === CONTACT === */}
       <FadeSection bgClassName="bg-section-indigo"><Contact /></FadeSection>
+      <FeatureRequest />
       <LocationMap />
 
       {/* === FOOTER AREA === */}
@@ -558,9 +568,11 @@ const Index = () => {
         </footer>
       </FadeSection>
       <BackToTop />
+      <LiveVisitors />
       <SocialProof />
       <LiveChat />
       <ReferralPopup />
+      <ExitIntentPopup />
       <CookieBanner />
     </div>
   );
