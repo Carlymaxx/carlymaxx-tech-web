@@ -309,26 +309,55 @@ const Index = () => {
         <section className="py-20">
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Why Choose Us</h2>
-            <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">What makes Maxx Tech the best choice for your digital needs</p>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { icon: Zap, title: "Fast Delivery", description: "Most projects delivered within 24-48 hours. No long waits." },
-                { icon: Clock, title: "24/7 Availability", description: "Round-the-clock support and services whenever you need us." },
-                { icon: Award, title: "Quality Guaranteed", description: "Premium quality work with satisfaction guarantee on all services." },
-                { icon: Headphones, title: "Dedicated Support", description: "Personal support team to help you every step of the way." },
-              ].map((item, index) => {
-                const colors = ["bg-emerald-50 text-emerald-600", "bg-violet-50 text-violet-600", "bg-amber-50 text-amber-600", "bg-sky-50 text-sky-600"];
-                const color = colors[index % 4];
-                return (
-                <div key={item.title} className={`text-center p-6 rounded-2xl border border-border bg-card transition-all hover-lift`}>
-                  <div className={`h-14 w-14 rounded-full ${color.split(' ')[0]} flex items-center justify-center mx-auto mb-4`}>
-                    <item.icon className={`h-7 w-7 ${color.split(' ')[1]}`} />
+            <p className="mx-auto mb-16 max-w-xl text-center text-gray-500">What makes Maxx Tech the best choice for your digital needs</p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {/* Fast Delivery */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift p-6 text-center" style={{ background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-300/30 rounded-full blur-2xl group-hover:w-32 group-hover:h-32 transition-all"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Fast Delivery" className="w-12 h-12" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="font-display text-base font-bold mb-2 text-emerald-800">Fast Delivery</h3>
+                  <p className="text-xs text-emerald-700/70 leading-relaxed">Most projects delivered within 24-48 hours. Bots deployed in 2-3 mins.</p>
                 </div>
-                );
-              })}
+              </div>
+
+              {/* 24/7 Availability */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift p-6 text-center" style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)' }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-violet-300/30 rounded-full blur-2xl group-hover:w-32 group-hover:h-32 transition-all"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/fluency/96/overtime.png" alt="24/7" className="w-12 h-12" />
+                  </div>
+                  <h3 className="font-display text-base font-bold mb-2 text-violet-800">24/7 Availability</h3>
+                  <p className="text-xs text-violet-700/70 leading-relaxed">Round-the-clock support and services whenever you need us.</p>
+                </div>
+              </div>
+
+              {/* Quality Guaranteed */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift p-6 text-center" style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)' }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-300/30 rounded-full blur-2xl group-hover:w-32 group-hover:h-32 transition-all"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/fluency/96/prize.png" alt="Quality" className="w-12 h-12" />
+                  </div>
+                  <h3 className="font-display text-base font-bold mb-2 text-amber-800">Quality Guaranteed</h3>
+                  <p className="text-xs text-amber-700/70 leading-relaxed">Premium quality work with satisfaction guarantee on all services.</p>
+                </div>
+              </div>
+
+              {/* Dedicated Support */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift p-6 text-center" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)' }}>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-sky-300/30 rounded-full blur-2xl group-hover:w-32 group-hover:h-32 transition-all"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="Support" className="w-12 h-12" />
+                  </div>
+                  <h3 className="font-display text-base font-bold mb-2 text-sky-800">Dedicated Support</h3>
+                  <p className="text-xs text-sky-700/70 leading-relaxed">Personal support team to help you every step of the way.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

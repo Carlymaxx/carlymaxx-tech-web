@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "How long does it take to deploy a bot?",
-    answer: "Most WhatsApp bots are deployed within 5-30 minutes after confirmation. Complex custom solutions may take 1-3 days.",
+    answer: "Most WhatsApp bots are deployed within 2-3 minutes after confirmation. Complex custom solutions may take 5-7 minutes. We're that fast!",
   },
   {
     question: "Do you offer ongoing support?",
