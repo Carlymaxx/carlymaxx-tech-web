@@ -25,12 +25,9 @@ import SocialProof from "@/components/SocialProof";
 import SkillsSection from "@/components/SkillsSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import LocationMap from "@/components/LocationMap";
-import LanguageToggle from "@/components/LanguageToggle";
 import AnnouncementBar from "@/components/AnnouncementBar";
-import QuickContact from "@/components/QuickContact";
 import Blog from "@/components/Blog";
 import ReferralPopup from "@/components/ReferralPopup";
-import CursorTrail from "@/components/CursorTrail";
 import TypingText from "@/components/TypingText";
 
 
@@ -139,7 +136,6 @@ const Index = () => {
       </div>
       <AnnouncementBar />
       <NavBar />
-      <LanguageToggle />
 
       <FadeSection>
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 bg-hero-gradient">
@@ -533,8 +529,6 @@ const Index = () => {
         </footer>
       </FadeSection>
       <BackToTop />
-      <QuickContact />
-      <CursorTrail />
       <SocialProof />
       <LiveChat />
       <ReferralPopup />

@@ -1,15 +1,33 @@
 import { Clock, ArrowRight } from "lucide-react";
 
 const posts = [
-  { title: "How to Deploy a WhatsApp Bot in Under 5 Minutes", excerpt: "Step-by-step guide to getting your MAXX-XMD bot up and running quickly.", date: "Mar 28, 2026", tag: "Tutorial", image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=400&q=80" },
-  { title: "Top 10 Web Design Trends for 2026", excerpt: "Stay ahead with these modern web design trends that dominate this year.", date: "Mar 25, 2026", tag: "Design", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80" },
-  { title: "Why Every Business Needs a WhatsApp Bot", excerpt: "Automate customer support, send notifications, and boost engagement.", date: "Mar 20, 2026", tag: "Business", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80" },
+  {
+    title: "How to Deploy MAXX-XMD Bot in 2 Minutes",
+    excerpt: "1. Get your session at pair.maxxtech.co.ke — put your number with country code. 2. Copy the 8-digit code, link to WhatsApp. 3. Session will be sent automatically — copy it. 4. Fork the repo github.com/Carlymaxx/maxxtechxmd. 5. Deploy on Heroku, Railway, or any platform. 6. Paste your session and deploy. Bot alive in 2 mins!",
+    date: "Mar 30, 2026",
+    tag: "Deployment",
+    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=400&q=80",
+  },
+  {
+    title: "MAXX-XMD Bot Commands & Features",
+    excerpt: "Explore 50+ commands including group management, auto-replies, media downloads, stickers, and more. Wait 5 minutes after deploy for WhatsApp sync, then start using commands.",
+    date: "Mar 28, 2026",
+    tag: "Tutorial",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80",
+  },
+  {
+    title: "Deploy on Heroku vs Railway — Which is Better?",
+    excerpt: "Compare free hosting platforms for your WhatsApp bot. Heroku for simplicity, Railway for speed. Both work perfectly with MAXX-XMD. Follow our step-by-step guide.",
+    date: "Mar 25, 2026",
+    tag: "Guide",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80",
+  },
 ];
 
 const Blog = () => (
   <section className="py-20"><div className="container mx-auto px-6">
     <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Latest Articles</h2>
-    <p className="mx-auto mb-12 max-w-xl text-center text-gray-500">Tips, tutorials, and insights from Maxx Tech</p>
+    <p className="mx-auto mb-12 max-w-xl text-center text-gray-500">Guides and tutorials from Maxx Tech</p>
     <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {posts.map((post) => (
         <article key={post.title} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
@@ -23,7 +41,6 @@ const Blog = () => (
             </div>
             <h3 className="font-bold text-sm mb-2 group-hover:text-emerald-600 transition-colors">{post.title}</h3>
             <p className="text-xs text-gray-500 leading-relaxed mb-3">{post.excerpt}</p>
-            <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRight className="h-3 w-3" /></span>
           </div>
         </article>
       ))}
