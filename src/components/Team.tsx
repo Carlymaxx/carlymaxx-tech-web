@@ -15,7 +15,7 @@ const team = [
     role: "Backend Engineer",
     bio: "Expert in API development, databases, and server architecture. Builds scalable backends that power our most demanding applications.",
     skills: ["Node.js", "MongoDB", "PostgreSQL", "REST APIs"],
-    icon: Bot,
+    image: "https://files.catbox.moe/i6mhnk.jpg",
     twitter: "#",
     github: "#",
   },
@@ -24,7 +24,7 @@ const team = [
     role: "UI/UX Designer",
     bio: "Creative designer who crafts beautiful, intuitive interfaces. Specializes in modern web design and mobile-first experiences.",
     skills: ["Figma", "CSS", "Animation", "Branding"],
-    icon: Palette,
+    image: "https://files.catbox.moe/dtul0r.jpg",
     twitter: "#",
   },
 ];
