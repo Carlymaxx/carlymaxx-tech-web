@@ -14,6 +14,7 @@ import LiveChat from "@/components/LiveChat";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Partners from "@/components/Partners";
 import SocialMediaSection, { socials } from "@/components/SocialMediaSection";
+import BackToTop from "@/components/BackToTop";
 import TrustBadges from "@/components/TrustBadges";
 import CountdownTimer from "@/components/CountdownTimer";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -385,17 +386,27 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      {/* === CREDIBILITY === */}
       <SkillsSection />
       <FadeSection bgClassName="bg-section-dark"><About /></FadeSection>
-      <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
-      <FadeSection bgClassName="bg-section-teal"><Pricing /></FadeSection>
-      <FadeSection bgClassName="bg-section-slate"><Team /></FadeSection>
+
+      {/* === PORTFOLIO === */}
       <FadeSection bgClassName="bg-section-dark"><Gallery /></FadeSection>
+      <BeforeAfter />
+
+      {/* === TEAM === */}
+      <FadeSection bgClassName="bg-section-slate"><Team /></FadeSection>
+      <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
+
+      {/* === PRICING === */}
+      <FadeSection bgClassName="bg-section-teal"><Pricing /></FadeSection>
+      <PricingCalculator />
+
+      {/* === FAQ === */}
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
-      <FadeSection bgClassName="bg-section-indigo"><Contact /></FadeSection>
 
+      {/* === SOCIAL PROOF === */}
       <VideoSection />
-
       <FadeSection bgClassName="bg-testimonials-gradient">
         <section className="py-16">
           <div className="container mx-auto px-6 text-center">
@@ -405,8 +416,9 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      {/* === MEET CARLY === */}
       <FadeSection>
-        <section id="about" className="py-20 bg-about-gradient section-glow-purple">
+        <section className="py-20 bg-about-gradient section-glow-purple">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet <span className="text-primary">Carly Maxx</span></h2>
@@ -424,14 +436,14 @@ const Index = () => {
         </section>
       </FadeSection>
 
-      <BeforeAfter />
-      <PricingCalculator />
+      {/* === CONTACT === */}
+      <FadeSection bgClassName="bg-section-indigo"><Contact /></FadeSection>
+      <LocationMap />
 
+      {/* === FOOTER AREA === */}
       <FadeSection>
         <Newsletter />
       </FadeSection>
-
-      <LocationMap />
       <Partners />
       <SocialMediaSection />
 
@@ -499,6 +511,7 @@ const Index = () => {
           </div>
         </footer>
       </FadeSection>
+      <BackToTop />
       <SocialProof />
       <LiveChat />
     </div>
