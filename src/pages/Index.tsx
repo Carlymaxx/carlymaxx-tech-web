@@ -52,12 +52,12 @@ const socialLinks = [
 ];
 
 const services = [
-  { icon: Code, title: "Web Design", description: "Custom websites & landing pages built with modern frameworks and stunning UI." },
-  { icon: Bot, title: "Smart Automation", description: "AI-powered bots and workflow automation to streamline your digital operations." },
-  { icon: Globe, title: "Web Solutions", description: "Full-stack web applications, APIs, and cloud-based solutions for your business." },
-  { icon: Cpu, title: "Information Technology", description: "IT consulting, infrastructure setup, and technical support around the clock." },
-  { icon: Wrench, title: "Tools & APIs", description: "Integration of powerful tools and third-party APIs to supercharge your workflow." },
-  { icon: MessageCircle, title: "24/7 Support", description: "Always available smart assistant for all your tech queries and digital needs." },
+  { icon: Code, title: "Web Design", description: "Custom websites & landing pages built with modern frameworks and stunning UI.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", color: "from-blue-500 to-cyan-500" },
+  { icon: Bot, title: "Smart Automation", description: "AI-powered bots and workflow automation to streamline your digital operations.", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80", color: "from-violet-500 to-purple-500" },
+  { icon: Globe, title: "Web Solutions", description: "Full-stack web applications, APIs, and cloud-based solutions for your business.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80", color: "from-emerald-500 to-teal-500" },
+  { icon: Cpu, title: "Information Technology", description: "IT consulting, infrastructure setup, and technical support around the clock.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80", color: "from-orange-500 to-red-500" },
+  { icon: Wrench, title: "Tools & APIs", description: "Integration of powerful tools and third-party APIs to supercharge your workflow.", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80", color: "from-sky-500 to-blue-500" },
+  { icon: MessageCircle, title: "24/7 Support", description: "Always available smart assistant for all your tech queries and digital needs.", image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=400&q=80", color: "from-pink-500 to-rose-500" },
 ];
 
 const premiumServices = [
@@ -272,10 +272,20 @@ const Index = () => {
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Software, Web Design, Information Technology & Market Solutions</p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service.title} className="group neon-border-card bg-card p-8 transition-all duration-300 hover-lift">
-                  <service.icon className="mb-5 h-8 w-8 text-emerald-600 transition-transform group-hover:scale-110 group-hover:text-violet-600" />
-                  <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">{service.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                <div key={service.title} className="group neon-border-card bg-card overflow-hidden transition-all duration-300 hover-lift">
+                  <div className="relative h-32 overflow-hidden">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-40`}></div>
+                    <div className="absolute bottom-3 left-4">
+                      <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg`}>
+                        <service.icon className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="mb-2 font-display text-lg font-semibold tracking-wide text-card-foreground">{service.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
