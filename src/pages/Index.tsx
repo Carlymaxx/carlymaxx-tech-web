@@ -11,6 +11,18 @@ import Clients from "@/components/Clients";
 import Gallery from "@/components/Gallery";
 import Newsletter from "@/components/Newsletter";
 import LiveChat from "@/components/LiveChat";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import TrustBadges from "@/components/TrustBadges";
+import CountdownTimer from "@/components/CountdownTimer";
+import BeforeAfter from "@/components/BeforeAfter";
+import VideoSection from "@/components/VideoSection";
+import PricingCalculator from "@/components/PricingCalculator";
+import ClientLogos from "@/components/ClientLogos";
+import SocialProof from "@/components/SocialProof";
+import SkillsSection from "@/components/SkillsSection";
+import ProcessTimeline from "@/components/ProcessTimeline";
+import LocationMap from "@/components/LocationMap";
+import LanguageToggle from "@/components/LanguageToggle";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -117,6 +129,7 @@ const Index = () => {
         {speedLines.map((line) => <div key={line.id} className="speed-line" style={{ top: line.top, width: line.width, animationDuration: line.duration, animationDelay: line.delay, opacity: line.opacity * 0.3 }} />)}
       </div>
       <NavBar />
+      <LanguageToggle />
 
       <FadeSection>
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 bg-hero-gradient">
@@ -144,6 +157,9 @@ const Index = () => {
           </div>
         </section>
       </FadeSection>
+
+      <ClientLogos />
+      <TrustBadges />
 
       <FadeSection>
         <section className="py-20">
@@ -244,6 +260,8 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      <CountdownTimer />
+
       <FadeSection>
         <section id="services" className="py-24 bg-services-gradient section-glow-green">
           <div className="container mx-auto px-6">
@@ -284,6 +302,8 @@ const Index = () => {
           </div>
         </section>
       </FadeSection>
+
+      <ProcessTimeline />
 
       <FadeSection>
         <section className="py-16 bg-stats-gradient animate-gradient-shift">
@@ -363,6 +383,7 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      <SkillsSection />
       <FadeSection bgClassName="bg-section-dark"><About /></FadeSection>
       <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
       <FadeSection bgClassName="bg-section-teal"><Pricing /></FadeSection>
@@ -370,6 +391,8 @@ const Index = () => {
       <FadeSection bgClassName="bg-section-dark"><Gallery /></FadeSection>
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
       <FadeSection bgClassName="bg-section-indigo"><Contact /></FadeSection>
+
+      <VideoSection />
 
       <FadeSection bgClassName="bg-testimonials-gradient">
         <section className="py-16">
@@ -399,9 +422,14 @@ const Index = () => {
         </section>
       </FadeSection>
 
+      <BeforeAfter />
+      <PricingCalculator />
+
       <FadeSection>
         <Newsletter />
       </FadeSection>
+
+      <LocationMap />
 
       <FadeSection>
         <footer className="bg-footer-gradient py-16 text-white">
@@ -467,6 +495,8 @@ const Index = () => {
           </div>
         </footer>
       </FadeSection>
+      <WhatsAppButton />
+      <SocialProof />
       <LiveChat />
     </div>
   );
