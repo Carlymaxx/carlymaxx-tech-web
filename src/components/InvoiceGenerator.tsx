@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { FileText, Download, Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { FileText, Download, Plus, Trash2, Check } from "lucide-react";
 
 interface Item { desc: string; qty: number; price: number; }
 
@@ -7,7 +7,7 @@ const InvoiceGenerator = () => {
   const [client, setClient] = useState("");
   const [email, setEmail] = useState("");
   const [items, setItems] = useState<Item[]>([{ desc: "WhatsApp Bot Deployment", qty: 1, price: 50 }]);
-  const printRef = useRef<HTMLDivElement>(null);
+  const [downloaded, setDownloaded] = useState(false);
 
   const addItem = () => setItems([...items, { desc: "", qty: 1, price: 0 }]);
   const removeItem = (i: number) => setItems(items.filter((_, idx) => idx !== i));
@@ -17,25 +17,83 @@ const InvoiceGenerator = () => {
     setItems(updated);
   };
   const total = items.reduce((sum, item) => sum + item.qty * item.price, 0);
+  const invNum = `INV-${Date.now().toString().slice(-6)}`;
 
   const download = () => {
-    const content = printRef.current;
-    if (!content) return;
-    const WinPrint = window.open('', '', 'width=800,height=600');
-    if (!WinPrint) return;
-    WinPrint.document.write(`
-      <html><head><title>Invoice - Maxx Tech</title>
-      <style>body{font-family:Arial;padding:40px;max-width:700px;margin:auto}
-      h1{color:#059669}table{width:100%;border-collapse:collapse;margin:20px 0}
-      th,td{border:1px solid #e5e7eb;padding:10px;text-align:left;font-size:14px}
-      th{background:#f0fdf4}.total{font-size:20px;font-weight:bold;color:#059669;text-align:right;margin-top:20px}
-      .header{display:flex;justify-content:space-between;margin-bottom:30px}</style></head>
-      <body>${content.innerHTML}</body></html>
-    `);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
+    const rows = items.map(item => `
+      <tr>
+        <td style="padding:12px;border-bottom:1px solid #e5e7eb">${item.desc || 'Service'}</td>
+        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:center">${item.qty}</td>
+        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:right">${item.price.toLocaleString()} KES</td>
+        <td style="padding:12px;border-bottom:1px solid #e5e7eb;text-align:right;font-weight:bold">${(item.qty * item.price).toLocaleString()} KES</td>
+      </tr>`).join('');
+
+    const html = `<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Invoice ${invNum} - Maxx Tech</title>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;padding:40px;max-width:750px;margin:auto;color:#1f2937}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;padding-bottom:20px;border-bottom:3px solid #059669}
+  .logo h1{color:#059669;font-size:28px;margin:0}
+  .logo p{color:#6b7280;margin:4px 0 0;font-size:13px}
+  .inv-info{text-align:right}
+  .inv-info h2{color:#059669;font-size:22px;margin:0}
+  .inv-info p{color:#6b7280;margin:4px 0;font-size:13px}
+  .bill-to{margin-bottom:30px}
+  .bill-to strong{color:#059669}
+  table{width:100%;border-collapse:collapse;margin:20px 0}
+  th{background:#f0fdf4;padding:12px;text-align:left;font-size:13px;color:#059669;border-bottom:2px solid #059669}
+  .total-row{display:flex;justify-content:flex-end;margin-top:20px}
+  .total-box{background:#f0fdf4;padding:15px 25px;border-radius:8px;text-align:right}
+  .total-box .label{font-size:13px;color:#6b7280}
+  .total-box .amount{font-size:24px;font-weight:bold;color:#059669}
+  .footer{margin-top:50px;padding-top:20px;border-top:1px solid #e5e7eb;text-align:center;font-size:12px;color:#9ca3af}
+</style></head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <h1>MAXX TECH</h1>
+      <p>Smart Tech Solutions by Carly Maxx</p>
+      <p>Ruiru, Kenya | maxxtech.co.ke</p>
+    </div>
+    <div class="inv-info">
+      <h2>INVOICE</h2>
+      <p><strong>${invNum}</strong></p>
+      <p>Date: ${new Date().toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+    </div>
+  </div>
+  <div class="bill-to">
+    <strong>Bill To:</strong><br>
+    ${client || 'Client Name'}<br>
+    ${email || 'client@example.com'}
+  </div>
+  <table>
+    <thead><tr><th>Description</th><th style="text-align:center">Qty</th><th style="text-align:right">Price</th><th style="text-align:right">Total</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <div class="total-row">
+    <div class="total-box">
+      <div class="label">Total Amount</div>
+      <div class="amount">${total.toLocaleString()} KES</div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Thank you for your business!</p>
+    <p>Maxx Tech — WhatsApp: +254 725 979 273 | maxxtechxmd@gmail.com</p>
+  </div>
+</body></html>`;
+
+    const blob = new Blob([html], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `MaxxTech_Invoice_${invNum}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    setDownloaded(true);
+    setTimeout(() => setDownloaded(false), 3000);
   };
 
   return (
@@ -81,23 +139,10 @@ const InvoiceGenerator = () => {
 
             <div className="border-t border-gray-100 pt-4 flex items-center justify-between">
               <span className="font-bold text-lg">Total: <span className="text-emerald-600">{total.toLocaleString()} KES</span></span>
-              <button onClick={download} className="flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-colors">
-                <Download className="h-4 w-4" /> Download Invoice
+              <button onClick={download} className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all ${downloaded ? 'bg-green-500 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}`}>
+                {downloaded ? <><Check className="h-4 w-4" /> Downloaded!</> : <><Download className="h-4 w-4" /> Download Invoice</>}
               </button>
             </div>
-          </div>
-
-          <div ref={printRef} className="hidden">
-            <div className="header">
-              <div><h1>MAXX TECH</h1><p>Smart Tech Solutions</p><p>Ruiru, Kenya</p></div>
-              <div style={{textAlign:'right'}}><p><strong>Invoice</strong></p><p>Date: {new Date().toLocaleDateString()}</p><p>INV-{Date.now().toString().slice(-6)}</p></div>
-            </div>
-            <p><strong>Bill To:</strong> {client || 'Client Name'}<br/>{email}</p>
-            <table><thead><tr><th>Description</th><th>Qty</th><th>Price (KES)</th><th>Total (KES)</th></tr></thead>
-              <tbody>{items.map((item, i) => <tr key={i}><td>{item.desc}</td><td>{item.qty}</td><td>{item.price.toLocaleString()}</td><td>{(item.qty * item.price).toLocaleString()}</td></tr>)}</tbody>
-            </table>
-            <div className="total">Total: {total.toLocaleString()} KES</div>
-            <p style={{marginTop:30,fontSize:12,color:'#888'}}>Thank you for your business! — Maxx Tech | maxxtech.co.ke</p>
           </div>
         </div>
       </div>
