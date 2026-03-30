@@ -3,52 +3,40 @@ import { ExternalLink } from "lucide-react";
 
 const galleryItems = [
   {
-    title: "WhatsApp Bot Dashboard",
-    category: "Bot Development",
-    description: "Custom admin dashboard for managing WhatsApp bot operations",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    title: "Project Showcase 1",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/d5xedo.jpg",
   },
   {
-    title: "E-commerce Platform",
-    category: "Web Development",
-    description: "Modern e-commerce website with payment integration",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    title: "Project Showcase 2",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/6u07h4.jpg",
   },
   {
-    title: "AI Chat Interface",
-    category: "AI Solutions",
-    description: "Intelligent chatbot with natural language processing",
-    image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80",
+    title: "Project Showcase 3",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/xx7rru.jpg",
   },
   {
-    title: "Mobile App UI",
-    category: "UI/UX Design",
-    description: "Sleek mobile application interface design",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    title: "Project Showcase 4",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/frwq4s.jpg",
   },
   {
-    title: "Analytics Dashboard",
-    category: "Data Visualization",
-    description: "Real-time analytics and reporting system",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    title: "Project Showcase 5",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/bbwgie.jpg",
   },
   {
-    title: "API Gateway",
-    category: "Backend",
-    description: "Secure and scalable API infrastructure",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-  },
-  {
-    title: "Cloud Infrastructure",
-    category: "DevOps",
-    description: "Modern cloud architecture and deployment",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-  },
-  {
-    title: "Cybersecurity",
-    category: "Security",
-    description: "Enterprise-grade security solutions",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+    title: "Project Showcase 6",
+    category: "Maxx Tech",
+    description: "Custom project by Maxx Tech",
+    image: "https://files.catbox.moe/ga6rt7.png",
   },
 ];
 
@@ -65,7 +53,7 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryItems.map((item, index) => (
             <div
               key={index}
