@@ -120,15 +120,16 @@ const Index = () => {
 
       <FadeSection>
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 bg-hero-gradient">
-          <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-[120px] animate-pulse-glow" />
-          <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-          <div className="container mx-auto flex flex-col items-center px-6 text-center">
+          <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-emerald-300/30 blur-[120px] animate-pulse-glow" />
+          <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-violet-300/30 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+          <div className="pointer-events-none absolute top-1/3 right-10 h-64 w-64 rounded-full bg-amber-200/20 blur-[100px] animate-pulse-glow" style={{ animationDelay: "3s" }} />
+          <div className="container mx-auto flex flex-col items-center px-6 text-center relative z-10">
             <div className="animate-float mb-8">
               <img src={logo} alt="Carly Maxx" className="h-32 w-32 rounded-full ring-4 ring-primary/40 box-glow object-cover" />
             </div>
             <h1 className="mb-4 font-display text-4xl font-black tracking-wider sm:text-6xl lg:text-7xl"><span className="gradient-text">MAXX TECH</span></h1>
-            <p className="mb-2 font-display text-sm tracking-[0.3em] text-muted-foreground uppercase">by Carly Maxx</p>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-secondary-foreground sm:text-xl">🤖 Smart assistant for tech, tools & APIs.<br />⚙️ Web solutions & automation — Available 24/7 for your digital needs.</p>
+            <p className="mb-2 font-display text-sm tracking-[0.3em] text-emerald-700 uppercase animate-pulse">by Carly Maxx</p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl">🤖 Smart assistant for tech, tools & APIs.<br />⚙️ Web solutions & automation — Available 24/7 for your digital needs.</p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover">
                 <MessageCircle className="h-5 w-5" />WhatsApp Channel<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -151,8 +152,8 @@ const Index = () => {
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Software, Web Design, Information Technology & Market Solutions</p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service.title} className="group neon-border-card bg-card p-8 transition-all duration-300">
-                  <service.icon className="mb-5 h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+                <div key={service.title} className="group neon-border-card bg-card p-8 transition-all duration-300 hover-lift">
+                  <service.icon className="mb-5 h-8 w-8 text-emerald-600 transition-transform group-hover:scale-110 group-hover:text-violet-600" />
                   <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">{service.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
                 </div>
@@ -169,9 +170,9 @@ const Index = () => {
             <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">Premium digital services at unbeatable prices. Fast delivery, real results.</p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {premiumServices.map((service) => (
-                <div key={service.title} className="group relative neon-border-card bg-card p-8 transition-all duration-300">
-                  {service.hot && <span className="absolute -top-3 right-4 flex items-center gap-1 bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"><Flame className="h-3 w-3" />HOT DEAL</span>}
-                  <service.icon className="mb-5 h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+                <div key={service.title} className="group relative neon-border-card bg-card p-8 transition-all duration-300 hover-lift">
+                  {service.hot && <span className="absolute -top-3 right-4 flex items-center gap-1 bg-gradient-to-r from-orange-500 to-red-500 px-3 py-1 text-xs font-bold text-white animate-border-color rounded-full"><Flame className="h-3 w-3" />HOT DEAL</span>}
+                  <service.icon className="mb-5 h-8 w-8 text-emerald-600 transition-transform group-hover:scale-110 group-hover:text-amber-500" />
                   <h3 className="mb-3 font-display text-lg font-semibold tracking-wide text-card-foreground">{service.title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
                   <div className="flex items-center justify-between">
@@ -186,7 +187,7 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section className="py-16 bg-primary">
+        <section className="py-16 bg-stats-gradient animate-gradient-shift">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
@@ -216,15 +217,19 @@ const Index = () => {
                 { icon: Clock, title: "24/7 Availability", description: "Round-the-clock support and services whenever you need us." },
                 { icon: Award, title: "Quality Guaranteed", description: "Premium quality work with satisfaction guarantee on all services." },
                 { icon: Headphones, title: "Dedicated Support", description: "Personal support team to help you every step of the way." },
-              ].map((item) => (
-                <div key={item.title} className="text-center p-6 rounded-2xl border border-border bg-card hover:border-primary/40 transition-all hover:shadow-lg">
-                  <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-7 w-7 text-primary" />
+              ].map((item, index) => {
+                const colors = ["bg-emerald-50 text-emerald-600", "bg-violet-50 text-violet-600", "bg-amber-50 text-amber-600", "bg-sky-50 text-sky-600"];
+                const color = colors[index % 4];
+                return (
+                <div key={item.title} className={`text-center p-6 rounded-2xl border border-border bg-card transition-all hover-lift`}>
+                  <div className={`h-14 w-14 rounded-full ${color.split(' ')[0]} flex items-center justify-center mx-auto mb-4`}>
+                    <item.icon className={`h-7 w-7 ${color.split(' ')[1]}`} />
                   </div>
                   <h3 className="font-display text-lg font-semibold mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
