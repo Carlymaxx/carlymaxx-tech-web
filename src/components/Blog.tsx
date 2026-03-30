@@ -1,73 +1,33 @@
 import { Clock, ArrowRight } from "lucide-react";
 
 const posts = [
-  {
-    title: "How to Deploy a WhatsApp Bot in Under 5 Minutes",
-    excerpt: "A step-by-step guide to getting your own WhatsApp bot up and running using MaxxTechxmd framework.",
-    date: "Mar 10, 2026",
-    readTime: "3 min read",
-    category: "Tutorial",
-  },
-  {
-    title: "Top 5 Tools Every Content Creator Needs in 2026",
-    excerpt: "From video editing to analytics, these are the must-have tools for growing your audience this year.",
-    date: "Mar 5, 2026",
-    readTime: "4 min read",
-    category: "Tech Tips",
-  },
-  {
-    title: "Why Your Business Needs a WhatsApp Bot",
-    excerpt: "Discover how automation can save you hours, boost engagement, and increase your revenue.",
-    date: "Feb 28, 2026",
-    readTime: "5 min read",
-    category: "Business",
-  },
+  { title: "How to Deploy a WhatsApp Bot in Under 5 Minutes", excerpt: "Step-by-step guide to getting your MAXX-XMD bot up and running quickly.", date: "Mar 28, 2026", tag: "Tutorial", image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=400&q=80" },
+  { title: "Top 10 Web Design Trends for 2026", excerpt: "Stay ahead with these modern web design trends that dominate this year.", date: "Mar 25, 2026", tag: "Design", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80" },
+  { title: "Why Every Business Needs a WhatsApp Bot", excerpt: "Automate customer support, send notifications, and boost engagement.", date: "Mar 20, 2026", tag: "Business", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80" },
 ];
 
-const ORDER_WA = "https://wa.me/254725979273?text=Hey%20Maxx%20I%20want%20to%20learn%20more%20about%20this";
-
 const Blog = () => (
-  <section className="border-t border-border py-24">
-    <div className="container mx-auto px-6">
-      <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">
-        Blog & Insights
-      </h2>
-      <p className="mx-auto mb-16 max-w-xl text-center text-muted-foreground">
-        Tech tips, tutorials, and industry insights
-      </p>
-      <div className="mx-auto grid max-w-4xl gap-6">
-        {posts.map((post) => (
-          <a
-            key={post.title}
-            href={ORDER_WA}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group neon-border-card bg-card p-8 transition-all duration-300 flex flex-col sm:flex-row sm:items-center gap-6"
-          >
-            <div className="flex-1">
-              <span className="mb-2 inline-block font-display text-[10px] font-bold tracking-[0.2em] uppercase text-primary">
-                {post.category}
-              </span>
-              <h3 className="mb-2 font-display text-base font-semibold tracking-wide text-card-foreground group-hover:text-primary transition-colors">
-                {post.title}
-              </h3>
-              <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                <span>{post.date}</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  {post.readTime}
-                </span>
-              </div>
+  <section className="py-20"><div className="container mx-auto px-6">
+    <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Latest Articles</h2>
+    <p className="mx-auto mb-12 max-w-xl text-center text-gray-500">Tips, tutorials, and insights from Maxx Tech</p>
+    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {posts.map((post) => (
+        <article key={post.title} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
+          <div className="h-40 overflow-hidden">
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold">{post.tag}</span>
+              <span className="text-[10px] text-gray-400 flex items-center gap-1"><Clock className="h-3 w-3" />{post.date}</span>
             </div>
-            <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1 shrink-0" />
-          </a>
-        ))}
-      </div>
+            <h3 className="font-bold text-sm mb-2 group-hover:text-emerald-600 transition-colors">{post.title}</h3>
+            <p className="text-xs text-gray-500 leading-relaxed mb-3">{post.excerpt}</p>
+            <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRight className="h-3 w-3" /></span>
+          </div>
+        </article>
+      ))}
     </div>
-  </section>
+  </div></section>
 );
-
 export default Blog;

@@ -26,6 +26,12 @@ import SkillsSection from "@/components/SkillsSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import LocationMap from "@/components/LocationMap";
 import LanguageToggle from "@/components/LanguageToggle";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import QuickContact from "@/components/QuickContact";
+import Blog from "@/components/Blog";
+import ReferralPopup from "@/components/ReferralPopup";
+import CursorTrail from "@/components/CursorTrail";
+import TypingText from "@/components/TypingText";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -92,7 +98,7 @@ const NavBar = () => {
     { href: "#contact", label: "Contact" },
   ];
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+    <nav className="fixed top-10 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
@@ -131,11 +137,12 @@ const Index = () => {
       <div className="speed-lines">
         {speedLines.map((line) => <div key={line.id} className="speed-line" style={{ top: line.top, width: line.width, animationDuration: line.duration, animationDelay: line.delay, opacity: line.opacity * 0.3 }} />)}
       </div>
+      <AnnouncementBar />
       <NavBar />
       <LanguageToggle />
 
       <FadeSection>
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 bg-hero-gradient">
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 bg-hero-gradient">
           <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-emerald-300/30 blur-[120px] animate-pulse-glow" />
           <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-violet-300/30 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
           <div className="pointer-events-none absolute top-1/3 right-10 h-64 w-64 rounded-full bg-amber-200/20 blur-[100px] animate-pulse-glow" style={{ animationDelay: "3s" }} />
@@ -145,7 +152,9 @@ const Index = () => {
             </div>
             <h1 className="mb-4 font-display text-4xl font-black tracking-wider sm:text-6xl lg:text-7xl"><span className="gradient-text">MAXX TECH</span></h1>
             <p className="mb-2 font-display text-sm tracking-[0.3em] text-emerald-700 uppercase animate-pulse">by Carly Maxx</p>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl">🤖 Smart assistant for tech, tools & APIs.<br />⚙️ Web solutions & automation — Available 24/7 for your digital needs.</p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl">
+              <TypingText texts={["🤖 Smart assistant for tech, tools & APIs.", "⚙️ Web solutions & automation — Available 24/7.", "🚀 WhatsApp bots deployed in 2-3 minutes.", "💡 AI-powered tools for your business."]} />
+            </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover">
                 <MessageCircle className="h-5 w-5" />WhatsApp Channel<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -415,6 +424,8 @@ const Index = () => {
       {/* === FAQ === */}
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
 
+      <Blog />
+
       {/* === SOCIAL PROOF === */}
       <VideoSection />
       <FadeSection bgClassName="bg-testimonials-gradient">
@@ -522,8 +533,11 @@ const Index = () => {
         </footer>
       </FadeSection>
       <BackToTop />
+      <QuickContact />
+      <CursorTrail />
       <SocialProof />
       <LiveChat />
+      <ReferralPopup />
     </div>
   );
 };
