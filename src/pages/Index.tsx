@@ -150,7 +150,7 @@ const Index = () => {
           <div className="container mx-auto px-6">
             <h2 className="mb-4 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Our Products</h2>
             <p className="mx-auto mb-16 max-w-xl text-center text-gray-600">Powerful tools built by Maxx Tech for your digital needs</p>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* MAXXTECH AI Card */}
               <div className="relative group rounded-3xl overflow-hidden hover-lift">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
@@ -209,6 +209,34 @@ const Index = () => {
                       <Github className="h-4 w-4" /> GitHub
                     </a>
                   </div>
+                </div>
+              </div>
+
+              {/* Maxx Media Hub Card */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-orange-500 to-rose-600 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-rose-500 via-amber-500 to-orange-600"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="relative p-8 md:p-10 text-white">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Music className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold tracking-wider">MAXX MEDIA HUB</h3>
+                      <p className="text-sm text-white/70">Music & Media Platform</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 leading-relaxed mb-6">Your all-in-one media platform for music streaming, downloads, and entertainment. Access thousands of tracks and media content.</p>
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {["Music", "Downloads", "Streaming", "Free"].map((tag) => (
+                      <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-amber-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
+                    <Music className="h-4 w-4" /> Open Media Hub
+                  </a>
                 </div>
               </div>
             </div>
@@ -347,65 +375,65 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <footer className="bg-footer-gradient py-12">
+        <footer className="bg-footer-gradient py-16 text-white">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
               {/* Product */}
               <div>
-                <h3 className="font-bold mb-4">Product</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#services" className="hover:text-primary transition-colors">Home</a></li>
-                  <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-                  <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
-                  <li><a href="#gallery" className="hover:text-primary transition-colors">Gallery</a></li>
-                  <li><a href="#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+                <h3 className="font-bold mb-4 text-white/90">Product</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href="#services" className="hover:text-white transition-colors">Home</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                  <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                  <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
+                  <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
                 </ul>
               </div>
               {/* Tools */}
               <div>
-                <h3 className="font-bold mb-4">Tools</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Pair Session</a></li>
-                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">AI Assistant</a></li>
-                  <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Maxx Hub</a></li>
-                  <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
-                  <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp Group</a></li>
+                <h3 className="font-bold mb-4 text-white/90">Tools</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pair Session</a></li>
+                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Assistant</a></li>
+                  <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Media Hub</a></li>
+                  <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
+                  <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Group</a></li>
                 </ul>
               </div>
               {/* Company */}
               <div>
-                <h3 className="font-bold mb-4">Company</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">Contact Us</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Press</a></li>
+                <h3 className="font-bold mb-4 text-white/90">Company</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Careers</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
                 </ul>
               </div>
               {/* Legal */}
               <div>
-                <h3 className="font-bold mb-4">Legal</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Cookies</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Security</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Refund Policy</a></li>
+                <h3 className="font-bold mb-4 text-white/90">Legal</h3>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Terms & Conditions</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Cookies</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Refund Policy</a></li>
                 </ul>
               </div>
             </div>
             
             {/* Bottom Footer */}
-            <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <img src="https://files.catbox.moe/oepq4e.jpg" alt="Maxx Tech" className="w-8 h-8 rounded-full" />
-                <span className="font-bold gradient-text">MAXX TECH</span>
+                <span className="font-bold text-white">MAXX TECH</span>
               </div>
               <div className="flex flex-wrap justify-center gap-4">
-                {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" title={link.label}><link.icon className="h-5 w-5" /></a>)}
+                {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" title={link.label}><link.icon className="h-5 w-5" /></a>)}
               </div>
-              <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Maxx Tech. All rights reserved.</p>
+              <p className="text-xs text-white/50">© {new Date().getFullYear()} Maxx Tech. All rights reserved.</p>
             </div>
           </div>
         </footer>

@@ -157,7 +157,7 @@
   }
 
   .bg-footer-gradient {
-    background: linear-gradient(180deg, #f1f5f9 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #064e3b 0%, #047857 30%, #0f766e 60%, #1e293b 100%);
   }
 
   .bg-newsletter-gradient {

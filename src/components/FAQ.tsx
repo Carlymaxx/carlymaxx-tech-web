@@ -1,9 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -30,31 +26,58 @@ const faqs = [
     question: "Can I cancel my subscription anytime?",
     answer: "Yes, all our subscriptions can be cancelled monthly with no hidden fees or penalties.",
   },
+  {
+    question: "Do you work with international clients?",
+    answer: "Yes! While we're based in Kenya, we serve clients worldwide. All services are delivered online.",
+  },
+  {
+    question: "How do I get a Session ID for MAXX-XMD?",
+    answer: "Visit pair.maxxtech.co.ke to generate your Session ID. Follow the steps and pair your WhatsApp in under 2 minutes.",
+  },
+  {
+    question: "Is MAXXTECH AI free to use?",
+    answer: "MAXXTECH AI has both free and premium tiers. The free version gives you access to basic features, while premium unlocks advanced capabilities.",
+  },
 ];
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section id="faq" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl mx-auto">
             Got questions? We've got answers. If you can't find what you're looking for, reach out to us.
           </p>
         </div>
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-3xl mx-auto grid gap-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-gray-200 bg-white overflow-hidden transition-all duration-300 hover:border-emerald-300 hover:shadow-md"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-5 text-left"
+              >
+                <span className="font-semibold text-sm pr-4">{faq.question}</span>
+                <ChevronDown
+                  className={`h-5 w-5 text-emerald-600 flex-shrink-0 transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? "max-h-40 pb-5 px-5" : "max-h-0"
+                }`}
+              >
+                <p className="text-sm text-gray-500 leading-relaxed">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
