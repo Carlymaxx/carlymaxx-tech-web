@@ -32,6 +32,9 @@ import ScrollProgress from "@/components/ScrollProgress";
 import GoogleReviews from "@/components/GoogleReviews";
 import Sitemap from "@/components/Sitemap";
 import CookieBanner from "@/components/CookieBanner";
+import URLShortener from "@/components/URLShortener";
+import InvoiceGenerator from "@/components/InvoiceGenerator";
+import AffiliateSystem from "@/components/AffiliateSystem";
 
 
 const WHATSAPP_CHANNEL = "https://whatsapp.com/channel/0029Vb6XNTjAInPblhlwnm2J";
@@ -424,6 +427,9 @@ const Index = () => {
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
 
       <Blog />
+      <URLShortener />
+      <InvoiceGenerator />
+      <AffiliateSystem />
 
       {/* === SOCIAL PROOF === */}
       <VideoSection />
