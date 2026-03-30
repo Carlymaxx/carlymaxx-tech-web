@@ -37,49 +37,72 @@ const InvoiceGenerator = () => {
     doc.text("MAXX TECH", 20, 22);
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text("Smart Tech Solutions by Carly Maxx", 20, 30);
-    doc.text("Ruiru, Kenya | maxxtech.co.ke", 20, 36);
+    doc.text("Smart Tech Solutions | Web Development | AI Automation", 20, 30);
+    doc.text("Ruiru, Kiambu County, Kenya | www.maxxtech.co.ke", 20, 36);
 
     // Invoice info
     doc.setFontSize(12);
     doc.setFont("helvetica", "bold");
-    doc.text("INVOICE", 190, 18, { align: "right" });
+    doc.text("TAX INVOICE", 190, 18, { align: "right" });
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
     doc.text(invNum, 190, 25, { align: "right" });
-    doc.text(new Date().toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' }), 190, 31, { align: "right" });
+    doc.text(`Issue Date: ${new Date().toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' })}`, 190, 31, { align: "right" });
+    doc.text(`Due Date: ${new Date(Date.now() + 7*24*60*60*1000).toLocaleDateString('en-KE', { year: 'numeric', month: 'long', day: 'numeric' })}`, 190, 37, { align: "right" });
 
     // Bill To
     doc.setTextColor(...dark);
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-    doc.text("Bill To:", 20, 60);
+    doc.text("BILL TO:", 20, 55);
     doc.setFont("helvetica", "normal");
-    doc.text(client || "Client Name", 20, 68);
+    doc.text(client || "Client Name", 20, 63);
     doc.setTextColor(...gray);
-    doc.text(email || "client@example.com", 20, 75);
+    doc.text(email || "client@example.com", 20, 70);
+
+    // Project Info
+    doc.setTextColor(...dark);
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "bold");
+    doc.text("PROJECT DETAILS:", 120, 55);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(...gray);
+    doc.text("Service Category: Digital Solutions & Automation", 120, 63);
+    doc.text("Tech Stack: React, Node.js, WhatsApp API, Cloud", 120, 69);
+    doc.text("Deployment: Cloudflare / Heroku / Railway", 120, 75);
+    doc.text("SLA: 99.9% Uptime Guarantee", 120, 81);
 
     // Table header
-    const tableTop = 90;
+    const tableTop = 92;
     doc.setFillColor(240, 253, 244);
     doc.rect(15, tableTop, 180, 10, 'F');
     doc.setTextColor(...green);
     doc.setFontSize(9);
     doc.setFont("helvetica", "bold");
-    doc.text("Description", 20, tableTop + 7);
-    doc.text("Qty", 120, tableTop + 7, { align: "center" });
-    doc.text("Price (KES)", 155, tableTop + 7, { align: "right" });
-    doc.text("Total (KES)", 190, tableTop + 7, { align: "right" });
+    doc.text("#", 18, tableTop + 7);
+    doc.text("Service Description", 25, tableTop + 7);
+    doc.text("SKU", 105, tableTop + 7);
+    doc.text("Qty", 130, tableTop + 7, { align: "center" });
+    doc.text("Unit Price", 158, tableTop + 7, { align: "right" });
+    doc.text("Amount", 190, tableTop + 7, { align: "right" });
 
     // Table rows
     doc.setTextColor(...dark);
     doc.setFont("helvetica", "normal");
     let yPos = tableTop + 18;
-    items.forEach((item) => {
+    const skus = ["MX-WEB-001", "MX-BOT-002", "MX-API-003", "MX-SEC-004", "MX-AI-005", "MX-DSN-006", "MX-DEV-007", "MX-HOS-008"];
+    items.forEach((item, idx) => {
       doc.setFontSize(9);
-      doc.text(item.desc || "Service", 20, yPos);
-      doc.text(String(item.qty), 120, yPos, { align: "center" });
-      doc.text(item.price.toLocaleString(), 155, yPos, { align: "right" });
+      doc.setTextColor(...gray);
+      doc.text(String(idx + 1), 18, yPos);
+      doc.setTextColor(...dark);
+      doc.text(item.desc || "Service", 25, yPos);
+      doc.setTextColor(...gray);
+      doc.text(skus[idx % skus.length], 105, yPos);
+      doc.setTextColor(...dark);
+      doc.text(String(item.qty), 130, yPos, { align: "center" });
+      doc.text(item.price.toLocaleString(), 158, yPos, { align: "right" });
       doc.text((item.qty * item.price).toLocaleString(), 190, yPos, { align: "right" });
 
       // Row separator
@@ -100,12 +123,41 @@ const InvoiceGenerator = () => {
     doc.setFont("helvetica", "bold");
     doc.text(`${total.toLocaleString()} KES`, 157, yPos + 16, { align: "center" });
 
-    // Footer
-    doc.setTextColor(...gray);
+    // Terms & Conditions
+    yPos += 30;
+    doc.setFillColor(249, 250, 251);
+    doc.rect(15, yPos, 180, 35, 'F');
+    doc.setTextColor(...dark);
     doc.setFontSize(8);
+    doc.setFont("helvetica", "bold");
+    doc.text("TERMS & CONDITIONS:", 20, yPos + 7);
     doc.setFont("helvetica", "normal");
-    doc.text("Thank you for your business!", 105, 270, { align: "center" });
-    doc.text("Maxx Tech — WhatsApp: +254 725 979 273 | maxxtechxmd@gmail.com", 105, 277, { align: "center" });
+    doc.setTextColor(...gray);
+    doc.text("Payment Terms: Net 7 days | Currency: Kenyan Shilling (KES)", 20, yPos + 13);
+    doc.text("Late Payment: 5% monthly interest on overdue amounts", 20, yPos + 18);
+    doc.text("Support: 24/7 technical support included for 30 days post-delivery", 20, yPos + 23);
+    doc.text("Warranty: All services covered by satisfaction guarantee", 20, yPos + 28);
+
+    // Payment Methods
+    doc.setTextColor(...dark);
+    doc.setFont("helvetica", "bold");
+    doc.text("PAYMENT METHODS:", 120, yPos + 7);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(...gray);
+    doc.text("M-Pesa: +254 725 979 273", 120, yPos + 13);
+    doc.text("PayPal: maxxtechxmd@gmail.com", 120, yPos + 18);
+    doc.text("Bank: Equity Bank Kenya", 120, yPos + 23);
+
+    // Footer
+    doc.setTextColor(16, 185, 129);
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "bold");
+    doc.text("MAXX TECH — Powering Digital Innovation", 105, 275, { align: "center" });
+    doc.setTextColor(...gray);
+    doc.setFontSize(7);
+    doc.setFont("helvetica", "normal");
+    doc.text("www.maxxtech.co.ke | +254 725 979 273 | maxxtechxmd@gmail.com | Ruiru, Kenya", 105, 281, { align: "center" });
+    doc.text("Powered by Maxx Tech Invoice System v2.0 | Generated with precision engineering", 105, 286, { align: "center" });
 
     // Download PDF
     doc.save(`MaxxTech_Invoice_${invNum}.pdf`);
