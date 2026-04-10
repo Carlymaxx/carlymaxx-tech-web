@@ -44,21 +44,22 @@ const Gallery = () => {
   const [selectedItem, setSelectedItem] = useState<typeof galleryItems[0] | null>(null);
 
   return (
-    <section id="gallery" className="py-20">
+    <section id="gallery" className="py-8">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore some of our recent projects and see how we've helped businesses transform their digital presence.
+        <div className="text-center mb-5">
+          <h2 className="text-2xl font-bold mb-1">Project Showcase</h2>
+          <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+            Recent projects — click any to expand.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
           {galleryItems.map((item, index) => (
             <div
               key={index}
               onClick={() => setSelectedItem(item)}
-              className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer"
+              className="group relative rounded-lg overflow-hidden cursor-pointer"
+              style={{ aspectRatio: '4/3' }}
             >
               <img
                 src={item.image}
