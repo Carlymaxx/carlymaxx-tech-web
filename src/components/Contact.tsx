@@ -120,7 +120,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium">Email</div>
-                    <div className="text-muted-foreground">maxxtechxmd@gmail.com</div>
+                    <div className="text-muted-foreground">info@maxxtech.co.ke</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -129,7 +129,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium">Location</div>
-                    <div className="text-muted-foreground">Nairobi, Kenya</div>
+                    <div className="text-muted-foreground">Ruiru, Kenya</div>
                   </div>
                 </div>
               </div>
