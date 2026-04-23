@@ -156,7 +156,7 @@ const InvoiceGenerator = () => {
     doc.setTextColor(...gray);
     doc.setFontSize(7);
     doc.setFont("helvetica", "normal");
-    doc.text("www.maxxtech.co.ke | +254 725 979 273 | maxxtechxmd@gmail.com | Ruiru, Kenya", 105, 281, { align: "center" });
+    doc.text("www.maxxtech.co.ke | +254 725 979 273 | info@maxxtech.co.ke | Ruiru, Kenya", 105, 281, { align: "center" });
     doc.text("Powered by Maxx Tech Invoice System v2.0 | Generated with precision engineering", 105, 286, { align: "center" });
 
     // Download PDF
