@@ -7,7 +7,7 @@ const VideoSection = () => (
       <p className="text-gray-400 mb-8">"Technology should work for you, not the other way around. That's why I build solutions that are fast, reliable, and affordable."</p>
       <div className="flex gap-4">
         <a href="https://wa.me/254725979273" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors">Work With Me</a>
-        <a href="https://www.youtube.com/@MaxxTechxmd" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 transition-colors">YouTube Channel</a>
+        <a href="https://youtube.com/shorts/0-ssjMGe8TM?si=gFV3JINPSfA5xArQ" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 transition-colors">YouTube Channel</a>
       </div>
     </div>
     <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-700 shadow-2xl group cursor-pointer">
