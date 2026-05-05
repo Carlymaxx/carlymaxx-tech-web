@@ -184,11 +184,11 @@ const InvoiceGenerator = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div>
                 <label className="text-xs font-semibold text-gray-500 mb-1 block">Client Name</label>
-                <input type="text" value={client} onChange={(e) => setClient(e.target.value)} placeholder="John Doe" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                <input type="text" value={client} onChange={(e) => setClient(e.target.value)} placeholder="Carly Maxx" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
               <div>
                 <label className="text-xs font-semibold text-gray-500 mb-1 block">Client Email</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="john@example.com" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="info@maxxtech.co.ke" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
             </div>
 
