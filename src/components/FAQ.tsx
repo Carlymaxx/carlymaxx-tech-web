@@ -38,6 +38,14 @@ const faqs = [
     question: "Is MAXXTECH AI free to use?",
     answer: "MAXXTECH AI has both free and premium tiers. The free version gives you access to basic features, while premium unlocks advanced capabilities.",
   },
+  {
+    question: "What is the MAXX-XMD Panel and how do I access it?",
+    answer: "The MAXX-XMD Panel is your bot management dashboard where you can monitor activity, manage sessions, and configure your WhatsApp bot settings. Access it at panel.maxxtech.co.ke after deploying your bot.",
+  },
+  {
+    question: "How do I contact support by email?",
+    answer: "You can reach us anytime at info@maxxtech.co.ke. We typically respond within a few hours during business hours. For urgent issues, WhatsApp is the fastest channel.",
+  },
 ];
 
 const FAQ = () => {
