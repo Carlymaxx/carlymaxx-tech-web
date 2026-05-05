@@ -1,0 +1,57 @@
+{
+  "name": "Maxx Tech – MAXX-XMD by Carly Maxx",
+  "short_name": "Maxx Tech",
+  "description": "Home of MAXX-XMD WhatsApp Bot created by Carly Maxx (MaxxMD). Deploy your WhatsApp bot in 2-3 minutes. Based in Ruiru, Kenya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["technology", "business", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://files.catbox.moe/oepq4e.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "Maxx Tech – MAXX-XMD by Carly Maxx"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Session ID",
+      "short_name": "Pair Bot",
+      "description": "Generate your MAXX-XMD Session ID",
+      "url": "https://pair.maxxtech.co.ke/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "MAXX-XMD Panel",
+      "short_name": "Panel",
+      "description": "Open the MAXX-XMD management panel",
+      "url": "https://panel.maxxtech.co.ke/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "WhatsApp Channel",
+      "short_name": "WhatsApp",
+      "description": "Join Maxx Tech on WhatsApp",
+      "url": "https://wa.me/254725979273",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}
