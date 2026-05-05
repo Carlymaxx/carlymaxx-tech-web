@@ -41,3 +41,6 @@ Allow: /
 
 Sitemap: https://www.maxxtech.co.ke/sitemap.xml
 Sitemap: https://www.maxxtech.co.ke/sitemap-images.xml
+
+# IndexNow key (Bing / Yandex / DuckDuckGo / Naver / Seznam instant indexing)
+# Key file: https://www.maxxtech.co.ke/b371800fa611067db14b39b8c5d82a11.txt
