@@ -1,7 +1,27 @@
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +30,17 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+Sitemap: https://www.maxxtech.co.ke/sitemap.xml
+Sitemap: https://www.maxxtech.co.ke/sitemap-images.xml
+
+# IndexNow key (Bing / Yandex / DuckDuckGo / Naver / Seznam instant indexing)
+# Key file: https://www.maxxtech.co.ke/b371800fa611067db14b39b8c5d82a11.txt
