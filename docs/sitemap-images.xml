@@ -4,6 +4,8 @@
 
   <url>
     <loc>https://www.maxxtech.co.ke/</loc>
+
+    <!-- Original catbox images -->
     <image:image>
       <image:loc>https://files.catbox.moe/oepq4e.jpg</image:loc>
       <image:title>Maxx Tech - Carly Maxx (MaxxMD) - MAXX-XMD WhatsApp Bot</image:title>
@@ -38,6 +40,48 @@
       <image:loc>https://files.catbox.moe/ga6rt7.png</image:loc>
       <image:title>MAXX-XMD Panel - Carly Maxx Maxx Tech</image:title>
       <image:caption>MAXX-XMD panel and platform by Carly Maxx (MaxxMD) - Maxx Tech Kenya</image:caption>
+    </image:image>
+
+    <!-- New branded images for global search visibility -->
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-tech-smart-assistant.jpeg</image:loc>
+      <image:title>Maxx Tech Smart Assistant - Web Solutions &amp; Automation by Carly Maxx</image:title>
+      <image:caption>Maxx Tech by Carly Maxx — smart assistant for tech, tools &amp; APIs. Web solutions &amp; automation, available 24/7. Software, web designer, information technology.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-tech-services-card.jpeg</image:loc>
+      <image:title>MAXX TECH The Real Choice - Website Design, Hosting, WhatsApp Chatbots - Carly Maxx Kenya</image:title>
+      <image:caption>MAXX TECH — The Real Choice. Website Design &amp; Development, Hosting &amp; Maintenance, Domain Registration, WhatsApp Chatbots. Founded by Carly Maxx, Ruiru Kenya. Contact: +254725979273</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-xmd-intelligence-automation.jpeg</image:loc>
+      <image:title>MAXX-XMD Intelligence Automation Innovation - WhatsApp Bot by Carly Maxx</image:title>
+      <image:caption>MAXX-XMD — Intelligence · Automation · Innovation. The powerful WhatsApp bot created by Carly Maxx (MaxxMD), Maxx Tech Kenya. AI core analytics and automation flow.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-xmd-global-network.jpeg</image:loc>
+      <image:title>MAXX-XMD Global Operations Network - Carly Maxx MaxxMD Maxx Tech</image:title>
+      <image:caption>MAXX-XMD Global Operations Network powering a smarter future — by Carly Maxx (MaxxMD), Maxx Tech. Intelligence · Automation · Innovation worldwide.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-xmd-technology-future.jpeg</image:loc>
+      <image:title>MAXX-XMD Technology Intelligence Future - Carly Maxx Maxx Tech</image:title>
+      <image:caption>MAXX-XMD — Technology · Intelligence · Future. Ideas, Innovation, Impact. Created by Carly Maxx, Maxx Tech Kenya. AI insights, automation status, global network, predictive analytics.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-xmd-powering-smarter-future.jpeg</image:loc>
+      <image:title>MAXX-XMD Powering a Smarter Future - Carly Maxx AI Operations</image:title>
+      <image:caption>MAXX-XMD powering a smarter future — AI operations 92% efficiency, system health 98% optimal. By Carly Maxx (MaxxMD), Maxx Tech. Intelligence · Automation · Innovation.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/maxx-web-solutions-automation.jpeg</image:loc>
+      <image:title>Maxx Tech Web Solutions &amp; Automation - Carly Maxx Software Web Designer</image:title>
+      <image:caption>Maxx Tech web solutions &amp; automation. Software, web designer, information technology. Smart assistant for tech, tools &amp; APIs. Available 24/7. By Carly Maxx.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.maxxtech.co.ke/gallery/carly-maxx-founder.jpeg</image:loc>
+      <image:title>Carly Maxx - Founder of Maxx Tech and Creator of MAXX-XMD</image:title>
+      <image:caption>Carly Maxx — founder of Maxx Tech and creator of MAXX-XMD WhatsApp bot. Also known as MaxxMD and Squillah Maxx. Based in Ruiru, Kenya. Tech entrepreneur serving clients worldwide.</image:caption>
     </image:image>
   </url>
 
