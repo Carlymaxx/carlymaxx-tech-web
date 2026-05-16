@@ -33,7 +33,6 @@ import URLShortener from "@/components/URLShortener";
 import InvoiceGenerator from "@/components/InvoiceGenerator";
 import AffiliateSystem from "@/components/AffiliateSystem";
 import LiveStatus from "@/components/LiveStatus";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FeatureRequest from "@/components/FeatureRequest";
 
 
@@ -89,7 +88,6 @@ const NavBar = () => {
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#pricing", label: "Pricing" },
     { href: "#gallery", label: "Gallery" },
     { href: "#contact", label: "Contact" },
   ];
@@ -397,7 +395,47 @@ const Index = () => {
       <FadeSection bgClassName="bg-section-slate"><Team /></FadeSection>
       <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
 
-      {/* === FAQ === */}
+
+        {/* === BOT HOSTING PANEL === */}
+        <FadeSection>
+          <section className="py-12 bg-gradient-to-br from-emerald-950/50 via-background to-violet-950/30 border-y border-primary/10">
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 text-sm text-primary font-medium mb-4">
+                    <Bot className="h-4 w-4" /> Bot Hosting Panel
+                  </div>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wider gradient-text mb-3">Host Your WhatsApp Bot</h2>
+                  <p className="text-muted-foreground text-lg max-w-xl mx-auto">Deploy, manage and monitor your MAXX-XMD bot on our cloud infrastructure. 24/7 uptime, one-click deploy.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  {[
+                    { icon: "⚡", title: "1-Click Deploy", desc: "Paste your session ID and your bot is live in under a minute." },
+                    { icon: "🤖", title: "Social Media Boost", desc: "Use your XD balance to grow Instagram, TikTok, YouTube & more." },
+                    { icon: "📊", title: "Full Dashboard", desc: "Monitor, restart, stop or update your bots anytime from your dashboard." },
+                  ].map((f) => (
+                    <div key={f.title} className="bg-card border border-border rounded-xl p-5 text-center hover-lift">
+                      <div className="text-3xl mb-2">{f.icon}</div>
+                      <h3 className="font-bold mb-1">{f.title}</h3>
+                      <p className="text-sm text-muted-foreground">{f.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a href="https://panel.maxxtech.co.ke" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover rounded-lg">
+                    <Bot className="h-5 w-5" /> Open Bot Panel <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Zap className="h-4 w-4 text-yellow-500" />
+                    <span>50 XD = 30 days · Pro 90 XD = 45 days</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </FadeSection>
+
+        {/* === FAQ === */}
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
 
       <Blog />
@@ -534,7 +572,6 @@ const Index = () => {
       <SocialProof />
       <LiveChat />
       <ReferralPopup />
-      <ExitIntentPopup />
       <CookieBanner />
     </div>
   );
