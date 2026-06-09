@@ -23,7 +23,6 @@ import ProcessTimeline from "@/components/ProcessTimeline";
 import LocationMap from "@/components/LocationMap";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Blog from "@/components/Blog";
-import ReferralPopup from "@/components/ReferralPopup";
 import TypingText from "@/components/TypingText";
 import ScrollProgress from "@/components/ScrollProgress";
 import GoogleReviews from "@/components/GoogleReviews";
@@ -42,6 +41,7 @@ const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const PAIR_SITE = "https://pair.maxxtech.co.ke";
 const AI_SITE = "https://agent.maxxtech.co.ke";
+const AI_CLASSIC = "https://ai.maxxtech.co.ke";
 
 const TELEGRAM = "https://t.me/maxxtechgram";
 const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
@@ -101,6 +101,8 @@ const NavBar = () => {
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{link.label}</a>
           ))}
+          <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">MAXXTECH AI</a>
+          <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-violet-600 hover:text-violet-500 transition-colors font-semibold">Agent</a>
           <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">WhatsApp</a>
         </div>
         <button onClick={() => setMenuOpen(!menuOpen)} className="border border-border p-2.5 text-foreground transition-all hover:border-primary/40 hover:text-primary md:hidden" aria-label="Toggle menu">
@@ -114,6 +116,8 @@ const NavBar = () => {
               <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary">{link.label}</a>
             ))}
             <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="bg-primary text-primary-foreground px-4 py-2.5 rounded-lg text-sm font-medium text-center">WhatsApp</a>
+            <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary">MAXXTECH AI</a>
+            <a href={AI_SITE} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 border border-violet-400 px-4 py-2.5 font-body text-sm font-semibold text-violet-600 transition-all hover:bg-violet-50">Agent (AI Assistant)</a>
             <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 border border-border px-4 py-2.5 font-body text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"><Music className="h-4 w-4" />Music Hub</a>
           </div>
         </div>
@@ -506,7 +510,8 @@ const Index = () => {
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Products</h3>
                 <ul className="space-y-1 text-xs text-white/50">
-                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXXTECH AI</a></li>
+                  <li><a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXXTECH AI</a></li>
+                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Agent</a></li>
                   <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXX-XMD Bot</a></li>
                   <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Media Hub</a></li>
                 </ul>
@@ -526,7 +531,8 @@ const Index = () => {
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Tools</h3>
                 <ul className="space-y-1 text-xs text-white/50">
                   <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pair Session</a></li>
-                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Assistant</a></li>
+                  <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Agent</a></li>
+                  <li><a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXXTECH AI</a></li>
                   <li><a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
                   <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Group</a></li>
                 </ul>
@@ -569,7 +575,6 @@ const Index = () => {
       </FadeSection>
       <BackToTop />
       <LiveChat />
-      <ReferralPopup />
       <CookieBanner />
     </div>
   );
