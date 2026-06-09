@@ -95,15 +95,7 @@ const AffiliateSystem = () => {
                 </button>
               </div>
 
-              <div className="grid grid-cols-3 gap-2">
-                <a
-                  href={trimmed ? `https://wa.me/?text=${waText}` : "#"}
-                  target={trimmed ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-1 bg-green-500 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-green-600 transition-colors ${!trimmed ? "opacity-40 pointer-events-none" : ""}`}
-                >
-                  <Share2 className="h-3.5 w-3.5" /> WhatsApp
-                </a>
+              <div className="grid grid-cols-2 gap-2">
                 <a
                   href={trimmed ? `https://twitter.com/intent/tweet?text=Check%20out%20MAXX-XMD%20Bot%20Panel!&url=${encodeURIComponent(referralLink)}` : "#"}
                   target={trimmed ? "_blank" : "_self"}
