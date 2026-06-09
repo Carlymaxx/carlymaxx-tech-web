@@ -20,7 +20,7 @@ const team = [
     github: "#",
   },
   {
-    name: "Sein Patel",
+    name: "Ibrahim Adams",
     role: "UI/UX Designer",
     bio: "Creative designer who crafts beautiful, intuitive interfaces. Specializes in modern web design and mobile-first experiences.",
     skills: ["Figma", "CSS", "Animation", "Branding"],
