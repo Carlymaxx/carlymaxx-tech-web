@@ -44,20 +44,20 @@ export default function CarlyMaxx() {
   return (
     <>
       <Helmet>
-        <title>Carly Maxx — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya</title>
-        <meta name="title" content="Carly Maxx — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya" />
-        <meta name="description" content="Carly Maxx (MAXXXMD, Squillah Maxx) is the founder of Maxx Tech and creator of MAXX-XMD — the fastest WhatsApp bot. Software developer, web designer, and tech entrepreneur from Ruiru, Kenya serving clients worldwide." />
-        <meta name="keywords" content="Carly Maxx, MAXXXMD, Squillah Maxx, Carlymaxx, who is Carly Maxx, who is MAXXXMD, Carly Maxx Maxx Tech, Carly Maxx MAXX-XMD, Carly Maxx Kenya, MAXXXMD Kenya, MAXXXMD WhatsApp bot, Carly Maxx creator, Carly Maxx developer, Carly Maxx YouTube, Carly Maxx TikTok, Squillah Maxx TikTok, MaxxTechxmd YouTube, Maxx Tech founder, MAXX-XMD creator, Ruiru Kenya developer, Carly Maxx GitHub, Carlymaxx GitHub" />
-        <meta name="author" content="Carly Maxx (MAXXXMD)" />
+        <title>CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya</title>
+        <meta name="title" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya" />
+        <meta name="description" content="CarlyMaxx (official name: Calvince Ochieng), also known as MAXXXMD and Squillah Maxx, is the CEO & founder of Maxx Tech and creator of MAXX-XMD — the fastest WhatsApp bot. Software developer, web designer, and tech entrepreneur from Ruiru, Kenya serving clients worldwide." />
+        <meta name="keywords" content="CarlyMaxx, Calvince Ochieng, Carly Maxx, MAXXXMD, Squillah Maxx, Carlymaxx, who is CarlyMaxx, who is Calvince Ochieng, who is Carly Maxx, who is MAXXXMD, Carly Maxx Maxx Tech, Calvince Ochieng Maxx Tech, Carly Maxx MAXX-XMD, Calvince Ochieng MAXX-XMD, Carly Maxx Kenya, MAXXXMD Kenya, MAXXXMD WhatsApp bot, Carly Maxx creator, CarlyMaxx CEO, Carly Maxx developer, Carly Maxx YouTube, Carly Maxx TikTok, Squillah Maxx TikTok, MaxxTechxmd YouTube, Maxx Tech founder, MAXX-XMD creator, Ruiru Kenya developer, Carly Maxx GitHub, Carlymaxx GitHub" />
+        <meta name="author" content="CarlyMaxx — Calvince Ochieng (MAXXXMD)" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.maxxtech.co.ke/about-carly-maxx" />
 
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://www.maxxtech.co.ke/about-carly-maxx" />
-        <meta property="og:title" content="Carly Maxx — MAXXXMD | Founder of Maxx Tech | MAXX-XMD Creator" />
-        <meta property="og:description" content="Carly Maxx (MAXXXMD) — founder of Maxx Tech and creator of MAXX-XMD WhatsApp bot. Software developer and tech entrepreneur from Ruiru, Kenya." />
+        <meta property="og:title" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD | CEO & Founder of Maxx Tech | MAXX-XMD Creator" />
+        <meta property="og:description" content="CarlyMaxx (Calvince Ochieng, MAXXXMD) — CEO & founder of Maxx Tech and creator of MAXX-XMD WhatsApp bot. Software developer and tech entrepreneur from Ruiru, Kenya." />
         <meta property="og:image" content="https://www.maxxtech.co.ke/gallery/carly-maxx-founder.jpeg" />
-        <meta property="og:image:alt" content="Carly Maxx — MAXXXMD, Founder of Maxx Tech and Creator of MAXX-XMD" />
+        <meta property="og:image:alt" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD, CEO & Founder of Maxx Tech and Creator of MAXX-XMD" />
         <meta property="profile:first_name" content="Carly" />
         <meta property="profile:last_name" content="Maxx" />
         <meta property="profile:username" content="carlymaxx" />
@@ -251,7 +251,8 @@ export default function CarlyMaxx() {
                   <h3 className="font-display font-bold mb-3 text-sm uppercase tracking-wider text-muted-foreground">Identity</h3>
                   <div className="space-y-2 text-sm">
                     {[
-                      ["Full Name", "Carly Maxx"],
+                      ["Full Name", "Calvince Ochieng"],
+                      ["Brand Name", "CarlyMaxx (Carly Maxx)"],
                       ["Brand Alias", "MAXXXMD"],
                       ["Also Known As", "Squillah Maxx"],
                       ["GitHub", "Carlymaxx"],
