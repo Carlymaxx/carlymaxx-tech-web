@@ -199,7 +199,7 @@ const Index = () => {
                       <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
                     ))}
                   </div>
-                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
+                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
                     Try MAXXTECH AI <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
