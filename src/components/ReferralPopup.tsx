@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Gift, X, Share2 } from "lucide-react";
+import { Gift, X } from "lucide-react";
 const ReferralPopup = () => {
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -17,9 +17,9 @@ const ReferralPopup = () => {
           <Gift className="h-8 w-8" />
         </div>
         <h3 className="text-xl font-bold mb-2">Get 10% Off!</h3>
-        <p className="text-sm text-gray-500 mb-6">Refer a friend and both of you get 10% off your next order. Share the love!</p>
-        <a href="https://wa.me/?text=Hey!%20Check%20out%20Maxx%20Tech%20-%20they%20do%20WhatsApp%20bots%2C%20web%20design%20and%20more!%20https://maxxtech.co.ke" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors">
-          <Share2 className="h-4 w-4" /> Share on WhatsApp
+        <p className="text-sm text-gray-500 mb-6">Refer a friend and both of you get 10% off your next order.</p>
+        <a href="https://panel.maxxtech.co.ke/register" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors">
+          Join & Get Discount
         </a>
       </div>
     </div>
