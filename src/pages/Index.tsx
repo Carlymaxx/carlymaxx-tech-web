@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones, Sparkles, Key } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones, Sparkles, Key, MapPin, Star, Trophy, Building2, Rocket, Heart } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -324,21 +324,21 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="text-white font-display font-bold text-xl tracking-wide">MAXXTECH AI</h3>
-                    <span className="text-[10px] bg-violet-500/30 text-violet-300 border border-violet-500/40 px-2 py-0.5 rounded-full font-semibold">Classic</span>
+                    <span className="text-[10px] bg-violet-500/30 text-violet-300 border border-violet-500/40 px-2 py-0.5 rounded-full font-semibold">Agent</span>
                   </div>
-                  <p className="text-white/50 text-xs mb-1 font-mono">ai.maxxtech.co.ke</p>
+                  <p className="text-white/50 text-xs mb-1 font-mono">agent.maxxtech.co.ke</p>
                   <p className="text-white/70 text-sm leading-relaxed mb-5">Your smart AI assistant for conversations, content writing, coding help, and creative work — available 24/7, no sign-up needed.</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {["AI Chat", "Code Help", "Content Writer", "24/7 Free"].map(t => (
                       <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">{t}</span>
                     ))}
                   </div>
-                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-violet-500 hover:to-purple-500 transition-all hover:gap-3 shadow-lg shadow-violet-900/40">
+                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-violet-500 hover:to-purple-500 transition-all hover:gap-3 shadow-lg shadow-violet-900/40">
                     Open MAXXTECH AI <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
-              {/* AI Agent */}
+              {/* MAXXTECH AI Classic */}
               <div className="group relative rounded-3xl border border-cyan-500/30 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
@@ -346,18 +346,18 @@ const Index = () => {
                     <Bot className="h-7 w-7 text-white" />
                   </div>
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-white font-display font-bold text-xl tracking-wide">AI Agent</h3>
-                    <span className="text-[10px] bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-semibold">Next-Gen</span>
+                    <h3 className="text-white font-display font-bold text-xl tracking-wide">MAXXTECH AI Classic</h3>
+                    <span className="text-[10px] bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-semibold">Classic</span>
                   </div>
-                  <p className="text-white/50 text-xs mb-1 font-mono">agent.maxxtech.co.ke</p>
-                  <p className="text-white/70 text-sm leading-relaxed mb-5">An autonomous AI agent that can browse the web, run tasks, manage workflows, and execute multi-step actions — the future of AI productivity.</p>
+                  <p className="text-white/50 text-xs mb-1 font-mono">ai.maxxtech.co.ke</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-5">The original MAXXTECH AI experience — fast, lightweight, and reliable for everyday AI tasks, content generation, and smart answers.</p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {["Autonomous", "Web Browsing", "Task Execution", "Agentic"].map(t => (
+                    {["Lightweight", "Fast", "Reliable", "Always On"].map(t => (
                       <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">{t}</span>
                     ))}
                   </div>
-                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-cyan-500 hover:to-teal-500 transition-all hover:gap-3 shadow-lg shadow-cyan-900/40">
-                    Open AI Agent <ArrowRight className="h-4 w-4" />
+                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-cyan-500 hover:to-teal-500 transition-all hover:gap-3 shadow-lg shadow-cyan-900/40">
+                    Open Classic AI <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
