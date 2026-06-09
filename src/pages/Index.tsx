@@ -18,7 +18,6 @@ import TrustBadges from "@/components/TrustBadges";
 import BeforeAfter from "@/components/BeforeAfter";
 import VideoSection from "@/components/VideoSection";
 import ClientLogos from "@/components/ClientLogos";
-import SocialProof from "@/components/SocialProof";
 import SkillsSection from "@/components/SkillsSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import LocationMap from "@/components/LocationMap";
@@ -42,7 +41,7 @@ const WHATSAPP_GROUP = "https://chat.whatsapp.com/BWZOtIlbZoJ9Xt8lgxxbqQ?mode=gi
 const GITHUB_REPO = "https://github.com/Carlymaxx/maxxtechxmd";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const PAIR_SITE = "https://pair.maxxtech.co.ke";
-const AI_SITE = "https://ai.maxxtech.co.ke";
+const AI_SITE = "https://agent.maxxtech.co.ke";
 
 const TELEGRAM = "https://t.me/maxxtechgram";
 const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
@@ -95,7 +94,7 @@ const NavBar = () => {
     <nav className="fixed top-10 w-full z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Maxx Tech logo" className="w-10 h-10 rounded-full ring-2 ring-primary/50" />
+          <img src={logo} alt="Maxx Tech logo" className="w-12 h-12 rounded-lg ring-2 ring-primary/50" />
           <span className="font-display text-lg font-bold tracking-wider gradient-text">MAXX TECH</span>
         </div>
         <div className="hidden md:flex items-center gap-6">
@@ -142,10 +141,10 @@ const Index = () => {
           <div className="pointer-events-none absolute top-1/3 right-10 h-64 w-64 rounded-full bg-amber-200/20 blur-[100px] animate-pulse-glow" style={{ animationDelay: "3s" }} />
           <div className="container mx-auto flex flex-col items-center px-6 text-center relative z-10">
             <div className="animate-float mb-4">
-              <img src={logo} alt="Carly Maxx" className="h-24 w-24 rounded-full ring-4 ring-primary/40 box-glow object-cover" />
+              <img src={logo} alt="Carly Maxx" className="h-40 w-40 rounded-2xl ring-4 ring-primary/40 box-glow object-cover" />
             </div>
             <h1 className="mb-2 font-display text-4xl font-black tracking-wider sm:text-5xl lg:text-6xl"><span className="gradient-text">MAXX TECH</span></h1>
-            <p className="mb-1 font-display text-sm tracking-[0.3em] text-emerald-700 uppercase animate-pulse">by Carly Maxx</p>
+            <p className="mb-1 font-display text-sm tracking-[0.3em] text-emerald-700 uppercase animate-pulse">by CarlyMaxx (Calvince Ochieng) — CEO & Founder</p>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-700 sm:text-lg">
               <TypingText texts={["🤖 Smart assistant for tech, tools & APIs.", "⚙️ Web solutions & automation — Available 24/7.", "🚀 WhatsApp bots deployed in 2-3 minutes.", "💡 AI-powered tools for your business."]} />
             </p>
@@ -461,9 +460,9 @@ const Index = () => {
         <section className="py-10 bg-about-gradient section-glow-purple">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet <span className="text-primary">Carly Maxx</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet <span className="text-primary">CarlyMaxx</span> <span className="text-muted-foreground text-lg font-normal">(Calvince Ochieng)</span></h2>
               <div className="mb-4">
-                <img src="https://files.catbox.moe/3716xg.jpg" alt="Carly Maxx" className="w-40 h-40 rounded-full mx-auto object-cover ring-4 ring-primary/50 shadow-lg" />
+                <img src="https://files.catbox.moe/3716xg.jpg" alt="CarlyMaxx" className="w-40 h-40 rounded-2xl mx-auto object-cover ring-4 ring-primary/50 shadow-lg" />
               </div>
               <p className="text-muted-foreground mb-4 text-lg">I'm a passionate software developer, web designer, and IT specialist from <span className="font-bold text-primary">Ruiru, Kenya</span>.</p>
               <p className="text-muted-foreground mb-6 text-lg">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
@@ -569,7 +568,6 @@ const Index = () => {
         </footer>
       </FadeSection>
       <BackToTop />
-      <SocialProof />
       <LiveChat />
       <ReferralPopup />
       <CookieBanner />
