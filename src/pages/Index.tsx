@@ -199,7 +199,7 @@ const Index = () => {
                       <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
                     ))}
                   </div>
-                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
+                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all hover:gap-3">
                     Try MAXXTECH AI <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -290,6 +290,74 @@ const Index = () => {
                   </div>
                   <a href={BOT_PANEL_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-cyan-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-white/90 transition-all">
                     <Zap className="h-3 w-3" /> Open Panel <ArrowRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeSection>
+
+      {/* ── Our AI Tools ── */}
+      <FadeSection>
+        <section className="py-14 bg-gradient-to-br from-slate-950 via-indigo-950 to-violet-950 relative overflow-hidden">
+          {/* background glows */}
+          <div className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-violet-600/20 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-32 right-1/4 h-96 w-96 rounded-full bg-indigo-500/20 blur-[120px]" />
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 backdrop-blur">
+                <Sparkles className="h-3.5 w-3.5 text-violet-300" /> Powered by Maxx Tech
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-black tracking-wider text-white mb-3">
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">AI Tools</span>
+              </h2>
+              <p className="text-white/60 max-w-lg mx-auto text-sm">Two powerful AI products built by CarlyMaxx — pick the one that fits your need.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* MAXXTECH AI */}
+              <div className="group relative rounded-3xl border border-violet-500/30 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-violet-400/60 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center mb-5 shadow-lg shadow-violet-900/40 group-hover:scale-110 transition-transform">
+                    <Sparkles className="h-7 w-7 text-white" />
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-white font-display font-bold text-xl tracking-wide">MAXXTECH AI</h3>
+                    <span className="text-[10px] bg-violet-500/30 text-violet-300 border border-violet-500/40 px-2 py-0.5 rounded-full font-semibold">Classic</span>
+                  </div>
+                  <p className="text-white/50 text-xs mb-1 font-mono">ai.maxxtech.co.ke</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-5">Your smart AI assistant for conversations, content writing, coding help, and creative work — available 24/7, no sign-up needed.</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {["AI Chat", "Code Help", "Content Writer", "24/7 Free"].map(t => (
+                      <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">{t}</span>
+                    ))}
+                  </div>
+                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-violet-500 hover:to-purple-500 transition-all hover:gap-3 shadow-lg shadow-violet-900/40">
+                    Open MAXXTECH AI <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+              {/* AI Agent */}
+              <div className="group relative rounded-3xl border border-cyan-500/30 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center mb-5 shadow-lg shadow-cyan-900/40 group-hover:scale-110 transition-transform">
+                    <Bot className="h-7 w-7 text-white" />
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-white font-display font-bold text-xl tracking-wide">AI Agent</h3>
+                    <span className="text-[10px] bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-semibold">Next-Gen</span>
+                  </div>
+                  <p className="text-white/50 text-xs mb-1 font-mono">agent.maxxtech.co.ke</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-5">An autonomous AI agent that can browse the web, run tasks, manage workflows, and execute multi-step actions — the future of AI productivity.</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {["Autonomous", "Web Browsing", "Task Execution", "Agentic"].map(t => (
+                      <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">{t}</span>
+                    ))}
+                  </div>
+                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:from-cyan-500 hover:to-teal-500 transition-all hover:gap-3 shadow-lg shadow-cyan-900/40">
+                    Open AI Agent <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
