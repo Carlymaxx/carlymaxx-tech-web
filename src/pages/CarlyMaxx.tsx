@@ -45,22 +45,22 @@ export default function CarlyMaxx() {
   return (
     <>
       <Helmet>
-        <title>CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya</title>
-        <meta name="title" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya" />
-        <meta name="description" content="CarlyMaxx (official name: Calvince Ochieng), also known as MAXXXMD and Squillah Maxx, is the CEO & founder of Maxx Tech and creator of MAXX-XMD — the fastest WhatsApp bot. Software developer, web designer, and tech entrepreneur from Ruiru, Kenya serving clients worldwide." />
-        <meta name="keywords" content="CarlyMaxx, Calvince Ochieng, Carly Maxx, MAXXXMD, Squillah Maxx, Carlymaxx, who is CarlyMaxx, who is Calvince Ochieng, Calvince Ochieng Ndhiwa, Calvince Ochieng Homa Bay, Calvince Ochieng Luo, CarlyMaxx Ndhiwa, Ndhiwa Homa Bay Kenya tech, Luo tech entrepreneur, Calvince Ochieng founder, Carly Maxx Maxx Tech, Calvince Ochieng MAXX-XMD, MAXXXMD Kenya, MAXXXMD WhatsApp bot, CarlyMaxx CEO, Carly Maxx developer, MaxxTechxmd YouTube, Squillah Maxx TikTok, MAXX-XMD creator, Ruiru Kenya developer, Carlymaxx GitHub" />
-        <meta name="author" content="CarlyMaxx — Calvince Ochieng (MAXXXMD)" />
+        <title>Calvince Ochieng (CarlyMaxx) — Official Profile | Maxx Tech Founder | MAXX-XMD Creator | Ndhiwa, Homa Bay, Kenya</title>
+        <meta name="title" content="Calvince Ochieng (CarlyMaxx) — Official Profile | Maxx Tech Founder | MAXX-XMD Creator | Ndhiwa, Kenya" />
+        <meta name="description" content="Calvince Ochieng, officially known as CarlyMaxx (MAXXXMD), is the CEO & founder of Maxx Tech and creator of MAXX-XMD — the world's fastest WhatsApp bot. Born in Ndhiwa, Homa Bay County, Kenya (Luo). Developer based in Ruiru, Kenya. Owner of Maxx Tech, MAXX-XMD, MAXXTECH AI and Maxx Media Hub. Serving clients worldwide." />
+        <meta name="keywords" content="Calvince Ochieng, CarlyMaxx, CarlyMaxx official profile, CarlyMaxx developer, CarlyMaxx Ruiru, CarlyMaxx Ndhiwa, CarlyMaxx hometown Ndhiwa, Calvince Ochieng official name, Calvince Ochieng developer, Calvince Ochieng Ruiru, Calvince Ochieng Ndhiwa Homa Bay, Calvince Ochieng Luo, who is Calvince Ochieng, who is CarlyMaxx, CarlyMaxx biography, Calvince Ochieng biography, CarlyMaxx founder, owner of Maxx Tech, owner of MAXX-XMD, CarlyMaxx products, Calvince Ochieng products, MAXXXMD, Squillah Maxx, Carly Maxx, Carlymaxx, MAXXXMD Kenya, MAXX-XMD creator, Maxx Tech founder, Maxx Tech owner, who owns Maxx Tech, who created MAXX-XMD, CarlyMaxx worldwide, CarlyMaxx global, Luo tech entrepreneur Kenya, Ndhiwa Homa Bay famous person, Ndhiwa Kenya developer, Ruiru Kenya developer, MaxxTechxmd YouTube, Squillah Maxx TikTok, Carlymaxx GitHub, CarlyMaxx Twitter maxx1470, CarlyMaxx age, CarlyMaxx net worth, young tech entrepreneur Africa, Kenya software developer worldwide" />
+        <meta name="author" content="Calvince Ochieng — CarlyMaxx (MAXXXMD)" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://www.maxxtech.co.ke/about-carly-maxx" />
+        <link rel="canonical" href="https://www.maxxtech.co.ke/carlymaxx" />
 
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://www.maxxtech.co.ke/about-carly-maxx" />
-        <meta property="og:title" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD | CEO & Founder of Maxx Tech | MAXX-XMD Creator" />
-        <meta property="og:description" content="CarlyMaxx (Calvince Ochieng, MAXXXMD) — CEO & founder of Maxx Tech and creator of MAXX-XMD WhatsApp bot. Software developer and tech entrepreneur from Ruiru, Kenya." />
+        <meta property="og:url" content="https://www.maxxtech.co.ke/carlymaxx" />
+        <meta property="og:title" content="Calvince Ochieng (CarlyMaxx) — CEO & Founder of Maxx Tech | MAXX-XMD Creator | Ndhiwa, Kenya" />
+        <meta property="og:description" content="Calvince Ochieng (CarlyMaxx / MAXXXMD) — CEO & founder of Maxx Tech, developer based in Ruiru, Kenya. Born in Ndhiwa, Homa Bay (Luo). Creator of MAXX-XMD, MAXXTECH AI, and Maxx Media Hub. Serving worldwide." />
         <meta property="og:image" content="https://www.maxxtech.co.ke/gallery/carly-maxx-founder.jpeg" />
-        <meta property="og:image:alt" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD, CEO & Founder of Maxx Tech and Creator of MAXX-XMD" />
-        <meta property="profile:first_name" content="Carly" />
-        <meta property="profile:last_name" content="Maxx" />
+        <meta property="og:image:alt" content="Calvince Ochieng (CarlyMaxx) — MAXXXMD, CEO & Founder of Maxx Tech and Creator of MAXX-XMD, from Ndhiwa Homa Bay Kenya" />
+        <meta property="profile:first_name" content="Calvince" />
+        <meta property="profile:last_name" content="Ochieng" />
         <meta property="profile:username" content="carlymaxx" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -75,10 +75,10 @@ export default function CarlyMaxx() {
           "@graph": [
             {
               "@type": "ProfilePage",
-              "@id": "https://www.maxxtech.co.ke/about-carly-maxx",
-              "name": "Carly Maxx — MAXXXMD | Founder Maxx Tech | Creator MAXX-XMD",
-              "url": "https://www.maxxtech.co.ke/about-carly-maxx",
-              "description": "Official profile page of Carly Maxx (MAXXXMD), founder of Maxx Tech and creator of MAXX-XMD WhatsApp bot.",
+              "@id": "https://www.maxxtech.co.ke/carlymaxx",
+              "name": "Calvince Ochieng (CarlyMaxx) — Official Profile | Maxx Tech Founder | MAXX-XMD Creator",
+              "url": "https://www.maxxtech.co.ke/carlymaxx",
+              "description": "Official profile of Calvince Ochieng (CarlyMaxx / MAXXXMD) — CEO & Founder of Maxx Tech, developer based in Ruiru Kenya, born in Ndhiwa Homa Bay (Luo). Owner of MAXX-XMD, MAXXTECH AI and Maxx Media Hub.",
               "mainEntity": { "@id": "#carlymaxx-profile" }
             },
             {
@@ -119,8 +119,54 @@ export default function CarlyMaxx() {
             {
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Maxx Tech", "item": "https://www.maxxtech.co.ke/" },
-                { "@type": "ListItem", "position": 2, "name": "About Carly Maxx (MAXXXMD)", "item": "https://www.maxxtech.co.ke/about-carly-maxx" }
+                { "@type": "ListItem", "position": 1, "name": "Maxx Tech Home", "item": "https://www.maxxtech.co.ke/" },
+                { "@type": "ListItem", "position": 2, "name": "Calvince Ochieng (CarlyMaxx) — Official Profile", "item": "https://www.maxxtech.co.ke/carlymaxx" }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://www.maxxtech.co.ke/carlymaxx#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Who is Calvince Ochieng?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Calvince Ochieng is the official name of CarlyMaxx — CEO and Founder of Maxx Tech and creator of MAXX-XMD, the world's fastest multi-session WhatsApp bot. He is a software developer and AI entrepreneur born in Ndhiwa, Homa Bay County, Kenya (Luo heritage), currently based in Ruiru, Kiambu County, Kenya. He builds and owns Maxx Tech, MAXX-XMD, MAXXTECH AI, and Maxx Media Hub, serving clients worldwide at maxxtech.co.ke." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is CarlyMaxx's official name?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "CarlyMaxx's official name is Calvince Ochieng. He is known online as CarlyMaxx, MAXXXMD, and Squillah Maxx. He is the founder and CEO of Maxx Tech, a global tech company based in Ruiru, Kenya." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where is CarlyMaxx based?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "CarlyMaxx (Calvince Ochieng) is a developer based in Ruiru, Kiambu County, Kenya. His hometown is Ndhiwa, Homa Bay County. He operates Maxx Tech from Ruiru and serves clients worldwide." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What does Calvince Ochieng own?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Calvince Ochieng (CarlyMaxx / MAXXXMD) owns and operates: Maxx Tech (maxxtech.co.ke), MAXX-XMD WhatsApp bot (pair.maxxtech.co.ke), MAXXTECH AI assistant (agent.maxxtech.co.ke), Bot Panel hosting service (panel.maxxtech.co.ke), and Maxx Media Hub. All products are used by thousands of users globally." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Who owns Maxx Tech?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Maxx Tech is owned by Calvince Ochieng, known online as CarlyMaxx (MAXXXMD). He founded Maxx Tech as a global technology brand offering WhatsApp bots (MAXX-XMD), AI tools, web design, and bot hosting. Company based in Ruiru, Kenya." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Who owns MAXX-XMD?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "MAXX-XMD is owned and created by Calvince Ochieng (CarlyMaxx / MAXXXMD) — CEO of Maxx Tech, developer from Ruiru, Kenya, born in Ndhiwa, Homa Bay County. You can get MAXX-XMD at pair.maxxtech.co.ke." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where is Calvince Ochieng from?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Calvince Ochieng (CarlyMaxx) was born in Ndhiwa, Homa Bay County, Kenya. He is Luo by heritage. His office is in Ruiru, Kiambu County, Kenya, and he serves tech clients worldwide through maxxtech.co.ke." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is CarlyMaxx popular worldwide?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. CarlyMaxx (Calvince Ochieng) is recognized worldwide through MAXX-XMD — one of the most downloaded WhatsApp bots globally with users across Africa, Asia, Europe, and the Americas. His YouTube channel @MaxxTechxmd and TikTok @squillahmaxx have an international following." }
+                }
               ]
             }
           ]
