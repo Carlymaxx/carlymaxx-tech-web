@@ -4,6 +4,14 @@ name: Deploy to GitHub Pages
     push:
       branches:
         - main
+      paths:
+        - 'src/**'
+        - 'public/**'
+        - 'index.html'
+        - 'package.json'
+        - 'pnpm-lock.yaml'
+        - 'vite.config.ts'
+        - 'tailwind.config.*'
 
   permissions:
     contents: write
@@ -15,21 +23,29 @@ name: Deploy to GitHub Pages
       steps:
         - uses: actions/checkout@v4
 
+        - uses: pnpm/action-setup@v3
+          with:
+            version: 9
+
         - uses: actions/setup-node@v4
           with:
             node-version: 20
+            cache: 'pnpm'
 
         - name: Install dependencies
-          run: npm install
+          run: pnpm install --frozen-lockfile
 
         - name: Build
-          run: npm run build
+          env:
+            PORT: 3000
+            BASE_PATH: /
+            NODE_ENV: production
+          run: pnpm --filter @workspace/main-site run build
 
         - name: Copy dist to docs
           run: |
             rm -rf docs
-            cp -r dist/. docs/
-            # Preserve CNAME so custom domain stays
+            cp -r artifacts/main-site/dist/public/. docs/
             echo "maxxtech.co.ke" > docs/CNAME
 
         - name: Commit and push docs
@@ -37,6 +53,6 @@ name: Deploy to GitHub Pages
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add docs/
-            git diff --cached --quiet || git commit -m "Deploy: update docs from build"
+            git diff --cached --quiet || git commit -m "Deploy: auto-build from source"
             git push
   
