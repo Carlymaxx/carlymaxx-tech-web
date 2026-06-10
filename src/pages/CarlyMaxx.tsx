@@ -10,7 +10,8 @@ const FACEBOOK = "https://www.facebook.com/squillah.maxx";
 const TWITTER = "https://x.com/maxx1470";
 const PAIR_SITE = "https://pair.maxxtech.co.ke";
 const PANEL_SITE = "https://panel.maxxtech.co.ke";
-const AI_SITE = "https://ai.maxxtech.co.ke";
+const AI_SITE = "https://agent.maxxtech.co.ke";
+const AI_CLASSIC = "https://ai.maxxtech.co.ke";
 const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const MAIN_SITE = "https://www.maxxtech.co.ke";
 
@@ -47,7 +48,7 @@ export default function CarlyMaxx() {
         <title>CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya</title>
         <meta name="title" content="CarlyMaxx (Calvince Ochieng) — MAXXXMD | Founder of Maxx Tech | Creator of MAXX-XMD | Kenya" />
         <meta name="description" content="CarlyMaxx (official name: Calvince Ochieng), also known as MAXXXMD and Squillah Maxx, is the CEO & founder of Maxx Tech and creator of MAXX-XMD — the fastest WhatsApp bot. Software developer, web designer, and tech entrepreneur from Ruiru, Kenya serving clients worldwide." />
-        <meta name="keywords" content="CarlyMaxx, Calvince Ochieng, Carly Maxx, MAXXXMD, Squillah Maxx, Carlymaxx, who is CarlyMaxx, who is Calvince Ochieng, who is Carly Maxx, who is MAXXXMD, Carly Maxx Maxx Tech, Calvince Ochieng Maxx Tech, Carly Maxx MAXX-XMD, Calvince Ochieng MAXX-XMD, Carly Maxx Kenya, MAXXXMD Kenya, MAXXXMD WhatsApp bot, Carly Maxx creator, CarlyMaxx CEO, Carly Maxx developer, Carly Maxx YouTube, Carly Maxx TikTok, Squillah Maxx TikTok, MaxxTechxmd YouTube, Maxx Tech founder, MAXX-XMD creator, Ruiru Kenya developer, Carly Maxx GitHub, Carlymaxx GitHub" />
+        <meta name="keywords" content="CarlyMaxx, Calvince Ochieng, Carly Maxx, MAXXXMD, Squillah Maxx, Carlymaxx, who is CarlyMaxx, who is Calvince Ochieng, Calvince Ochieng Ndhiwa, Calvince Ochieng Homa Bay, Calvince Ochieng Luo, CarlyMaxx Ndhiwa, Ndhiwa Homa Bay Kenya tech, Luo tech entrepreneur, Calvince Ochieng founder, Carly Maxx Maxx Tech, Calvince Ochieng MAXX-XMD, MAXXXMD Kenya, MAXXXMD WhatsApp bot, CarlyMaxx CEO, Carly Maxx developer, MaxxTechxmd YouTube, Squillah Maxx TikTok, MAXX-XMD creator, Ruiru Kenya developer, Carlymaxx GitHub" />
         <meta name="author" content="CarlyMaxx — Calvince Ochieng (MAXXXMD)" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.maxxtech.co.ke/about-carly-maxx" />
@@ -83,19 +84,26 @@ export default function CarlyMaxx() {
             {
               "@type": "Person",
               "@id": "#carlymaxx-profile",
-              "name": "Carly Maxx",
-              "alternateName": ["MAXXXMD", "Squillah Maxx", "Carlymaxx", "MaxxTech Creator", "MAXX-XMD Creator"],
-              "url": "https://www.maxxtech.co.ke/about-carly-maxx",
+              "name": "Calvince Ochieng",
+              "givenName": "Calvince",
+              "familyName": "Ochieng",
+              "alternateName": ["CarlyMaxx", "Carly Maxx", "MAXXXMD", "Squillah Maxx", "Carlymaxx", "MaxxTech CEO", "MAXX-XMD Creator"],
+              "url": "https://www.maxxtech.co.ke/carlymaxx",
               "image": [
                 "https://www.maxxtech.co.ke/gallery/carly-maxx-founder.jpeg",
                 "https://files.catbox.moe/3716xg.jpg",
                 "https://files.catbox.moe/oepq4e.jpg"
               ],
-              "jobTitle": "Founder & CEO — Maxx Tech | Creator of MAXX-XMD",
-              "description": "Carly Maxx (MAXXXMD, also known as Squillah Maxx) is a software developer, web designer, and tech entrepreneur from Ruiru, Kenya. She founded Maxx Tech and created MAXX-XMD — the fastest WhatsApp bot worldwide. She is also creator of MAXXTECH AI and Maxx Media Hub.",
+              "jobTitle": "CEO & Founder — Maxx Tech | Creator of MAXX-XMD",
+              "description": "Calvince Ochieng, known online as CarlyMaxx and MAXXXMD, is a software developer, AI entrepreneur, and tech founder from Ndhiwa, Homa Bay County, Kenya (Luo). He founded Maxx Tech based in Ruiru, Kenya, and created MAXX-XMD — the world's fastest multi-session WhatsApp bot. He also built MAXXTECH AI and Maxx Media Hub.",
+              "birthPlace": { "@type": "Place", "name": "Ndhiwa, Homa Bay County, Kenya" },
               "worksFor": { "@type": "Organization", "name": "Maxx Tech", "url": "https://www.maxxtech.co.ke" },
               "nationality": { "@type": "Country", "name": "Kenya" },
-              "homeLocation": { "@type": "Place", "name": "Ruiru, Kiambu, Kenya" },
+              "homeLocation": { "@type": "Place", "name": "Ruiru, Kiambu County, Kenya" },
+              "additionalProperty": [
+                { "@type": "PropertyValue", "name": "hometown", "value": "Ndhiwa, Homa Bay County, Kenya" },
+                { "@type": "PropertyValue", "name": "tribe", "value": "Luo, Kenya" }
+              ],
               "knowsAbout": ["WhatsApp Bots", "MAXX-XMD", "MAXXXMD", "Web Development", "AI Tools", "Digital Marketing", "Bot Automation", "Software Engineering", "IT Consulting", "JavaScript", "Node.js"],
               "award": ["Creator of MAXX-XMD — Most Popular WhatsApp Bot Kenya", "Founder Maxx Tech Global Brand"],
               "sameAs": [
@@ -150,16 +158,17 @@ export default function CarlyMaxx() {
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-emerald-400 text-xs font-mono tracking-wider uppercase">Available for projects</span>
                 </div>
-                <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-3 leading-tight">
-                  Carly<br />
-                  <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">Maxx</span>
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-1 leading-tight">
+                  Calvince<br />
+                  <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">Ochieng</span>
                 </h1>
-                <p className="text-emerald-400 font-mono tracking-[0.3em] text-sm mb-4 uppercase">MAXXXMD · Squillah Maxx</p>
+                <p className="text-emerald-400 font-mono tracking-[0.2em] text-sm mb-1 uppercase">CarlyMaxx · MAXXXMD · Squillah Maxx</p>
+                <p className="text-white/50 text-xs font-mono mb-4">Ndhiwa, Homa Bay County, Kenya · Luo</p>
                 <p className="text-white/80 text-lg leading-relaxed mb-6">
-                  Founder of <strong className="text-white">Maxx Tech</strong> & creator of <strong className="text-emerald-400">MAXX-XMD</strong> — the fastest WhatsApp bot worldwide. Software developer, web designer & tech entrepreneur from <span className="text-cyan-400">Ruiru, Kenya</span>.
+                  CEO &amp; Founder of <strong className="text-white">Maxx Tech</strong> · Creator of <strong className="text-emerald-400">MAXX-XMD</strong> — the world's fastest multi-session WhatsApp bot. Software developer &amp; AI entrepreneur from <span className="text-cyan-400">Ruiru, Kenya</span>.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-6">
-                  {["MAXX-XMD Creator", "MAXXXMD", "Squillah Maxx", "Ruiru Kenya", "WhatsApp Bot Dev"].map(tag => (
+                  {["MAXX-XMD Creator", "Ndhiwa • Homa Bay", "Luo 🦅", "MAXXXMD", "Ruiru Kenya", "AI Builder"].map(tag => (
                     <span key={tag} className="px-3 py-1.5 text-xs rounded-full bg-white/10 border border-white/20 text-white/70 font-mono">{tag}</span>
                   ))}
                 </div>
@@ -234,16 +243,16 @@ export default function CarlyMaxx() {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  <strong className="text-foreground">Carly Maxx</strong>, widely known as <strong className="text-emerald-500">MAXXXMD</strong> and <strong className="text-cyan-500">Squillah Maxx</strong>, is a self-taught software developer, web designer, and digital entrepreneur based in <strong className="text-foreground">Ruiru, Kiambu County, Kenya</strong>.
+                  <strong className="text-foreground">Calvince Ochieng</strong>, known online as <strong className="text-emerald-500">CarlyMaxx</strong> and <strong className="text-cyan-500">MAXXXMD</strong>, is a self-taught software developer, AI entrepreneur, and tech founder. He was born in <strong className="text-amber-400">Ndhiwa, Homa Bay County, Kenya</strong> — a proud <strong className="text-foreground">Luo</strong> man — and currently runs his company from <strong className="text-foreground">Ruiru, Kiambu County, Kenya</strong>.
                 </p>
                 <p>
-                  She founded <strong className="text-foreground">Maxx Tech</strong> to deliver cutting-edge technology solutions to clients across Africa and worldwide. Her flagship product, <strong className="text-emerald-500">MAXX-XMD</strong>, is one of the most widely used WhatsApp bots globally — known for its speed, 100+ commands, and 2-3 minute deployment.
+                  He founded <strong className="text-foreground">Maxx Tech</strong> to deliver cutting-edge technology to clients across Africa and worldwide. His flagship product, <strong className="text-emerald-500">MAXX-XMD</strong>, is one of the world's most widely used multi-session WhatsApp bots — known for its speed, 100+ commands, and 2-3 minute deployment.
                 </p>
                 <p>
-                  Beyond MAXX-XMD, Carly Maxx has built <strong className="text-violet-400">MAXXTECH AI</strong>, a 24/7 AI assistant, and <strong className="text-amber-400">Maxx Media Hub</strong>, a music and media streaming platform — all under the Maxx Tech brand.
+                  Beyond MAXX-XMD, Calvince has built <strong className="text-violet-400">MAXXTECH AI</strong> (agent.maxxtech.co.ke), an advanced AI assistant, and <strong className="text-amber-400">Maxx Media Hub</strong>, a music and media streaming platform — all under the Maxx Tech brand.
                 </p>
                 <p>
-                  Her work blends deep technical skill with a passion for making technology <strong className="text-foreground">accessible, fast, and affordable</strong> to everyone — from solo entrepreneurs to growing businesses worldwide.
+                  His work blends deep technical skill with a passion for making technology <strong className="text-foreground">accessible, fast, and affordable</strong> to everyone — from solo entrepreneurs in Homa Bay to businesses across the globe.
                 </p>
               </div>
               <div className="space-y-4">
@@ -253,11 +262,12 @@ export default function CarlyMaxx() {
                     {[
                       ["Full Name", "Calvince Ochieng"],
                       ["Brand Name", "CarlyMaxx (Carly Maxx)"],
-                      ["Brand Alias", "MAXXXMD"],
-                      ["Also Known As", "Squillah Maxx"],
+                      ["Brand Alias", "MAXXXMD · Squillah Maxx"],
+                      ["Hometown", "Ndhiwa, Homa Bay County"],
+                      ["Heritage", "Luo — Nyanza, Kenya"],
+                      ["Office", "Ruiru, Kiambu, Kenya"],
                       ["GitHub", "Carlymaxx"],
-                      ["Location", "Ruiru, Kenya"],
-                      ["Serves", "Worldwide"],
+                      ["Serves", "Worldwide 🌍"],
                       ["Contact", "info@maxxtech.co.ke"],
                     ].map(([k, v]) => (
                       <div key={k} className="flex justify-between gap-2">
