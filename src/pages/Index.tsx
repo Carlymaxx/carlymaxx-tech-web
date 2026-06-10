@@ -610,8 +610,8 @@ const Index = () => {
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Company</h3>
                 <ul className="space-y-1 text-xs text-white/50">
                   <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                  <li><a href="/carlymaxx" className="hover:text-white transition-colors">CarlyMaxx (CEO)</a></li>
                   <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                   <li><a href="#contact" className="hover:text-white transition-colors">Careers</a></li>
                 </ul>
               </div>
