@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones, Sparkles, Key, MapPin, Star, Trophy, Building2, Rocket, Heart } from "lucide-react";
+import { Bot, Code, Globe, Cpu, Wrench, MessageCircle, ArrowRight, Mail, Phone, Github, Music, Youtube, Shield, Users, Send, Twitter, Menu, X, Zap, Clock, Award, Headphones, Sparkles, Key, MapPin, Star, Trophy, Building2, Rocket, Heart, ChevronDown, ChevronUp, Play } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -60,12 +60,21 @@ const socialLinks = [
 ];
 
 const services = [
-  { icon: Code, title: "Web Design", description: "Custom websites & landing pages built with modern frameworks and stunning UI.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200w=400&q=80q=70", color: "from-blue-500 to-cyan-500" },
-  { icon: Bot, title: "Smart Automation", description: "AI-powered bots and workflow automation to streamline your digital operations.", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200w=400&q=80q=70", color: "from-violet-500 to-purple-500" },
-  { icon: Globe, title: "Web Solutions", description: "Full-stack web applications, APIs, and cloud-based solutions for your business.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200w=400&q=80q=70", color: "from-emerald-500 to-teal-500" },
-  { icon: Cpu, title: "Information Technology", description: "IT consulting, infrastructure setup, and technical support around the clock.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200w=400&q=80q=70", color: "from-orange-500 to-red-500" },
-  { icon: Wrench, title: "Tools & APIs", description: "Integration of powerful tools and third-party APIs to supercharge your workflow.", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=200w=400&q=80q=70", color: "from-sky-500 to-blue-500" },
-  { icon: MessageCircle, title: "24/7 Support", description: "Always available smart assistant for all your tech queries and digital needs.", image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=200w=400&q=80q=70", color: "from-pink-500 to-rose-500" },
+  { icon: Code, title: "Web Design", description: "Custom websites & landing pages built with modern frameworks.", color: "from-blue-500 to-cyan-500" },
+  { icon: Bot, title: "Automation", description: "AI-powered bots and workflow automation for your business.", color: "from-violet-500 to-purple-500" },
+  { icon: Globe, title: "Web Solutions", description: "Full-stack apps, APIs & cloud-based solutions.", color: "from-emerald-500 to-teal-500" },
+  { icon: Cpu, title: "IT Support", description: "IT consulting, infrastructure setup & 24/7 tech support.", color: "from-orange-500 to-red-500" },
+  { icon: Wrench, title: "Tools & APIs", description: "Third-party API integrations to supercharge your workflow.", color: "from-sky-500 to-blue-500" },
+  { icon: MessageCircle, title: "24/7 Support", description: "Smart assistant for all your tech queries & digital needs.", color: "from-pink-500 to-rose-500" },
+];
+
+const products = [
+  { icon: Sparkles, name: "MAXXTECH AI", href: AI_SITE, color: "from-violet-500 to-purple-600", tag: "Agent" },
+  { icon: Bot, name: "MAXX-XMD Bot", href: PAIR_SITE, color: "from-emerald-500 to-teal-600", tag: "Free" },
+  { icon: Music, name: "Media Hub", href: MUSIC_HUB, color: "from-amber-500 to-orange-500", tag: "Free" },
+  { icon: Play, name: "Maxx Movies", href: MOVIE_SITE, color: "from-red-600 to-rose-700", tag: "HD" },
+  { icon: Zap, name: "Bot Panel", href: BOT_PANEL_URL, color: "from-cyan-500 to-blue-600", tag: "Pro" },
+  { icon: Sparkles, name: "AI Classic", href: AI_CLASSIC, color: "from-indigo-500 to-blue-600", tag: "Classic" },
 ];
 
 const FadeSection = ({ children, className = "", bgClassName = "" }: { children: React.ReactNode; className?: string; bgClassName?: string }) => {
@@ -128,6 +137,9 @@ const NavBar = () => {
 };
 
 const Index = () => {
+  const [teamOpen, setTeamOpen] = useState(false);
+  const [carlyOpen, setCarlyOpen] = useState(false);
+
   const speedLines = Array.from({ length: 20 }, (_, i) => ({ id: i, top: `${Math.random() * 100}%`, width: `${100 + Math.random() * 300}px`, duration: `${1.5 + Math.random() * 3}s`, delay: `${Math.random() * 5}s`, opacity: 0.2 + Math.random() * 0.5 }));
 
   return (
@@ -172,156 +184,28 @@ const Index = () => {
       <TrustBadges />
       <LiveStatus />
 
+      {/* ── Our Products ── */}
       <FadeSection>
-        <section className="py-10">
+        <section className="py-6 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 border-y border-white/5">
           <div className="container mx-auto px-6">
-            <h2 className="mb-2 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Our Products</h2>
-            <p className="mx-auto mb-3 max-w-xl text-center text-gray-600">Powerful tools built by Maxx Tech for your digital needs</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-              {/* MAXXTECH AI Card */}
-              <div className="relative group rounded-3xl overflow-hidden hover-lift">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-indigo-600 via-violet-500 to-purple-700"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="relative p-3 md:p-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Sparkles className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm font-bold tracking-wider">MAXXTECH AI</h3>
-                      <p className="text-xs text-white/70">Powered by Maxx Tech</p>
-                    </div>
+            <div className="flex flex-col items-center mb-4">
+              <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 text-white/70 text-[10px] font-semibold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
+                <Rocket className="h-3 w-3 text-emerald-400" /> Our Products
+              </span>
+              <h2 className="font-display text-xl font-black tracking-wider text-white">Everything Maxx Tech Builds</h2>
+            </div>
+            <div className="flex flex-wrap gap-2.5 max-w-4xl mx-auto justify-center">
+              {products.map((p) => (
+                <a href={p.href} target="_blank" rel="noopener noreferrer" key={p.name}
+                  className="group flex items-center gap-2 bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 rounded-xl px-4 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30 backdrop-blur-sm">
+                  <div className={`h-7 w-7 rounded-lg bg-gradient-to-br ${p.color} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                    <p.icon className="h-3.5 w-3.5" />
                   </div>
-                  <p className="text-white/90 leading-relaxed mb-2 text-xs">Advanced AI assistant for smart conversations, coding help, content creation, and automation. Available 24/7 with lightning-fast responses.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["AI Chat", "Code Help", "Content Writer", "24/7"].map((tag) => (
-                      <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15 backdrop-blur">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-violet-700 px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all hover:gap-3">
-                    Try MAXXTECH AI <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-
-              {/* MAXX-XMD Card */}
-              <div className="relative group rounded-3xl overflow-hidden hover-lift">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-green-600 via-emerald-500 to-teal-700"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="relative p-3 md:p-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Bot className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm font-bold tracking-wider">MAXX-XMD</h3>
-                      <p className="text-xs text-white/70">WhatsApp Bot</p>
-                    </div>
-                  </div>
-                  <p className="text-white/90 leading-relaxed mb-2 text-xs">Powerful WhatsApp bot with group management, auto-replies, media downloads, stickers, and 100+ commands. Deploy in minutes!</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["WhatsApp", "Group Mgmt", "Auto-Reply", "50+ Cmds"].map((tag) => (
-                      <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/15 backdrop-blur">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 bg-white text-emerald-700 px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
-                      <Key className="h-3 w-3" /> Session ID
-                    </a>
-                    <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 border-2 border-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/10 transition-all">
-                      <Github className="h-3 w-3" /> GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Maxx Media Hub Card */}
-              <div className="relative group rounded-3xl overflow-hidden hover-lift">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-orange-500 to-rose-600 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-rose-500 via-amber-500 to-orange-600"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="relative p-3 md:p-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Music className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm font-bold tracking-wider">MEDIA HUB</h3>
-                      <p className="text-xs text-white/70">Music & Media Platform</p>
-                    </div>
-                  </div>
-                  <p className="text-white/90 leading-relaxed mb-2 text-xs">Your all-in-one media platform for music streaming, downloads, and entertainment. Access thousands of tracks and media content.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["Music", "Downloads", "Streaming", "Free"].map((tag) => (
-                      <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/15 backdrop-blur">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-amber-700 px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
-                    <Music className="h-3 w-3" /> Open Media Hub
-                  </a>
-                </div>
-              </div>
-
-              {/* Maxx Movies Card */}
-              <div className="relative group rounded-3xl overflow-hidden hover-lift">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-rose-700 to-pink-800 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-pink-700 via-red-600 to-rose-800"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="relative p-3 md:p-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" /></svg>
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm font-bold tracking-wider">MAXX MOVIES</h3>
-                      <p className="text-xs text-white/70">Free Movies               {/* Bot Hosting Panel Card */}amp; Series</p>
-                    </div>
-                  </div>
-                  <p className="text-white/90 leading-relaxed mb-2 text-xs">Watch and stream the latest movies, TV series, and entertainment content — all free, powered by Maxx Tech.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["Movies", "Series", "Free", "HD"].map((tag) => (
-                      <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/15 backdrop-blur">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={MOVIE_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-red-700 px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch Now
-                  </a>
-                </div>
-              </div>
-
-              {/* Bot Hosting Panel Card */}
-              <div className="relative group rounded-3xl overflow-hidden hover-lift">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-sky-600 to-blue-700 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-600 via-cyan-500 to-sky-700"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="relative p-3 md:p-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-8 w-8 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Zap className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-sm font-bold tracking-wider">BOT PANEL</h3>
-                      <p className="text-xs text-white/70">Bot Hosting & Management</p>
-                    </div>
-                  </div>
-                  <p className="text-white/90 leading-relaxed mb-2 text-xs">Host and manage your MAXX-XMD WhatsApp bot with our powerful SaaS panel. Monitor stats, manage sessions, and scale with ease.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["Hosting", "Dashboard", "Billing", "24/7"].map((tag) => (
-                      <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/15 backdrop-blur">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={BOT_PANEL_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-cyan-700 px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
-                    <Zap className="h-3 w-3" /> Open Panel <ArrowRight className="h-3 w-3" />
-                  </a>
-                </div>
-              </div>
+                  <span className="font-bold text-sm text-white">{p.name}</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-white/50 font-semibold tracking-wide">{p.tag}</span>
+                  <ArrowRight className="h-3 w-3 text-white/30 group-hover:text-white/70 group-hover:translate-x-0.5 transition-all" />
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -330,92 +214,63 @@ const Index = () => {
       {/* ── Our AI Tools ── */}
       <FadeSection>
         <section className="py-5 bg-gradient-to-br from-slate-950 via-indigo-950 to-violet-950 relative overflow-hidden">
-          {/* background glows */}
           <div className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-violet-600/20 blur-[120px]" />
           <div className="pointer-events-none absolute -bottom-32 right-1/4 h-96 w-96 rounded-full bg-indigo-500/20 blur-[120px]" />
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-3">
-              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 backdrop-blur">
-                <Sparkles className="h-3.5 w-3.5 text-violet-300" /> Powered by Maxx Tech
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-black tracking-wider text-white mb-3">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">AI Tools</span>
-              </h2>
-              <p className="text-white/60 max-w-lg mx-auto text-sm">Two powerful AI products built by CarlyMaxx — pick the one that fits your need.</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="flex items-center gap-2 mr-0 sm:mr-4">
+                <Sparkles className="h-4 w-4 text-violet-400" />
+                <span className="text-white font-display font-black text-base tracking-wide">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">AI Tools</span></span>
+              </div>
               {/* MAXXTECH AI */}
-              <div className="group relative rounded-2xl border border-violet-500/30 bg-white/5 backdrop-blur-sm p-4 hover:bg-white/10 hover:border-violet-400/60 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative">
-                  <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center mb-2 shadow-lg shadow-violet-900/40 group-hover:scale-110 transition-transform">
-                    <Sparkles className="h-4 w-4 text-white" />
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-white font-display font-bold text-base tracking-wide">MAXXTECH AI</h3>
-                    <span className="text-[10px] bg-violet-500/30 text-violet-300 border border-violet-500/40 px-2 py-0.5 rounded-full font-semibold">Agent</span>
-                  </div>
-                  <p className="text-white/50 text-xs mb-1 font-mono">agent.maxxtech.co.ke</p>
-                  <p className="text-white/70 text-xs leading-relaxed mb-2">Your smart AI assistant for conversations, content writing, coding help, and creative work — available 24/7, no sign-up needed.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["AI Chat", "Code Help", "Content Writer", "24/7 Free"].map(t => (
-                      <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">{t}</span>
-                    ))}
-                  </div>
-                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-xs hover:from-violet-500 hover:to-purple-500 transition-all hover:gap-3 shadow-lg shadow-violet-900/40">
-                    Open MAXXTECH AI <ArrowRight className="h-4 w-4" />
-                  </a>
+              <a href={AI_SITE} target="_blank" rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-xl border border-violet-500/30 bg-white/5 backdrop-blur-sm px-4 py-3 hover:bg-white/10 hover:border-violet-400/60 transition-all hover:-translate-y-0.5">
+                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center shadow-lg shadow-violet-900/40 group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Sparkles className="h-3.5 w-3.5 text-white" />
                 </div>
-              </div>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-white font-bold text-sm">MAXXTECH AI</span>
+                    <span className="text-[9px] bg-violet-500/30 text-violet-300 border border-violet-500/40 px-1.5 py-0.5 rounded-full font-semibold">Agent</span>
+                  </div>
+                  <p className="text-white/40 text-[10px] font-mono">agent.maxxtech.co.ke</p>
+                </div>
+                <ArrowRight className="h-3.5 w-3.5 text-violet-400 group-hover:translate-x-0.5 transition-transform ml-1" />
+              </a>
               {/* MAXXTECH AI Classic */}
-              <div className="group relative rounded-3xl border border-cyan-500/30 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative">
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center mb-5 shadow-lg shadow-cyan-900/40 group-hover:scale-110 transition-transform">
-                    <Bot className="h-4 w-4 text-white" />
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-white font-display font-bold text-base tracking-wide">MAXXTECH AI Classic</h3>
-                    <span className="text-[10px] bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-semibold">Classic</span>
-                  </div>
-                  <p className="text-white/50 text-xs mb-1 font-mono">ai.maxxtech.co.ke</p>
-                  <p className="text-white/70 text-xs leading-relaxed mb-2">The original MAXXTECH AI experience — fast, lightweight, and reliable for everyday AI tasks, content generation, and smart answers.</p>
-                  <div className="flex flex-wrap gap-1 mb-2">
-                    {["Lightweight", "Fast", "Reliable", "Always On"].map(t => (
-                      <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">{t}</span>
-                    ))}
-                  </div>
-                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-3 py-1.5 rounded-lg font-bold text-xs hover:from-cyan-500 hover:to-teal-500 transition-all hover:gap-3 shadow-lg shadow-cyan-900/40">
-                    Open Classic AI <ArrowRight className="h-4 w-4" />
-                  </a>
+              <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-xl border border-cyan-500/30 bg-white/5 backdrop-blur-sm px-4 py-3 hover:bg-white/10 hover:border-cyan-400/60 transition-all hover:-translate-y-0.5">
+                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-900/40 group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Bot className="h-3.5 w-3.5 text-white" />
                 </div>
-              </div>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-white font-bold text-sm">AI Classic</span>
+                    <span className="text-[9px] bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 px-1.5 py-0.5 rounded-full font-semibold">Classic</span>
+                  </div>
+                  <p className="text-white/40 text-[10px] font-mono">ai.maxxtech.co.ke</p>
+                </div>
+                <ArrowRight className="h-3.5 w-3.5 text-cyan-400 group-hover:translate-x-0.5 transition-transform ml-1" />
+              </a>
             </div>
           </div>
         </section>
       </FadeSection>
 
+      {/* ── Services ── */}
       <FadeSection>
-        <section id="services" className="py-4 bg-services-gradient section-glow-green">
+        <section id="services" className="py-5 bg-services-gradient section-glow-green">
           <div className="container mx-auto px-6">
-            <h2 className="mb-2 text-center font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text">Services</h2>
-            <p className="mx-auto mb-3 max-w-xl text-center text-muted-foreground">Software, Web Design, Information Technology & Market Solutions</p>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <h2 className="mb-1 text-center font-display text-2xl font-bold tracking-wider gradient-text">Services</h2>
+            <p className="mx-auto mb-3 max-w-xl text-center text-muted-foreground text-xs">Software · Web Design · IT · Market Solutions</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-5xl mx-auto">
               {services.map((service) => (
-                <div key={service.title} className="group neon-border-card bg-card overflow-hidden transition-all duration-300 hover-lift">
-                  <div className="relative h-32 overflow-hidden">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-40`}></div>
-                    <div className="absolute bottom-3 left-4">
-                      <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg`}>
-                        <service.icon className="h-5 w-5" />
-                      </div>
-                    </div>
+                <div key={service.title} className="group relative rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm p-3 hover:shadow-lg hover:-translate-y-0.5 transition-all text-center hover:border-primary/30">
+                  <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 transition-transform shadow-sm`}>
+                    <service.icon className="h-4 w-4" />
                   </div>
-                  <div className="p-6">
-                    <h3 className="mb-2 font-display text-lg font-semibold tracking-wide text-card-foreground">{service.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
-                  </div>
+                  <h3 className="font-bold text-xs mb-1 text-card-foreground">{service.title}</h3>
+                  <p className="text-[10px] leading-relaxed text-muted-foreground line-clamp-2">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -446,38 +301,24 @@ const Index = () => {
       </FadeSection>
 
       <FadeSection>
-        <section className="py-6">
+        <section className="py-5">
           <div className="container mx-auto px-6">
-            <h2 className="mb-4 text-center font-display text-2xl font-bold tracking-wider gradient-text">Why Choose Us</h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl hover-lift" style={{ background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' }}>
-                <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Fast Delivery" className="w-8 h-8 shrink-0" />
-                <div>
-                  <div className="font-display text-sm font-bold text-emerald-800">Fast Delivery</div>
-                  <div className="text-xs text-emerald-700/70">24-48hrs · Bots in 2-3 mins</div>
+            <h2 className="mb-3 text-center font-display text-xl font-bold tracking-wider gradient-text">Why Choose Us</h2>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {[
+                { img: "https://img.icons8.com/fluency/96/delivery.png", alt: "Fast Delivery", title: "Fast Delivery", sub: "24-48hrs · Bots in 2-3 mins", bg: "linear-gradient(135deg,#ecfdf5,#d1fae5)", tc: "text-emerald-800", sc: "text-emerald-700/70" },
+                { img: "https://img.icons8.com/fluency/96/overtime.png", alt: "24/7", title: "24/7 Availability", sub: "Always here for you", bg: "linear-gradient(135deg,#ede9fe,#ddd6fe)", tc: "text-violet-800", sc: "text-violet-700/70" },
+                { img: "https://img.icons8.com/fluency/96/prize.png", alt: "Quality", title: "Quality Guaranteed", sub: "Satisfaction on every project", bg: "linear-gradient(135deg,#fef3c7,#fde68a)", tc: "text-amber-800", sc: "text-amber-700/70" },
+                { img: "https://img.icons8.com/fluency/96/customer-support.png", alt: "Support", title: "Dedicated Support", sub: "Personal team behind you", bg: "linear-gradient(135deg,#e0f2fe,#bae6fd)", tc: "text-sky-800", sc: "text-sky-700/70" },
+              ].map((b) => (
+                <div key={b.title} className="flex items-center gap-2 px-4 py-2.5 rounded-2xl hover-lift" style={{ background: b.bg }}>
+                  <img src={b.img} alt={b.alt} className="w-7 h-7 shrink-0" />
+                  <div>
+                    <div className={`font-display text-xs font-bold ${b.tc}`}>{b.title}</div>
+                    <div className={`text-[10px] ${b.sc}`}>{b.sub}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl hover-lift" style={{ background: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)' }}>
-                <img src="https://img.icons8.com/fluency/96/overtime.png" alt="24/7" className="w-8 h-8 shrink-0" />
-                <div>
-                  <div className="font-display text-sm font-bold text-violet-800">24/7 Availability</div>
-                  <div className="text-xs text-violet-700/70">Always here for you</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl hover-lift" style={{ background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)' }}>
-                <img src="https://img.icons8.com/fluency/96/prize.png" alt="Quality" className="w-8 h-8 shrink-0" />
-                <div>
-                  <div className="font-display text-sm font-bold text-amber-800">Quality Guaranteed</div>
-                  <div className="text-xs text-amber-700/70">Satisfaction on every project</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl hover-lift" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)' }}>
-                <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="Support" className="w-8 h-8 shrink-0" />
-                <div>
-                  <div className="font-display text-sm font-bold text-sky-800">Dedicated Support</div>
-                  <div className="text-xs text-sky-700/70">Personal team behind you</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -491,51 +332,70 @@ const Index = () => {
       <FadeSection bgClassName="bg-section-dark"><Gallery /></FadeSection>
       <BeforeAfter />
 
-      {/* === TEAM === */}
-      <FadeSection bgClassName="bg-section-slate"><Team /></FadeSection>
+      {/* === TEAM (accordion) === */}
+      <FadeSection bgClassName="bg-section-slate">
+        <section id="team" className="py-5">
+          <div className="container mx-auto px-6">
+            <div className="flex justify-center">
+              <button
+                onClick={() => setTeamOpen(!teamOpen)}
+                className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5"
+              >
+                <Users className="h-4 w-4" />
+                Meet Our Team
+                {teamOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </button>
+            </div>
+            {teamOpen && (
+              <div className="mt-5 animate-in slide-in-from-top-3 duration-300">
+                <Team />
+              </div>
+            )}
+          </div>
+        </section>
+      </FadeSection>
       <FadeSection bgClassName="bg-section-indigo"><Clients /></FadeSection>
 
-
-        {/* === BOT HOSTING PANEL === */}
-        <FadeSection>
-          <section className="py-12 bg-gradient-to-br from-emerald-950/50 via-background to-violet-950/30 border-y border-primary/10">
-            <div className="container mx-auto px-6">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-3">
-                  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 text-sm text-primary font-medium mb-4">
-                    <Bot className="h-4 w-4" /> Bot Hosting Panel
-                  </div>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wider gradient-text mb-3">Host Your WhatsApp Bot</h2>
-                  <p className="text-muted-foreground text-lg max-w-xl mx-auto">Deploy, manage and monitor your MAXX-XMD bot on our cloud infrastructure. 24/7 uptime, one-click deploy.</p>
+      {/* === BOT HOSTING PANEL === */}
+      <FadeSection>
+        <section className="py-10 bg-gradient-to-br from-emerald-950/50 via-background to-violet-950/30 border-y border-primary/10">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-3">
+                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 text-sm text-primary font-medium mb-3">
+                  <Bot className="h-4 w-4" /> Bot Hosting Panel
                 </div>
-                <div className="grid md:grid-cols-3 gap-4 mb-3">
-                  {[
-                    { icon: "⚡", title: "1-Click Deploy", desc: "Paste your session ID and your bot is live in under a minute." },
-                    { icon: "🤖", title: "Social Media Boost", desc: "Use your XD balance to grow Instagram, TikTok, YouTube & more." },
-                    { icon: "📊", title: "Full Dashboard", desc: "Monitor, restart, stop or update your bots anytime from your dashboard." },
-                  ].map((f) => (
-                    <div key={f.title} className="bg-card border border-border rounded-xl p-5 text-center hover-lift">
-                      <div className="text-3xl mb-2">{f.icon}</div>
-                      <h3 className="font-bold mb-1">{f.title}</h3>
-                      <p className="text-sm text-muted-foreground">{f.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a href="https://panel.maxxtech.co.ke" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-8 py-4 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover rounded-lg">
-                    <Bot className="h-5 w-5" /> Open Bot Panel <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Zap className="h-4 w-4 text-yellow-500" />
-                    <span>50 XD = 30 days · Pro 90 XD = 45 days</span>
+                <h2 className="font-display text-2xl md:text-3xl font-bold tracking-wider gradient-text mb-2">Host Your WhatsApp Bot</h2>
+                <p className="text-muted-foreground text-sm max-w-xl mx-auto">Deploy, manage and monitor your MAXX-XMD bot on our cloud infrastructure. 24/7 uptime, one-click deploy.</p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-3 mb-4">
+                {[
+                  { icon: "⚡", title: "1-Click Deploy", desc: "Paste your session ID and your bot is live in under a minute." },
+                  { icon: "🤖", title: "Social Media Boost", desc: "Use your XD balance to grow Instagram, TikTok, YouTube & more." },
+                  { icon: "📊", title: "Full Dashboard", desc: "Monitor, restart, stop or update your bots anytime from your dashboard." },
+                ].map((f) => (
+                  <div key={f.title} className="bg-card border border-border rounded-xl p-4 text-center hover-lift">
+                    <div className="text-2xl mb-1.5">{f.icon}</div>
+                    <h3 className="font-bold text-sm mb-1">{f.title}</h3>
+                    <p className="text-xs text-muted-foreground">{f.desc}</p>
                   </div>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://panel.maxxtech.co.ke" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 bg-primary px-6 py-3 font-display text-sm font-bold tracking-wider text-primary-foreground transition-all hover:box-glow-hover rounded-lg">
+                  <Bot className="h-4 w-4" /> Open Bot Panel <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <Zap className="h-3.5 w-3.5 text-yellow-500" />
+                  <span>50 XD = 30 days · Pro 90 XD = 45 days</span>
                 </div>
               </div>
             </div>
-          </section>
-        </FadeSection>
+          </div>
+        </section>
+      </FadeSection>
 
-        {/* === FAQ === */}
+      {/* === FAQ === */}
       <FadeSection bgClassName="bg-section-emerald"><FAQ /></FadeSection>
 
       <Blog />
@@ -543,10 +403,11 @@ const Index = () => {
       <InvoiceGenerator />
       <AffiliateSystem />
 
-      {/* === SOCIAL PROOF === */}
+      {/* === TUTORIAL VIDEOS (accordion handled inside VideoSection) === */}
       <VideoSection />
+
       <FadeSection bgClassName="bg-testimonials-gradient">
-        <section className="py-8">
+        <section className="py-6">
           <div className="container mx-auto px-6 text-center">
             <h2 className="mb-4 font-display text-2xl font-bold tracking-wider gradient-text">What Our Clients Say</h2>
           </div>
@@ -556,22 +417,36 @@ const Index = () => {
 
       <GoogleReviews />
 
-      {/* === MEET CARLY === */}
+      {/* === MEET CARLY (accordion) === */}
       <FadeSection>
-        <section className="py-4 bg-about-gradient section-glow-purple">
+        <section className="py-5 bg-about-gradient section-glow-purple">
           <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet <span className="text-primary">CarlyMaxx</span> <span className="text-muted-foreground text-lg font-normal">(Calvince Ochieng)</span></h2>
-              <div className="mb-4">
-                <img src="https://files.catbox.moe/3716xg.jpg" alt="CarlyMaxx" className="w-40 h-40 rounded-2xl mx-auto object-cover ring-4 ring-primary/50 shadow-lg" />
-              </div>
-              <p className="text-muted-foreground mb-4 text-lg">I'm a passionate software developer, web designer, and IT specialist from <span className="font-bold text-primary">Ruiru, Kenya</span>.</p>
-              <p className="text-muted-foreground mb-6 text-lg">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">🎵 Maxx Hub</a>
-                <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">Get In Touch <ArrowRight className="h-4 w-4" /></a>
-              </div>
+            <div className="flex justify-center">
+              <button
+                onClick={() => setCarlyOpen(!carlyOpen)}
+                className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-500 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all hover:shadow-lg hover:shadow-violet-500/25 hover:-translate-y-0.5"
+              >
+                <img src="https://files.catbox.moe/3716xg.jpg" alt="CarlyMaxx" className="w-5 h-5 rounded-full object-cover ring-1 ring-white/40" />
+                Meet CarlyMaxx
+                {carlyOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </button>
             </div>
+            {carlyOpen && (
+              <div className="mt-5 animate-in slide-in-from-top-3 duration-300 max-w-2xl mx-auto text-center">
+                <div className="mb-4">
+                  <img src="https://files.catbox.moe/3716xg.jpg" alt="CarlyMaxx" className="w-32 h-32 rounded-2xl mx-auto object-cover ring-4 ring-primary/50 shadow-lg" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                  <span className="text-primary">CarlyMaxx</span> <span className="text-muted-foreground text-base font-normal">(Calvince Ochieng)</span>
+                </h2>
+                <p className="text-muted-foreground mb-3">I'm a passionate software developer, web designer, and IT specialist from <span className="font-bold text-primary">Ruiru, Kenya</span>.</p>
+                <p className="text-muted-foreground mb-5">From automation bots to full-stack applications, I deliver cutting-edge tech services tailored to your needs. With 5+ years of experience, I've helped hundreds of clients transform their digital presence.</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-purple-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">🎵 Maxx Hub</a>
+                  <a href={WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">Get In Touch <ArrowRight className="h-4 w-4" /></a>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </FadeSection>
@@ -592,7 +467,6 @@ const Index = () => {
         <footer className="bg-footer-gradient py-5 text-white">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-4">
-              {/* Product */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Product</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -603,7 +477,6 @@ const Index = () => {
                   <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                 </ul>
               </div>
-              {/* Products */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Products</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -614,7 +487,6 @@ const Index = () => {
                   <li><a href={MOVIE_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maxx Movies</a></li>
                 </ul>
               </div>
-              {/* Services */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Services</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -624,7 +496,6 @@ const Index = () => {
                   <li><a href="#services" className="hover:text-white transition-colors">TikTok Boosting</a></li>
                 </ul>
               </div>
-              {/* Tools */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Tools</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -635,7 +506,6 @@ const Index = () => {
                   <li><a href={WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Group</a></li>
                 </ul>
               </div>
-              {/* Company */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Company</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -645,7 +515,6 @@ const Index = () => {
                   <li><a href="#contact" className="hover:text-white transition-colors">Careers</a></li>
                 </ul>
               </div>
-              {/* Legal */}
               <div>
                 <h3 className="font-bold mb-2 text-xs uppercase tracking-wider text-white/70">Legal</h3>
                 <ul className="space-y-1 text-xs text-white/50">
@@ -656,8 +525,6 @@ const Index = () => {
                 </ul>
               </div>
             </div>
-
-            {/* Bottom Footer */}
             <div className="border-t border-white/10 pt-3 flex flex-col sm:flex-row items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <img src="https://files.catbox.moe/oepq4e.jpg" alt="Maxx Tech" className="w-6 h-6 rounded-full" />
