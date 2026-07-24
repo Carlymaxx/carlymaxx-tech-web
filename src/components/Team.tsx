@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Github, Twitter } from "lucide-react";
 
 const team = [
@@ -30,33 +31,28 @@ const team = [
 ];
 
 const Team = () => (
-  <section id="team" className="py-6">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-4">
-        <h2 className="text-xl md:text-2xl font-bold mb-1">Meet Our Team</h2>
-        <p className="text-gray-500 text-xs">The passionate people behind Maxx Tech</p>
-      </div>
-      <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
-        {team.map((member, index) => (
-          <div key={index} className="bg-white rounded-xl p-3 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all">
-            <img src={member.image} alt={member.name} className="w-12 h-12 rounded-full mx-auto mb-2 object-cover ring-2 ring-emerald-400" />
-            <h3 className="font-bold text-xs mb-0.5">{member.name}</h3>
-            <p className="text-emerald-600 text-[10px] font-semibold mb-1">{member.role}</p>
-            <p className="text-gray-500 text-[10px] leading-relaxed mb-2">{member.bio}</p>
-            <div className="flex flex-wrap justify-center gap-1 mb-2">
-              {member.skills.map((skill) => (
-                <span key={skill} className="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-medium">{skill}</span>
-              ))}
-            </div>
-            <div className="flex justify-center gap-1.5">
-              {member.twitter && <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><Twitter className="h-2.5 w-2.5" /></a>}
-              {member.github && <a href={member.github} target="_blank" rel="noopener noreferrer" className="h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-800 hover:text-white transition-colors"><Github className="h-2.5 w-2.5" /></a>}
-            </div>
+  <div className="max-w-3xl mx-auto">
+    <p className="text-gray-500 text-xs text-center mb-4">The passionate people behind Maxx Tech</p>
+    <div className="grid grid-cols-3 gap-3">
+      {team.map((member, index) => (
+        <div key={index} className="bg-white rounded-xl p-3 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all">
+          <img src={member.image} alt={member.name} className="w-12 h-12 rounded-full mx-auto mb-2 object-cover ring-2 ring-emerald-400" />
+          <h3 className="font-bold text-xs mb-0.5">{member.name}</h3>
+          <p className="text-emerald-600 text-[10px] font-semibold mb-1">{member.role}</p>
+          <p className="text-gray-500 text-[10px] leading-relaxed mb-2">{member.bio}</p>
+          <div className="flex flex-wrap justify-center gap-1 mb-2">
+            {member.skills.map((skill) => (
+              <span key={skill} className="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-medium">{skill}</span>
+            ))}
           </div>
-        ))}
-      </div>
+          <div className="flex justify-center gap-1.5">
+            {member.twitter && <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><Twitter className="h-2.5 w-2.5" /></a>}
+            {member.github && <a href={member.github} target="_blank" rel="noopener noreferrer" className="h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-800 hover:text-white transition-colors"><Github className="h-2.5 w-2.5" /></a>}
+          </div>
+        </div>
+      ))}
     </div>
-  </section>
+  </div>
 );
 
 export default Team;
