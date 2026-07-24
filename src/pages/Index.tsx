@@ -42,6 +42,7 @@ const MUSIC_HUB = "https://maxxtech-musichub.vercel.app";
 const PAIR_SITE = "https://pair.maxxtech.co.ke";
 const AI_SITE = "https://agent.maxxtech.co.ke";
 const AI_CLASSIC = "https://ai.maxxtech.co.ke";
+const MOVIE_SITE = "https://movie.maxxtech.co.ke";
 
 const TELEGRAM = "https://t.me/maxxtechgram";
 const TIKTOK = "https://www.tiktok.com/@squillahmaxx";
@@ -262,6 +263,34 @@ const Index = () => {
                   </div>
                   <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-amber-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-white/90 transition-all">
                     <Music className="h-3 w-3" /> Open Media Hub
+                  </a>
+                </div>
+              </div>
+
+              {/* Maxx Movies Card */}
+              <div className="relative group rounded-3xl overflow-hidden hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-rose-700 to-pink-800 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-pink-700 via-red-600 to-rose-800"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:w-60 group-hover:h-60 transition-all duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="relative p-5 md:p-6 text-white">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-12 w-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" /></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-bold tracking-wider">MAXX MOVIES</h3>
+                      <p className="text-xs text-white/70">Free Movies               {/* Bot Hosting Panel Card */}amp; Series</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">Watch and stream the latest movies, TV series, and entertainment content — all free, powered by Maxx Tech.</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["Movies", "Series", "Free", "HD"].map((tag) => (
+                      <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/15 backdrop-blur">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={MOVIE_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-red-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-white/90 transition-all">
+                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch Now
                   </a>
                 </div>
               </div>
@@ -582,6 +611,7 @@ const Index = () => {
                   <li><a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Agent</a></li>
                   <li><a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MAXX-XMD Bot</a></li>
                   <li><a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Media Hub</a></li>
+                  <li><a href={MOVIE_SITE} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Maxx Movies</a></li>
                 </ul>
               </div>
               {/* Services */}
