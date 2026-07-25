@@ -186,26 +186,184 @@ const Index = () => {
 
       {/* ── Our Products ── */}
       <FadeSection>
-        <section className="py-6 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 border-y border-white/5">
+        <section className="py-8 bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 border-y border-white/5">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col items-center mb-4">
+            <div className="flex flex-col items-center mb-6">
               <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 text-white/70 text-[10px] font-semibold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
                 <Rocket className="h-3 w-3 text-emerald-400" /> Our Products
               </span>
-              <h2 className="font-display text-xl font-black tracking-wider text-white">Everything Maxx Tech Builds</h2>
+              <h2 className="font-display text-2xl font-black tracking-wider text-white">Everything Maxx Tech Builds</h2>
+              <p className="text-white/40 text-xs mt-1">Powerful tools crafted by CarlyMaxx for your digital life</p>
             </div>
-            <div className="flex flex-wrap gap-2.5 max-w-4xl mx-auto justify-center">
-              {products.map((p) => (
-                <a href={p.href} target="_blank" rel="noopener noreferrer" key={p.name}
-                  className="group flex items-center gap-2 bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 rounded-xl px-4 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30 backdrop-blur-sm">
-                  <div className={`h-7 w-7 rounded-lg bg-gradient-to-br ${p.color} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                    <p.icon className="h-3.5 w-3.5" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+
+              {/* MAXXTECH AI */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-violet-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Sparkles className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">MAXXTECH AI</h3>
+                        <p className="text-[10px] text-white/60">agent.maxxtech.co.ke</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">Agent</span>
                   </div>
-                  <span className="font-bold text-sm text-white">{p.name}</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-white/50 font-semibold tracking-wide">{p.tag}</span>
-                  <ArrowRight className="h-3 w-3 text-white/30 group-hover:text-white/70 group-hover:translate-x-0.5 transition-all" />
-                </a>
-              ))}
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">Advanced AI assistant for smart conversations, coding help, content creation, and automation. Available 24/7 — no sign-up needed.</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["AI Chat", "Code Help", "Content Writer", "24/7 Free"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <a href={AI_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-violet-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                    Open AI <ArrowRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* MAXX-XMD */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-emerald-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Bot className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">MAXX-XMD</h3>
+                        <p className="text-[10px] text-white/60">WhatsApp Bot</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">Free</span>
+                  </div>
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">The fastest WhatsApp bot with 100+ commands — group management, auto-replies, media downloads, stickers. Deploy in just 2-3 minutes!</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["WhatsApp", "Group Mgmt", "Auto-Reply", "100+ Cmds"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <div className="flex gap-2">
+                    <a href={PAIR_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-emerald-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                      <Key className="h-3 w-3" /> Session ID
+                    </a>
+                    <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 border border-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs hover:bg-white/10 transition-all">
+                      <Github className="h-3 w-3" /> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Media Hub */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-amber-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-orange-500 to-rose-600" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Music className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">MEDIA HUB</h3>
+                        <p className="text-[10px] text-white/60">Music & Media Platform</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">Free</span>
+                  </div>
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">Your all-in-one media platform for music streaming, downloads, and entertainment. Access thousands of tracks and content for free.</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["Music", "Downloads", "Streaming", "Free"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <a href={MUSIC_HUB} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-amber-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                    <Music className="h-3 w-3" /> Open Hub
+                  </a>
+                </div>
+              </div>
+
+              {/* Maxx Movies */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-red-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-rose-700 to-pink-800" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Play className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">MAXX MOVIES</h3>
+                        <p className="text-[10px] text-white/60">Free Movies & Series</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">HD</span>
+                  </div>
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">Watch and stream the latest movies, TV series, and entertainment — all free in HD quality, powered by Maxx Tech. No subscriptions.</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["Movies", "TV Series", "Free", "HD Quality"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <a href={MOVIE_SITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-red-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                    <Play className="h-3 w-3" /> Watch Now
+                  </a>
+                </div>
+              </div>
+
+              {/* Bot Panel */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-cyan-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-sky-600 to-blue-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Zap className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">BOT PANEL</h3>
+                        <p className="text-[10px] text-white/60">Bot Hosting & Management</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">Pro</span>
+                  </div>
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">Host and manage your MAXX-XMD WhatsApp bot on our cloud SaaS panel. Monitor stats, manage sessions, and scale with one click.</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["Hosting", "Dashboard", "Social Boost", "24/7"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <a href={BOT_PANEL_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-cyan-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                    <Zap className="h-3 w-3" /> Open Panel
+                  </a>
+                </div>
+              </div>
+
+              {/* AI Classic */}
+              <div className="relative group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-900/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-700" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:w-48 group-hover:h-48 transition-all duration-700" />
+                <div className="relative p-5 text-white">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Sparkles className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-sm font-bold tracking-wider">AI CLASSIC</h3>
+                        <p className="text-[10px] text-white/60">ai.maxxtech.co.ke</p>
+                      </div>
+                    </div>
+                    <span className="text-[9px] bg-white/20 border border-white/30 px-2 py-0.5 rounded-full font-bold tracking-wide">Classic</span>
+                  </div>
+                  <p className="text-white/80 text-xs leading-relaxed mb-3">The original MAXXTECH AI — fast, lightweight, and reliable for everyday AI tasks, content generation, and smart answers. Always on.</p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {["Lightweight", "Fast", "Reliable", "Always On"].map(t => <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-white/15">{t}</span>)}
+                  </div>
+                  <a href={AI_CLASSIC} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-indigo-700 px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-white/90 transition-all">
+                    <Sparkles className="h-3 w-3" /> Open Classic
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
